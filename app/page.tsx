@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { MemberCard, Member } from '@/components/MemberCard';
+import { EditMemberModal } from '@/components/EditMemberModal';
 import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus, Baby } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { getRegion, getLicenseClass, isYOTA, Region, LicenseClass } from '@/lib/callsign-utils';
@@ -26,6 +27,30 @@ export default function Home() {
     const [classFilter, setClassFilter] = useState<LicenseClass | 'All'>('All');
     const [yotaFilter, setYotaFilter] = useState(false);
     const [page, setPage] = useState(1);
+
+    // Modal State
+    const [editingMember, setEditingMember] = useState<Member | null>(null);
+
+    // ... (Auth effects remain) ...
+
+    const handleEdit = (member: Member) => {
+        setEditingMember(member);
+    };
+
+    const handleDelete = async (id: string) => {
+        if (!confirm('WARNING: Are you sure you want to delete this member? This action cannot be undone.')) return;
+
+        const { error } = await supabase.from('members').delete().eq('id', id);
+        if (error) {
+            alert('Error deleting member: ' + error.message);
+        } else {
+            fetchData(); // Refresh
+        }
+    };
+
+    const handleSave = () => {
+        fetchData(); // Refresh list after edit
+    };
     const ITEMS_PER_PAGE = 24;
 
     // Auth State
@@ -308,7 +333,13 @@ export default function Home() {
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
                 {displayedMembers.map(member => (
-                    <MemberCard key={member.id} member={member} isAdmin={isAdmin} />
+                    <MemberCard
+                        key={member.id}
+                        member={member}
+                        isAdmin={isAdmin}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                    />
                 ))}
                 {!loading && displayedMembers.length === 0 && (
                     <div className="col-span-full py-20 text-center text-muted-foreground font-rajdhani text-xl">
@@ -321,6 +352,14 @@ export default function Home() {
                     </div>
                 )}
             </div>
+
+            {/* Edit Modal */}
+            <EditMemberModal
+                member={editingMember}
+                isOpen={!!editingMember}
+                onClose={() => setEditingMember(null)}
+                onSave={handleSave}
+            />
 
             {/* Load More */}
             {showLoadMore && (

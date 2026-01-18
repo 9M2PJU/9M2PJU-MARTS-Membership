@@ -17,9 +17,11 @@ export type Member = {
 interface MemberCardProps {
     member: Member
     isAdmin?: boolean;
+    onEdit?: (member: Member) => void;
+    onDelete?: (id: string) => void;
 }
 
-export function MemberCard({ member, isAdmin }: MemberCardProps) {
+export function MemberCard({ member, isAdmin, onEdit, onDelete }: MemberCardProps) {
     // Helpers
     const isExpired = (expiryStr: string) => {
         if (!expiryStr || expiryStr === '-') return false;
@@ -88,10 +90,18 @@ export function MemberCard({ member, isAdmin }: MemberCardProps) {
                 {/* Admin Controls */}
                 {isAdmin && (
                     <div className="flex gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity absolute top-2 right-2">
-                        <button className="bg-primary hover:bg-white text-black p-1.5 rounded-full transition-colors" title="Edit">
+                        <button
+                            onClick={() => onEdit?.(member)}
+                            className="bg-primary hover:bg-white text-black p-1.5 rounded-full transition-colors"
+                            title="Edit"
+                        >
                             <Pencil className="w-3 h-3" />
                         </button>
-                        <button className="bg-red-500 hover:bg-red-400 text-white p-1.5 rounded-full transition-colors" title="Delete">
+                        <button
+                            onClick={() => onDelete?.(member.id)}
+                            className="bg-red-500 hover:bg-red-400 text-white p-1.5 rounded-full transition-colors"
+                            title="Delete"
+                        >
                             <Trash2 className="w-3 h-3" />
                         </button>
                     </div>
