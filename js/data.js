@@ -34,14 +34,31 @@ function initSupabase() {
 async function loadMembers() {
     try {
         if (isSupabaseConnected && supabase) {
-            const { data, error } = await supabase
-                .from('members')
-                .select('*')
-                .order('callsign', { ascending: true });
+            // Fetch all records using pagination (Supabase default limit is 1000)
+            let allData = [];
+            let from = 0;
+            const batchSize = 1000;
+            let hasMore = true;
 
-            if (error) throw error;
+            while (hasMore) {
+                const { data, error } = await supabase
+                    .from('members')
+                    .select('*')
+                    .order('callsign', { ascending: true })
+                    .range(from, from + batchSize - 1);
 
-            membersData = data || [];
+                if (error) throw error;
+
+                if (data && data.length > 0) {
+                    allData = allData.concat(data);
+                    from += batchSize;
+                    hasMore = data.length === batchSize;
+                } else {
+                    hasMore = false;
+                }
+            }
+
+            membersData = allData;
             console.log(`📡 Loaded ${membersData.length} members from Supabase`);
         } else {
             // Fallback to localStorage
