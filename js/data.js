@@ -33,7 +33,7 @@ function initSupabase() {
  */
 async function loadMembers() {
     try {
-        if (isSupabaseConnected && supabase) {
+        if (isSupabaseConnected && supabaseClient) {
             try {
                 // Fetch all records using pagination (Supabase default limit is 1000)
                 let allData = [];
@@ -93,13 +93,13 @@ async function loadMembers() {
                 membersData = [];
             }
         }
-    }
+
         return membersData;
-} catch (error) {
-    console.error('Error loading members:', error);
-    showToast('Error loading members', 'error');
-    return [];
-}
+    } catch (error) {
+        console.error('Error loading members:', error);
+        showToast('Error loading members', 'error');
+        return [];
+    }
 }
 
 /**
