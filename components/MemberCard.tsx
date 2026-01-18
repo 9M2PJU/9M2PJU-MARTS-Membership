@@ -8,6 +8,9 @@ export type Member = {
     member_id: string
     expiry: string
     is_local: boolean
+    date_of_birth?: string | null
+    ic_number?: string | null
+    status?: 'active' | 'expired'
 }
 
 interface MemberCardProps {
