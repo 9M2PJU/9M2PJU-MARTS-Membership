@@ -127,7 +127,7 @@ export function EditMemberModal({ member, isOpen, onClose, onSave }: EditMemberM
                             />
                         </div>
                         <div className="space-y-1">
-                            <label className="text-xs uppercase text-primary/70 tracking-wider">Date of Birth (YOTA)</label>
+                            <label className="text-xs uppercase text-primary/70 tracking-wider">Date of Birth (Private)</label>
                             <input
                                 type="date"
                                 className="w-full bg-secondary/30 border border-input/50 rounded p-2 focus:ring-2 focus:ring-primary/30 outline-none"
