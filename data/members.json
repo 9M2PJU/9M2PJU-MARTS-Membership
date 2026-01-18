@@ -1,26 +1,6338 @@
 [
     {
         "id": "M00001",
-        "callsign": "9M2ABC",
-        "name": "AHMAD BIN ISMAIL",
-        "member_id": "30001",
-        "expiry": "2026/05",
+        "callsign": "9M0L",
+        "name": "MARTS 9M0L TEAM",
+        "member_id": "30136",
+        "expiry": "2014",
         "is_local": false
     },
     {
         "id": "M00002",
-        "callsign": "9W2XYZ",
-        "name": "MUHAMMAD BIN AHMAD",
-        "member_id": "30002",
-        "expiry": "2025/12",
+        "callsign": "9M2/G4GQA",
+        "name": "JAN CHMIELEWSKI",
+        "member_id": "30555",
+        "expiry": "2019/03",
         "is_local": false
     },
     {
         "id": "M00003",
-        "callsign": "9M6RST",
-        "name": "JOHN DOE",
-        "member_id": "30003",
-        "expiry": "2027/03",
+        "callsign": "9M2/JE1SCJ",
+        "name": "TAKUTO YOSHIDA",
+        "member_id": "30095",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00004",
+        "callsign": "9M2/JH8PHT (9M2ADX)",
+        "name": "KAZUO TAKASAKI",
+        "member_id": "28061",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00005",
+        "callsign": "9M2/JR1WZI",
+        "name": "KENJI ARAI",
+        "member_id": "D27106",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00006",
+        "callsign": "9M2ADI",
+        "name": "ADI ASHRAN BIN MOHD SALLEH",
+        "member_id": "30236",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00007",
+        "callsign": "9M2AGC",
+        "name": "AHMAD AZLAN BIN AB AZIZ",
+        "member_id": "25046",
+        "expiry": "2025/12",
+        "is_local": false
+    },
+    {
+        "id": "M00008",
+        "callsign": "9M2AIA",
+        "name": "AHMAD ISMAIL NIK AMAN",
+        "member_id": "30072",
+        "expiry": "2024/01",
+        "is_local": false
+    },
+    {
+        "id": "M00009",
+        "callsign": "9M2AL",
+        "name": "ALLAN OOI EWE CHYE",
+        "member_id": "10012",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00010",
+        "callsign": "9M2AOC",
+        "name": "ALEXANDER OON CHIN KEONG",
+        "member_id": "24046",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00011",
+        "callsign": "9M2ARR",
+        "name": "ABDUL RAHIM BIN ABDUL RAUB",
+        "member_id": "22276",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00012",
+        "callsign": "9M2AUR",
+        "name": "MUHAMMAD AIMIL BIN ABDUL RAHIM",
+        "member_id": "30877",
+        "expiry": "2024/01",
+        "is_local": false
+    },
+    {
+        "id": "M00013",
+        "callsign": "9M2AZ",
+        "name": "AZIZ B HUSSIN",
+        "member_id": "10025",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00014",
+        "callsign": "9M2BC",
+        "name": "HERBERT ALBRECHT BAER",
+        "member_id": "10029",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00015",
+        "callsign": "9M2BF",
+        "name": "LEE MUN WOH",
+        "member_id": "10033",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00016",
+        "callsign": "9M2BL",
+        "name": "ABDUL GHANI B ABAS",
+        "member_id": "10038",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00017",
+        "callsign": "9M2BMX",
+        "name": "YON NOR AZMAN",
+        "member_id": "30254",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00018",
+        "callsign": "9M2BP",
+        "name": "HO LAI CHEE",
+        "member_id": "10040",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00019",
+        "callsign": "9M2BRO",
+        "name": "MOHAMAD SAFWAN BIN MAT ISA",
+        "member_id": "30342",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00020",
+        "callsign": "9M2CCO",
+        "name": "CHOW CHEE ONN",
+        "member_id": "20040",
+        "expiry": "2025/12",
+        "is_local": false
+    },
+    {
+        "id": "M00021",
+        "callsign": "9M2CE",
+        "name": "MOHD NOR BIN PUTEH",
+        "member_id": "27118",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00022",
+        "callsign": "9M2CIA",
+        "name": "MOHAMAD LOKMAL NGAH",
+        "member_id": "25034",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00023",
+        "callsign": "9M2CJ",
+        "name": "THIAM CHEE MING",
+        "member_id": "27171",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00024",
+        "callsign": "9M2CL",
+        "name": "CHEE LYE SENG",
+        "member_id": "10056",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00025",
+        "callsign": "9M2CNC",
+        "name": "RICHARD HENRI OWEN EVERITT",
+        "member_id": "10763",
+        "expiry": "2023/09",
+        "is_local": false
+    },
+    {
+        "id": "M00026",
+        "callsign": "9M2CTT",
+        "name": "FAIRUDIN BIN BORHAN",
+        "member_id": "30948",
+        "expiry": "2025/07",
+        "is_local": false
+    },
+    {
+        "id": "M00027",
+        "callsign": "9M2DF",
+        "name": "DAVID JOHN WILKINS",
+        "member_id": "10074",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00028",
+        "callsign": "9M2DI",
+        "name": "MOHAMMED DANIAL BIN RAMLI",
+        "member_id": "24077",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00029",
+        "callsign": "9M2DRL",
+        "name": "LEE CHUN CHEOW",
+        "member_id": "27043",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00030",
+        "callsign": "9M2DU",
+        "name": "MAIDIN B MD DAN",
+        "member_id": "10084",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00031",
+        "callsign": "9M2DXD",
+        "name": "MUHAMMAD FERDAUS BIN OTHMAN",
+        "member_id": "30941",
+        "expiry": "2025/05",
+        "is_local": false
+    },
+    {
+        "id": "M00032",
+        "callsign": "9M2EAD",
+        "name": "MORIO KIMURA",
+        "member_id": "30363",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00033",
+        "callsign": "9M2EEE",
+        "name": "MOHD FIRDAUS BIN MOHD YUSOFF",
+        "member_id": "30401",
+        "expiry": "2017/06",
+        "is_local": false
+    },
+    {
+        "id": "M00034",
+        "callsign": "9M2EME",
+        "name": "AHMAD NOR HISHAMUDDIN BIN ABDUL RAHMAN",
+        "member_id": "30322",
+        "expiry": "2016/11",
+        "is_local": false
+    },
+    {
+        "id": "M00035",
+        "callsign": "9M2FB",
+        "name": "IAN BUFFHAM",
+        "member_id": "27194",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00036",
+        "callsign": "9M2FF",
+        "name": "MOHD YUSOF B MOHAMED",
+        "member_id": "10101",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00037",
+        "callsign": "9M2FOF",
+        "name": "FUZI BIN LATEH",
+        "member_id": "30628",
+        "expiry": "2020/07",
+        "is_local": false
+    },
+    {
+        "id": "M00038",
+        "callsign": "9M2FP",
+        "name": "PER GREEN",
+        "member_id": "10106",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00039",
+        "callsign": "9M2FRI",
+        "name": "MARTIN ESSENBERG",
+        "member_id": "25079",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00040",
+        "callsign": "9M2FUL",
+        "name": "SAIFUL AZUWAN BIN MOHAMAD",
+        "member_id": "30256",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00041",
+        "callsign": "9M2GDX EX 9W2GZH",
+        "name": "ZAINURUL IZWAN BIN ZAINAL",
+        "member_id": "30501",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00042",
+        "callsign": "9M2GH",
+        "name": "GHAZALIE SAW ABDULLAH",
+        "member_id": "30248",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00043",
+        "callsign": "9M2GID",
+        "name": "KHAIRUDDIN BIN HJ OSMAN",
+        "member_id": "30585",
+        "expiry": "2023/08",
+        "is_local": false
+    },
+    {
+        "id": "M00044",
+        "callsign": "9M2GK",
+        "name": "GEOH KAH LIM",
+        "member_id": "10118",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00045",
+        "callsign": "9M2GR",
+        "name": "K. GANESARETHINAM",
+        "member_id": "27179",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00046",
+        "callsign": "9M2HAS ( EX 9W2HKJ)",
+        "name": "HASBULLAN BIN KAMSANI",
+        "member_id": "30275",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00047",
+        "callsign": "9M2HDX",
+        "name": "ROS SAIFULLIZAN BIN YAHYA",
+        "member_id": "30865",
+        "expiry": "2024/12",
+        "is_local": false
+    },
+    {
+        "id": "M00048",
+        "callsign": "9M2HH",
+        "name": "HISHAM B MUSTAFFA",
+        "member_id": "10131",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00049",
+        "callsign": "9M2HIM (EX 9W2NKL)",
+        "name": "NOR EKEMAL BIN MOHD SHAHRIN",
+        "member_id": "30313",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00050",
+        "callsign": "9M2HK",
+        "name": "LEONG KOK HIN",
+        "member_id": "27095",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00051",
+        "callsign": "9M2HM",
+        "name": "MICHAL ONG",
+        "member_id": "30016",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00052",
+        "callsign": "9M2IDJ",
+        "name": "MASAHIRO OTAKARA",
+        "member_id": "30017",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00053",
+        "callsign": "9M2IY",
+        "name": "YOSHIOKA IKURO",
+        "member_id": "10147",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00054",
+        "callsign": "9M2JBH",
+        "name": "MOHD BUKHARI BIN HAMIRUDDIN",
+        "member_id": "30723",
+        "expiry": "2024/12",
+        "is_local": false
+    },
+    {
+        "id": "M00055",
+        "callsign": "9M2JEP",
+        "name": "MOHD JEFRI BIN NORDIN",
+        "member_id": "30193",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00056",
+        "callsign": "9M2JI",
+        "name": "MASAMICHI KUMAKURA",
+        "member_id": "27183",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00057",
+        "callsign": "9M2KE",
+        "name": "SHUNICHI KAWANO",
+        "member_id": "10169",
+        "expiry": "2025/12",
+        "is_local": false
+    },
+    {
+        "id": "M00058",
+        "callsign": "9M2KMA",
+        "name": "KPT(B) DR KHAIRUDIN B MOHD ALI",
+        "member_id": "22014",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00059",
+        "callsign": "9M2KR",
+        "name": "ONG KHEOK CHIN",
+        "member_id": "10177",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00060",
+        "callsign": "9M2KT",
+        "name": "PHOA KIA TECK",
+        "member_id": "10179",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00061",
+        "callsign": "9M2KW",
+        "name": "HOOI KWEE WENG",
+        "member_id": "25073",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00062",
+        "callsign": "9M2LAW",
+        "name": "LAW POH CHEOK",
+        "member_id": "20006",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00063",
+        "callsign": "9M2LC (SENIOR MEMBER)",
+        "name": "LIM KEAN CHUAN",
+        "member_id": "10187",
+        "expiry": "2024/12",
+        "is_local": false
+    },
+    {
+        "id": "M00064",
+        "callsign": "9M2LEX",
+        "name": "KHALID BIN KAMARUDIN",
+        "member_id": "30587",
+        "expiry": "2019/08",
+        "is_local": false
+    },
+    {
+        "id": "M00065",
+        "callsign": "9M2LL",
+        "name": "MD BASRI B WAGIMEN",
+        "member_id": "10193",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00066",
+        "callsign": "9M2LM",
+        "name": "LAM MOW SUM",
+        "member_id": "10194",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00067",
+        "callsign": "9M2LR",
+        "name": "LYE KOW KNIAH",
+        "member_id": "10196",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00068",
+        "callsign": "9M2MAX",
+        "name": "HAIDIL MUSTAFA BIN MOHD DIN",
+        "member_id": "30909",
+        "expiry": "2025/09",
+        "is_local": false
+    },
+    {
+        "id": "M00069",
+        "callsign": "9M2MM",
+        "name": "MOHD KHALID HJ MOHD YUSOF",
+        "member_id": "10211",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00070",
+        "callsign": "9M2MRL",
+        "name": "MOHD NOOR BIN ABDUL AZIZ",
+        "member_id": "26026",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00071",
+        "callsign": "9M2MT",
+        "name": "AZMAN SHAH ISMAIL",
+        "member_id": "29025",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00072",
+        "callsign": "9M2NAL",
+        "name": "ZAINAL ABIDIN BIN GHAZALI",
+        "member_id": "30422",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00073",
+        "callsign": "9M2NCL",
+        "name": "ANDRE NG CHEE LEONG",
+        "member_id": "24011",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00074",
+        "callsign": "9M2NJ",
+        "name": "MOHAMAD NASIM B. ISMAIL",
+        "member_id": "30548",
+        "expiry": "2018/12",
+        "is_local": false
+    },
+    {
+        "id": "M00075",
+        "callsign": "9M2NM",
+        "name": "NORDIN B ABU MANGSOR",
+        "member_id": "10231",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00076",
+        "callsign": "9M2NO",
+        "name": "AHMAD NAZLI B OTHMAN",
+        "member_id": "10232",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00077",
+        "callsign": "9M2NUA",
+        "name": "MOHD ANUAR NIZAM BIN RAHMAT",
+        "member_id": "30799",
+        "expiry": "2024/02",
+        "is_local": false
+    },
+    {
+        "id": "M00078",
+        "callsign": "9M2OCX EX 9W2OCX",
+        "name": "MUHAMAD SHARUL BIN MAHMUD",
+        "member_id": "30319",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00079",
+        "callsign": "9M2ODY",
+        "name": "MOHD NASRUDDIN BIN MD KISOM",
+        "member_id": "30100",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00080",
+        "callsign": "9M2OOO",
+        "name": "MOHD KHAIRUL AFENDY BIN MD AZIZ",
+        "member_id": "30188",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00081",
+        "callsign": "9M2OUT",
+        "name": "NOR HANIZAR BT NAHAR",
+        "member_id": "28054",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00082",
+        "callsign": "9M2PBP",
+        "name": "PERSATUAN PENGAKAP DAERAH BALIK PULAU",
+        "member_id": "27185",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00083",
+        "callsign": "9M2PEN",
+        "name": "SOON JUN SHENG",
+        "member_id": "26024",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00084",
+        "callsign": "9M2PMC",
+        "name": "KELAB RADIO AMATOR PP",
+        "member_id": "10250",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00085",
+        "callsign": "9M2PT",
+        "name": "CHAN PIN TAK",
+        "member_id": "10255",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00086",
+        "callsign": "9M2PZ",
+        "name": "ABDUL MANAN B PAWANTEH",
+        "member_id": "10215",
+        "expiry": "2017",
+        "is_local": false
+    },
+    {
+        "id": "M00087",
+        "callsign": "9M2RA",
+        "name": "MOOK AH TAW @ MOOK HON THO",
+        "member_id": "24010",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00088",
+        "callsign": "9M2RAS",
+        "name": "REDZUAN BIN ABU SEMAN",
+        "member_id": "30831",
+        "expiry": "2023/09",
+        "is_local": false
+    },
+    {
+        "id": "M00089",
+        "callsign": "9M2RCJ (EX 9W2RCJ)",
+        "name": "RICHARD CLARENCE JOSEPH",
+        "member_id": "26082",
+        "expiry": "2024/06",
+        "is_local": false
+    },
+    {
+        "id": "M00090",
+        "callsign": "9M2RHC",
+        "name": "MUHAMMAD RIZAL BIN HARIZAN",
+        "member_id": "30163",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00091",
+        "callsign": "9M2RIE",
+        "name": "AMRY BIN AMUDI",
+        "member_id": "30263",
+        "expiry": "2021/05",
+        "is_local": false
+    },
+    {
+        "id": "M00092",
+        "callsign": "9M2ROL",
+        "name": "MOHD AMIROL BIN AHMAD",
+        "member_id": "30079",
+        "expiry": "2018/12",
+        "is_local": false
+    },
+    {
+        "id": "M00093",
+        "callsign": "9M2RZZ",
+        "name": "RAJA ZAINAL ABIDIN BIN ZAHID",
+        "member_id": "21120",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00094",
+        "callsign": "9M2SAL",
+        "name": "MUHAMMAD SALMAN AL FARISI BIN MUHAMMAD",
+        "member_id": "30721",
+        "expiry": "2022/01",
+        "is_local": false
+    },
+    {
+        "id": "M00095",
+        "callsign": "9M2SKY",
+        "name": "KHAIRUL NADZMI B MOHD YUSOF",
+        "member_id": "30768",
+        "expiry": "2024/01",
+        "is_local": false
+    },
+    {
+        "id": "M00096",
+        "callsign": "9M2SRS",
+        "name": "SAIFUZZAMAN BIN ABDUL KARIM",
+        "member_id": "30774",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00097",
+        "callsign": "9M2ST",
+        "name": "STEVEN TAN KIAN LIP",
+        "member_id": "10301",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00098",
+        "callsign": "9M2SX",
+        "name": "SAITO B SALAM",
+        "member_id": "10304",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00099",
+        "callsign": "9M2SZ",
+        "name": "SHAHARUDIN ALI",
+        "member_id": "25035",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00100",
+        "callsign": "9M2TD",
+        "name": "TADAHARU UCHIMA",
+        "member_id": "10308",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00101",
+        "callsign": "9M2TL",
+        "name": "TERUKANE UCHINO",
+        "member_id": "10311",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00102",
+        "callsign": "9M2TMC",
+        "name": "VERHEUL ADRIANUS",
+        "member_id": "25084",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00103",
+        "callsign": "9M2UDE",
+        "name": "AZRISHAH BIN MOHD NOOR",
+        "member_id": "30323",
+        "expiry": "2018/11",
+        "is_local": false
+    },
+    {
+        "id": "M00104",
+        "callsign": "9M2VF",
+        "name": "MUI SIEW KAI",
+        "member_id": "10325",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00105",
+        "callsign": "9M2VJ",
+        "name": "VIJAYA KUMAR C R",
+        "member_id": "10326",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00106",
+        "callsign": "9M2VVH",
+        "name": "MOHD HUSSAIRY BIN SIDEK",
+        "member_id": "30031",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00107",
+        "callsign": "9M2WG",
+        "name": "WONG POH HING",
+        "member_id": "10334",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00108",
+        "callsign": "9M2WM",
+        "name": "PATRICK WILLIE MEOW",
+        "member_id": "27055",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00109",
+        "callsign": "9M2WP",
+        "name": "JOSEPH THONG GAN WOH",
+        "member_id": "10340",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00110",
+        "callsign": "9M2WR",
+        "name": "RONALD EDWARDS WHITING",
+        "member_id": "30002",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00111",
+        "callsign": "9M2WT",
+        "name": "WILLIAM TAN CHAI KWAY",
+        "member_id": "10343",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00112",
+        "callsign": "9M2WWW",
+        "name": "NOR IKMAL BIN GHAZALI",
+        "member_id": "30743",
+        "expiry": "2022/08",
+        "is_local": false
+    },
+    {
+        "id": "M00113",
+        "callsign": "9M2XA",
+        "name": "KODAMA SHINICHI",
+        "member_id": "10346",
+        "expiry": "2025/12",
+        "is_local": false
+    },
+    {
+        "id": "M00114",
+        "callsign": "9M2YDX",
+        "name": "MOHAMMAD YASIR BIN ABDULLAH",
+        "member_id": "30540",
+        "expiry": "2019/01",
+        "is_local": false
+    },
+    {
+        "id": "M00115",
+        "callsign": "9M2YMC",
+        "name": "YMCA ARC",
+        "member_id": "24035",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00116",
+        "callsign": "9M2YRS",
+        "name": "ABDUL RASHID AHMAD SIDEK",
+        "member_id": "10737",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00117",
+        "callsign": "9M2YUT",
+        "name": "MOHD KHAIRUL ZAIFAR BIN RAZIK",
+        "member_id": "30343",
+        "expiry": "2018/02",
+        "is_local": false
+    },
+    {
+        "id": "M00118",
+        "callsign": "9M2YYY",
+        "name": "CHENG KOK MENG",
+        "member_id": "30145",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00119",
+        "callsign": "9M2ZAK",
+        "name": "ZAKI BIN DIN",
+        "member_id": "30075",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00120",
+        "callsign": "9M2ZC",
+        "name": "ZAKARIA DAHILI",
+        "member_id": "29023",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00121",
+        "callsign": "9M2ZDX",
+        "name": "MUHAMMAD ZAKIR HASSAN BIN KHAIRUDDIN",
+        "member_id": "30380",
+        "expiry": "2017/05",
+        "is_local": false
+    },
+    {
+        "id": "M00122",
+        "callsign": "9M2ZI",
+        "name": "AZIZI B A. HADI",
+        "member_id": "10371",
+        "expiry": "2021/12",
+        "is_local": false
+    },
+    {
+        "id": "M00123",
+        "callsign": "9M2ZM",
+        "name": "ZULKIFLI B HASHIM",
+        "member_id": "24016",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00124",
+        "callsign": "9M2ZOL",
+        "name": "ZULKEFLI BIN ABDULLAH",
+        "member_id": "30586",
+        "expiry": "2020/08",
+        "is_local": false
+    },
+    {
+        "id": "M00125",
+        "callsign": "9M4CAP",
+        "name": "PERAK AMATEUR RADIO TRANSMITTERS SOCIETY (PARTS)",
+        "member_id": "30903",
+        "expiry": "2024/06",
+        "is_local": false
+    },
+    {
+        "id": "M00126",
+        "callsign": "9M4CDK",
+        "name": "PERSATUAN KOMUNITI RADIO AMATUR DAN REKREASI KOK LANAS (KRAKL)",
+        "member_id": "30642",
+        "expiry": "2020/10",
+        "is_local": false
+    },
+    {
+        "id": "M00127",
+        "callsign": "9M4CMT",
+        "name": "MOTOROLA ARC",
+        "member_id": "25083",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00128",
+        "callsign": "9M4COK",
+        "name": "KELAB RADIO AMATUR MELAYU JALAN KLANG LAMA SELANGOR",
+        "member_id": "30426",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00129",
+        "callsign": "9M4CPS",
+        "name": "KELAB RADIO AMATUR DX PERLIS",
+        "member_id": "30496",
+        "expiry": "2018/06",
+        "is_local": false
+    },
+    {
+        "id": "M00130",
+        "callsign": "9M4SAM",
+        "name": "GEORGE TOWN (SOUTH) SCOUTS DISTRICT",
+        "member_id": "26001",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00131",
+        "callsign": "9M6AAC",
+        "name": "HILLVIEW GARDENS ARC",
+        "member_id": "10381",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00132",
+        "callsign": "9M6DDX EX 9W6MRD",
+        "name": "MOHD AZLAN BIN MATASAN",
+        "member_id": "30231",
+        "expiry": "2025/12",
+        "is_local": false
+    },
+    {
+        "id": "M00133",
+        "callsign": "9M6DXX",
+        "name": "STEPHEN EDWIN TELENIUS LOWE",
+        "member_id": "27104",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00134",
+        "callsign": "9M6LS",
+        "name": "LUCIUS SOLOMON",
+        "member_id": "30736",
+        "expiry": "2024/11",
+        "is_local": false
+    },
+    {
+        "id": "M00135",
+        "callsign": "9M6SDA (EX 9W6SDA)",
+        "name": "MALVIN GAKIM",
+        "member_id": "30265",
+        "expiry": "2024/06",
+        "is_local": false
+    },
+    {
+        "id": "M00136",
+        "callsign": "9M6US",
+        "name": "JANI KURNIAWAN KUSMULYANA",
+        "member_id": "10460",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00137",
+        "callsign": "9M6XRO/GM3OOK",
+        "name": "JOHN PLENDERLEITH",
+        "member_id": "26113",
+        "expiry": "2018/10",
+        "is_local": false
+    },
+    {
+        "id": "M00138",
+        "callsign": "9M8/VA2TWT",
+        "name": "JEAN-GUY RIOUX",
+        "member_id": "30399",
+        "expiry": "2019/06",
+        "is_local": false
+    },
+    {
+        "id": "M00139",
+        "callsign": "9M8MCC",
+        "name": "MORGAN GREGORY",
+        "member_id": "30614",
+        "expiry": "2020/03",
+        "is_local": false
+    },
+    {
+        "id": "M00140",
+        "callsign": "9M8SYA",
+        "name": "SYED AZIMIN B. SYED ALI",
+        "member_id": "30093",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00141",
+        "callsign": "9M8WIN",
+        "name": "WINSTON LIM WEI TIONG",
+        "member_id": "30565",
+        "expiry": "2024/12",
+        "is_local": false
+    },
+    {
+        "id": "M00142",
+        "callsign": "9W2 DJC",
+        "name": "MOHD ROSDIYANSHAH BIN MOHAMED SAMSUDDIN",
+        "member_id": "27113",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00143",
+        "callsign": "9W2AAR",
+        "name": "ABDUL SHUKOR BIN ABDUL AZIZ",
+        "member_id": "30739",
+        "expiry": "2022/05",
+        "is_local": false
+    },
+    {
+        "id": "M00144",
+        "callsign": "9W2ABA",
+        "name": "MOHAMAD KHAIRIL AZMIR BIN MOHAMAD YUSOFF",
+        "member_id": "30696",
+        "expiry": "2021/10",
+        "is_local": false
+    },
+    {
+        "id": "M00145",
+        "callsign": "9W2ABR",
+        "name": "ABD RAAK BIN OTHMAN",
+        "member_id": "22311",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00146",
+        "callsign": "9W2ABZ",
+        "name": "HAJI ABDUL AZIZ BIN HAJI ZAINI",
+        "member_id": "27135",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00147",
+        "callsign": "9W2ACE",
+        "name": "ADLI BIN MD DAHALAN",
+        "member_id": "30267",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00148",
+        "callsign": "9W2ACQ",
+        "name": "AZMI BIN ABD. RAHMAN",
+        "member_id": "30176",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00149",
+        "callsign": "9W2ADD",
+        "name": "ADRI SUTAN (ADINDA)",
+        "member_id": "30579",
+        "expiry": "2019/06",
+        "is_local": false
+    },
+    {
+        "id": "M00150",
+        "callsign": "9W2ADJ",
+        "name": "MOHD FADHLY BIN IBRAHIM",
+        "member_id": "25145",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00151",
+        "callsign": "9W2ADO",
+        "name": "ABDULLAH BIN IBRAHIM",
+        "member_id": "27128",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00152",
+        "callsign": "9W2AFC",
+        "name": "NORHISHAM BIN SHAARI",
+        "member_id": "29001",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00153",
+        "callsign": "9W2AGZ",
+        "name": "MOHD FAKHRI ARIS BIN MUHAMMAD GHAZI",
+        "member_id": "30069",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00154",
+        "callsign": "9W2AIX",
+        "name": "AHMAD IDRISZULDIN B.RIDZUAN",
+        "member_id": "30693",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00155",
+        "callsign": "9W2AKT",
+        "name": "LT CDR (RTD) SHAMSUDIN BIN AHMAD",
+        "member_id": "27172",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00156",
+        "callsign": "9W2ALI",
+        "name": "ALI AFANDI BIN ARIFIN",
+        "member_id": "26060",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00157",
+        "callsign": "9W2ALS",
+        "name": "ALIAS BIN SALAN",
+        "member_id": "30143",
+        "expiry": "2019/12",
+        "is_local": false
+    },
+    {
+        "id": "M00158",
+        "callsign": "9W2AMI",
+        "name": "NOOR AZMI BIN JAAFAR",
+        "member_id": "27132",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00159",
+        "callsign": "9W2AMP",
+        "name": "SHARIL AHMAD BIN MOHD RADZI",
+        "member_id": "30627",
+        "expiry": "2007/12",
+        "is_local": false
+    },
+    {
+        "id": "M00160",
+        "callsign": "9W2ANS",
+        "name": "AHMAD NAWAWI B SAAD",
+        "member_id": "24068",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00161",
+        "callsign": "9W2AP",
+        "name": "TANG WANG NYAP",
+        "member_id": "20011",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00162",
+        "callsign": "9W2ARL",
+        "name": "CHEANG JING YUE",
+        "member_id": "26134",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00163",
+        "callsign": "9W2ARU",
+        "name": "KAHAIRUL AZMI BIN KARIM",
+        "member_id": "26112",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00164",
+        "callsign": "9W2ARY",
+        "name": "AZRI EMRAN BIN RAMLAN",
+        "member_id": "26114",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00165",
+        "callsign": "9W2ATW",
+        "name": "TAN KAH LEONG",
+        "member_id": "27188",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00166",
+        "callsign": "9W2AVI",
+        "name": "CHEAH CHUAN WOOI",
+        "member_id": "30131",
+        "expiry": "2020/12",
+        "is_local": false
+    },
+    {
+        "id": "M00167",
+        "callsign": "9W2AWA",
+        "name": "AWANG BIN MUHAMMAD",
+        "member_id": "30224",
+        "expiry": "2018/12",
+        "is_local": false
+    },
+    {
+        "id": "M00168",
+        "callsign": "9W2AXF",
+        "name": "AIRILANNUAR BIN ABDULLAH",
+        "member_id": "30530",
+        "expiry": "2024/10",
+        "is_local": false
+    },
+    {
+        "id": "M00169",
+        "callsign": "9W2AXN",
+        "name": "ADLIND FATANI B AHMAD ROSLI",
+        "member_id": "22297",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00170",
+        "callsign": "9W2AZ",
+        "name": "ABD AZIZ B HJ  ABU BAKAR",
+        "member_id": "10506",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00171",
+        "callsign": "9W2BA",
+        "name": "NOR AZLAN B MOHD ALI",
+        "member_id": "10507",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00172",
+        "callsign": "9W2BAV",
+        "name": "BEH TEIK WOON",
+        "member_id": "30172",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00173",
+        "callsign": "9W2BBQ",
+        "name": "CHEN KAE JANN",
+        "member_id": "29016",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00174",
+        "callsign": "9W2BC",
+        "name": "MOHD AMIN ZAIRY ADHAR",
+        "member_id": "25048",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00175",
+        "callsign": "9W2BCT",
+        "name": "AMRAN BIN OMAR",
+        "member_id": "30521",
+        "expiry": "2021/09",
+        "is_local": false
+    },
+    {
+        "id": "M00176",
+        "callsign": "9W2BDX",
+        "name": "AFZAINIZAM BIN AHMAD",
+        "member_id": "30717",
+        "expiry": "2022/01",
+        "is_local": false
+    },
+    {
+        "id": "M00177",
+        "callsign": "9W2BFR",
+        "name": "AZHAN MOHD MAIDIN",
+        "member_id": "30617",
+        "expiry": "2020/04",
+        "is_local": false
+    },
+    {
+        "id": "M00178",
+        "callsign": "9W2BGC",
+        "name": "SARUDIN BIN MD AMIN",
+        "member_id": "30298",
+        "expiry": "2021/12",
+        "is_local": false
+    },
+    {
+        "id": "M00179",
+        "callsign": "9W2BHL",
+        "name": "MOHD FARID BIN SUDIN",
+        "member_id": "30771",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00180",
+        "callsign": "9W2BI",
+        "name": "NASRUDIN B SAID",
+        "member_id": "24072",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00181",
+        "callsign": "9W2BLL",
+        "name": "SWEE LEAN HENG",
+        "member_id": "25137",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00182",
+        "callsign": "9W2BMG",
+        "name": "MEGAT NORAZLAN BIN MEGAT ISLAHUDDIN",
+        "member_id": "30780",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00183",
+        "callsign": "9W2BO",
+        "name": "YUSOF B BID",
+        "member_id": "10513",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00184",
+        "callsign": "9W2CCA",
+        "name": "SHAARI BIN ABDULLAH",
+        "member_id": "28052",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00185",
+        "callsign": "9W2CCH",
+        "name": "CH'NG CHENG HOE",
+        "member_id": "24064",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00186",
+        "callsign": "9W2CCT",
+        "name": "THO LAI TENG",
+        "member_id": "25086",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00187",
+        "callsign": "9W2CCY",
+        "name": "CHAN CHENG YEE",
+        "member_id": "24015",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00188",
+        "callsign": "9W2CDY",
+        "name": "MOHD RASHID BIN MAT RAIS",
+        "member_id": "27137",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00189",
+        "callsign": "9W2CEH",
+        "name": "MUHAMMAD ARMAN B SELAMAT",
+        "member_id": "30065",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00190",
+        "callsign": "9W2CGV",
+        "name": "RASELON BIN APAL",
+        "member_id": "30950",
+        "expiry": "2025/07",
+        "is_local": false
+    },
+    {
+        "id": "M00191",
+        "callsign": "9W2CHL",
+        "name": "IBRAHIM BIN AHMAD",
+        "member_id": "26056",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00192",
+        "callsign": "9W2CHY",
+        "name": "MARTIN CHAN HO YAU",
+        "member_id": "24056",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00193",
+        "callsign": "9W2CIJ",
+        "name": "JIHADI BIN ISA",
+        "member_id": "30187",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00194",
+        "callsign": "9W2CKZ",
+        "name": "CHE KU IZAN BIN CHE KU MANSOR",
+        "member_id": "30215",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00195",
+        "callsign": "9W2CLS",
+        "name": "RAJA INTAN AZLIN BTE RAJA ZAINOODIN",
+        "member_id": "30005",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00196",
+        "callsign": "9W2COA",
+        "name": "AFFANDI BIN HUSSAIN",
+        "member_id": "30880",
+        "expiry": "2024/12",
+        "is_local": false
+    },
+    {
+        "id": "M00197",
+        "callsign": "9W2CPT",
+        "name": "EDGAR DE VOSSE",
+        "member_id": "25135",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00198",
+        "callsign": "9W2CRN",
+        "name": "ASRIN AZIZUL BIN ADAM SAKERI",
+        "member_id": "30781",
+        "expiry": "2024/01",
+        "is_local": false
+    },
+    {
+        "id": "M00199",
+        "callsign": "9W2CV",
+        "name": "NG CHOW KENG",
+        "member_id": "24007",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00200",
+        "callsign": "9W2CWL",
+        "name": "CHONG WEE LONG",
+        "member_id": "27160",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00201",
+        "callsign": "9W2CXU",
+        "name": "SHAHRIL BIN SAMSUDDIN",
+        "member_id": "30667",
+        "expiry": "2024/11",
+        "is_local": false
+    },
+    {
+        "id": "M00202",
+        "callsign": "9W2CYC",
+        "name": "FRANCIS CHIN YEW CHOY",
+        "member_id": "25020",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00203",
+        "callsign": "9W2DAH",
+        "name": "NORAFIDAH BT RAHMAD",
+        "member_id": "24170",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00204",
+        "callsign": "9W2DAP",
+        "name": "SHAAINI BIN MD JUMAAT",
+        "member_id": "26032",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00205",
+        "callsign": "9W2DCM",
+        "name": "MOHD HUSAIMI BIN HUSIN",
+        "member_id": "30698",
+        "expiry": "2023/11",
+        "is_local": false
+    },
+    {
+        "id": "M00206",
+        "callsign": "9W2DCY",
+        "name": "CHNG CHIN YANG",
+        "member_id": "26151",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00207",
+        "callsign": "9W2DDL",
+        "name": "DAVID LIEW SHYUE LII",
+        "member_id": "25169",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00208",
+        "callsign": "9W2DFL",
+        "name": "TS. DR. MOHAMAD FAIZUL SHAHRIL BIN MD RAZALI",
+        "member_id": "30541",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00209",
+        "callsign": "9W2DJC",
+        "name": "MOHD RADIYAN SHAH",
+        "member_id": "30164",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00210",
+        "callsign": "9W2DLG",
+        "name": "KAMARUL QAWI AQIL BIN KAMARUL SANI",
+        "member_id": "30906",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00211",
+        "callsign": "9W2DM",
+        "name": "DAVID MAC GUHAN",
+        "member_id": "30059",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00212",
+        "callsign": "9W2DME",
+        "name": "MOHD EKRAM RUDAINI B. HARON",
+        "member_id": "27126",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00213",
+        "callsign": "9W2DOC",
+        "name": "MD YUNUS B AB WAHAB",
+        "member_id": "22157",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00214",
+        "callsign": "9W2DOV",
+        "name": "DONOVAN LAI",
+        "member_id": "30527",
+        "expiry": "2018/11",
+        "is_local": false
+    },
+    {
+        "id": "M00215",
+        "callsign": "9W2DQM",
+        "name": "ABDUL HALIM BIN ABDUL WAHAB",
+        "member_id": "30478",
+        "expiry": "2018/02",
+        "is_local": false
+    },
+    {
+        "id": "M00216",
+        "callsign": "9W2DRH",
+        "name": "DR. HADZLEY HARITH",
+        "member_id": "30622",
+        "expiry": "2024/06",
+        "is_local": false
+    },
+    {
+        "id": "M00217",
+        "callsign": "9W2DRZ",
+        "name": "ZAHARI OTHMAN",
+        "member_id": "30841",
+        "expiry": "2025/10",
+        "is_local": false
+    },
+    {
+        "id": "M00218",
+        "callsign": "9W2DSP",
+        "name": "NAUDIN BIN AWANG",
+        "member_id": "26070",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00219",
+        "callsign": "9W2DUB",
+        "name": "BAHARUDIN BIN LATIF",
+        "member_id": "30625",
+        "expiry": "2020/07",
+        "is_local": false
+    },
+    {
+        "id": "M00220",
+        "callsign": "9W2DVL",
+        "name": "CHEW KENG CHEONG",
+        "member_id": "30528",
+        "expiry": "2019/11",
+        "is_local": false
+    },
+    {
+        "id": "M00221",
+        "callsign": "9W2DVV",
+        "name": "CHEW KENG BENG",
+        "member_id": "30405",
+        "expiry": "2019/06",
+        "is_local": false
+    },
+    {
+        "id": "M00222",
+        "callsign": "9W2DYL",
+        "name": "FADZIL BIN ZAINAL",
+        "member_id": "30144",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00223",
+        "callsign": "9W2DZL",
+        "name": "DZULKARNAIN B MOHD NOOR",
+        "member_id": "22143",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00224",
+        "callsign": "9W2DZX",
+        "name": "CLEMENT JOSEPH",
+        "member_id": "27159",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00225",
+        "callsign": "9W2EAT",
+        "name": "CHEW KHO JIAN",
+        "member_id": "24044",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00226",
+        "callsign": "9W2EBT",
+        "name": "TOH ENG BOON",
+        "member_id": "25047",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00227",
+        "callsign": "9W2EDD",
+        "name": "EDDIE JOSE",
+        "member_id": "30561",
+        "expiry": "2019/05",
+        "is_local": false
+    },
+    {
+        "id": "M00228",
+        "callsign": "9W2EEE",
+        "name": "SHAHROL BIN ZAINAL",
+        "member_id": "30376",
+        "expiry": "2017/04",
+        "is_local": false
+    },
+    {
+        "id": "M00229",
+        "callsign": "9W2EEQ",
+        "name": "QUEEK PEA KIAN",
+        "member_id": "30042",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00230",
+        "callsign": "9W2EGK",
+        "name": "SHAHRIL NIZAM HAIRI BIN MD RAZI",
+        "member_id": "30243",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00231",
+        "callsign": "9W2EJE",
+        "name": "AHMAD SHARIZAL BIN ABDUL AZIZ",
+        "member_id": "30556",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00232",
+        "callsign": "9W2EJT",
+        "name": "MOHD IZZADDIN BIN ABU @ NAWAWI",
+        "member_id": "30081",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00233",
+        "callsign": "9W2ELY",
+        "name": "ADELY BIN ARIFFIN",
+        "member_id": "27063",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00234",
+        "callsign": "9W2ENG",
+        "name": "MOHD AZRI BIN MOHD SAID",
+        "member_id": "30887",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00235",
+        "callsign": "9W2EPK",
+        "name": "MOHD SABAREE BIN MOHD AFFANDI",
+        "member_id": "27020",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00236",
+        "callsign": "9W2EPV",
+        "name": "AHMED MUZHAFAR ABD KARIM",
+        "member_id": "30470",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00237",
+        "callsign": "9W2ESJ",
+        "name": "SEOW CHAI TEONG",
+        "member_id": "30018",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00238",
+        "callsign": "9W2ESV",
+        "name": "SUHAIMI BIN NASRO ALI",
+        "member_id": "30242",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00239",
+        "callsign": "9W2ETS",
+        "name": "EDWIN KHIAH HOCK HENG",
+        "member_id": "25088",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00240",
+        "callsign": "9W2EUV",
+        "name": "MOHD ROSDI BIN SULAIMAN",
+        "member_id": "30255",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00241",
+        "callsign": "9W2EWE",
+        "name": "LOH EWE EWE",
+        "member_id": "24104",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00242",
+        "callsign": "9W2EX",
+        "name": "SHAHARUDDIN B HJ HASHIM",
+        "member_id": "10754",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00243",
+        "callsign": "9W2EZE",
+        "name": "AHMAD ZAHIRUL ARIFIN BIN AHMAD ZAWAWI",
+        "member_id": "28050",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00244",
+        "callsign": "9W2EZL",
+        "name": "MOHAMAD EZAL BIN ZAINAL",
+        "member_id": "25143",
+        "expiry": "2019/12",
+        "is_local": false
+    },
+    {
+        "id": "M00245",
+        "callsign": "9W2EZU",
+        "name": "MOHD IZZUDIN BIN ABD RAHIM",
+        "member_id": "30746",
+        "expiry": "2023/10",
+        "is_local": false
+    },
+    {
+        "id": "M00246",
+        "callsign": "9W2FCC",
+        "name": "MOHD NAZERI BIN AZIZ",
+        "member_id": "30467",
+        "expiry": "2020/12",
+        "is_local": false
+    },
+    {
+        "id": "M00247",
+        "callsign": "9W2FCW",
+        "name": "CHAN WENG LONG",
+        "member_id": "30402",
+        "expiry": "2021/06",
+        "is_local": false
+    },
+    {
+        "id": "M00248",
+        "callsign": "9W2FFX",
+        "name": "NOR MUZHAFFAR BIN MAT HANAFFI",
+        "member_id": "30151",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00249",
+        "callsign": "9W2FHG",
+        "name": "MOHD NORHISHAM BIN SUKUR",
+        "member_id": "30648",
+        "expiry": "2024/12",
+        "is_local": false
+    },
+    {
+        "id": "M00250",
+        "callsign": "9W2FKE",
+        "name": "MOHD FIKRI BIN MOHAMAD",
+        "member_id": "30562",
+        "expiry": "2019/05",
+        "is_local": false
+    },
+    {
+        "id": "M00251",
+        "callsign": "9W2FLD",
+        "name": "MOHD HANIF B JUSOH @ TALIB",
+        "member_id": "30189",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00252",
+        "callsign": "9W2FMK",
+        "name": "MOHD FAIZ BIN MANAP",
+        "member_id": "30629",
+        "expiry": "2020/06",
+        "is_local": false
+    },
+    {
+        "id": "M00253",
+        "callsign": "9W2FNX",
+        "name": "FAIRUSSHAMIZAR BIN BONGSU",
+        "member_id": "30695",
+        "expiry": "2022/10",
+        "is_local": false
+    },
+    {
+        "id": "M00254",
+        "callsign": "9W2FPG",
+        "name": "MOHAMAD FIRDAUS BIN MUSA",
+        "member_id": "30815",
+        "expiry": "2023/06",
+        "is_local": false
+    },
+    {
+        "id": "M00255",
+        "callsign": "9W2FQR",
+        "name": "MUHAMAD DUZUHRI BIN JUSOH",
+        "member_id": "30057",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00256",
+        "callsign": "9W2FRQ",
+        "name": "FAIRUZ SHAH BIN OTHMAN",
+        "member_id": "30277",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00257",
+        "callsign": "9W2FTM",
+        "name": "TENGKU AHMAD MARWAN BIN TENGKU MAHMUD",
+        "member_id": "30220",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00258",
+        "callsign": "9W2FZI",
+        "name": "ISMAIL BIN YAAKOB",
+        "member_id": "26042",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00259",
+        "callsign": "9W2GD",
+        "name": "LIEW POH HENG",
+        "member_id": "21104",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00260",
+        "callsign": "9W2GEE",
+        "name": "WONG CHONG HOW",
+        "member_id": "30495",
+        "expiry": "2021/12",
+        "is_local": false
+    },
+    {
+        "id": "M00261",
+        "callsign": "9W2GG",
+        "name": "GO HWI KUEH",
+        "member_id": "20017",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00262",
+        "callsign": "9W2GHJ",
+        "name": "DATUK HELMY BIN JAAFAR",
+        "member_id": "30290",
+        "expiry": "2019/12",
+        "is_local": false
+    },
+    {
+        "id": "M00263",
+        "callsign": "9W2GLJ",
+        "name": "MARIANI BINTI MAHAMAD NOR",
+        "member_id": "30857",
+        "expiry": "2024/11",
+        "is_local": false
+    },
+    {
+        "id": "M00264",
+        "callsign": "9W2GNA",
+        "name": "MUHAMMAD HAFIZUDDIN BIN MOHAMMAD NADZRI",
+        "member_id": "30783",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00265",
+        "callsign": "9W2GRL",
+        "name": "MOHD SHAHRIZAL BIN ABU",
+        "member_id": "30791",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00266",
+        "callsign": "9W2GSR",
+        "name": "MOHD FADRUL BIN MOHD MUSTAPA",
+        "member_id": "27176",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00267",
+        "callsign": "9W2GTC",
+        "name": "GAN TECK CHEONG",
+        "member_id": "30139",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00268",
+        "callsign": "9W2GTK",
+        "name": "KHOO CHWEE HOON",
+        "member_id": "27166",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00269",
+        "callsign": "9W2GTY",
+        "name": "GOH HAN YANG",
+        "member_id": "27165",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00270",
+        "callsign": "9W2GYY",
+        "name": "GAN YEE YIN",
+        "member_id": "30138",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00271",
+        "callsign": "9W2HAK",
+        "name": "HASHIM BIN ALI KAMARUDDIN",
+        "member_id": "26047",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00272",
+        "callsign": "9W2HBA",
+        "name": "HAMIDON BIN ALI",
+        "member_id": "24183",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00273",
+        "callsign": "9W2HCK",
+        "name": "HOE CHIN KHWAN",
+        "member_id": "27149",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00274",
+        "callsign": "9W2HEE",
+        "name": "LEONG SOW HEE",
+        "member_id": "25160",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00275",
+        "callsign": "9W2HG",
+        "name": "ROBIAH BINTI HASSAN",
+        "member_id": "25052",
+        "expiry": "2018/12",
+        "is_local": false
+    },
+    {
+        "id": "M00276",
+        "callsign": "9W2HHC",
+        "name": "NG DIAN SENG",
+        "member_id": "30050",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00277",
+        "callsign": "9W2HHP",
+        "name": "MOHAMAD HAFIZ BIN BAHARIN",
+        "member_id": "30770",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00278",
+        "callsign": "9W2HKK",
+        "name": "GAN HOO KOK",
+        "member_id": "26120",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00279",
+        "callsign": "9W2HLC",
+        "name": "CHAN HAN LENG",
+        "member_id": "26150",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00280",
+        "callsign": "9W2HMN",
+        "name": "MOHD HANIF BIN MOHD ZAKI",
+        "member_id": "30007",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00281",
+        "callsign": "9W2HOR",
+        "name": "ROHAIZAD BIN OSMAN",
+        "member_id": "30732",
+        "expiry": "2025/02",
+        "is_local": false
+    },
+    {
+        "id": "M00282",
+        "callsign": "9W2HQX",
+        "name": "MOHD HYZER BIN HABEE RAHMAN",
+        "member_id": "25054",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00283",
+        "callsign": "9W2HSK",
+        "name": "KOAY HEAN SENG",
+        "member_id": "30027",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00284",
+        "callsign": "9W2HUT",
+        "name": "MEGAT SHAHRIMAN BIN CHE ANUAR",
+        "member_id": "30202",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00285",
+        "callsign": "9W2HYM",
+        "name": "ARULAPPAN ARUNKUMAR",
+        "member_id": "25140",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00286",
+        "callsign": "9W2IAX",
+        "name": "MUHAWIRA BIN MUHAMED",
+        "member_id": "30381",
+        "expiry": "2019/05",
+        "is_local": false
+    },
+    {
+        "id": "M00287",
+        "callsign": "9W2ICT",
+        "name": "ANUAR BIN ISHAK",
+        "member_id": "26050",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00288",
+        "callsign": "9W2IEB",
+        "name": "MOHD AMIRUL ASHRAF BIN MD AZHAR",
+        "member_id": "30532",
+        "expiry": "2025/03",
+        "is_local": false
+    },
+    {
+        "id": "M00289",
+        "callsign": "9W2IGP",
+        "name": "ADI HARRIS BIN ADNAN",
+        "member_id": "D27078",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00290",
+        "callsign": "9W2IKA",
+        "name": "IDHAM KHALIL BIN ABDUL WAHAB",
+        "member_id": "30117",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00291",
+        "callsign": "9W2IMA",
+        "name": "IMRAN MAT ALI",
+        "member_id": "26031",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00292",
+        "callsign": "9W2IOO",
+        "name": "AB SAMAT BIN HJ HAMZAH",
+        "member_id": "26054",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00293",
+        "callsign": "9W2ISC",
+        "name": "MOHD NAZRIN BIN BURHANUDDIN",
+        "member_id": "30036",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00294",
+        "callsign": "9W2IVA",
+        "name": "IVAN LEOW HUN LIN",
+        "member_id": "30122",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00295",
+        "callsign": "9W2IYZ",
+        "name": "ISMAIL BIN YUSOF @ MOHAMED",
+        "member_id": "30730",
+        "expiry": "2023/02",
+        "is_local": false
+    },
+    {
+        "id": "M00296",
+        "callsign": "9W2JAR",
+        "name": "SITI HAJAR ABD AZIZ",
+        "member_id": "24058",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00297",
+        "callsign": "9W2JBJ",
+        "name": "MOHAMAD JAMLAY B JAAFAR",
+        "member_id": "22324",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00298",
+        "callsign": "9W2JBT",
+        "name": "ZAHARIM BIN TAHARIM",
+        "member_id": "30227",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00299",
+        "callsign": "9W2JDY",
+        "name": "SHAHARANI@JUNAIDY BIN MANSOR",
+        "member_id": "30087",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00300",
+        "callsign": "9W2JEK",
+        "name": "MOHAMED ZAKI BIN JANI",
+        "member_id": "30175",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00301",
+        "callsign": "9W2JHZ",
+        "name": "JAMALLUDDIN BIN HAIDZIR",
+        "member_id": "30211",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00302",
+        "callsign": "9W2JIP",
+        "name": "MOHAMED NAJIB B MOHD HANAPIAH",
+        "member_id": "30062",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00303",
+        "callsign": "9W2JLE",
+        "name": "JASON LEE CHEN YIK",
+        "member_id": "30119",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00304",
+        "callsign": "9W2JLS",
+        "name": "JASLYN LOO SHEN-WUI",
+        "member_id": "27010",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00305",
+        "callsign": "9W2JNG",
+        "name": "NG MOH SIEW @ WONG MOH SIEW",
+        "member_id": "27115",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00306",
+        "callsign": "9W2JOH",
+        "name": "FEROZ YUNOS KHAN",
+        "member_id": "30152",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00307",
+        "callsign": "9W2JOY",
+        "name": "JUNE LIM MEI YAN",
+        "member_id": "24106",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00308",
+        "callsign": "9W2JQ",
+        "name": "JATESH A/L SURESH",
+        "member_id": "10592",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00309",
+        "callsign": "9W2JRT",
+        "name": "TAN BEE CHIN",
+        "member_id": "25066",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00310",
+        "callsign": "9W2JRZ",
+        "name": "MD RAZALI BIN MD KADARI",
+        "member_id": "30569",
+        "expiry": "2019/06",
+        "is_local": false
+    },
+    {
+        "id": "M00311",
+        "callsign": "9W2JSV",
+        "name": "SHYFUDIN BIN MOHAMED",
+        "member_id": "30264",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00312",
+        "callsign": "9W2JTK",
+        "name": "JUSTIN KONG TEK MING",
+        "member_id": "30128",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00313",
+        "callsign": "9W2JUN",
+        "name": "VONG FOUN JUN",
+        "member_id": "30713",
+        "expiry": "2021/12",
+        "is_local": false
+    },
+    {
+        "id": "M00314",
+        "callsign": "9W2JWG",
+        "name": "ROHAIZAT BIN ABD RAHMAN",
+        "member_id": "30796",
+        "expiry": "2024/02",
+        "is_local": false
+    },
+    {
+        "id": "M00315",
+        "callsign": "9W2KCB",
+        "name": "KHOOI CHU BOON",
+        "member_id": "26092",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00316",
+        "callsign": "9W2KDM",
+        "name": "LEOW KENG FENG",
+        "member_id": "30120",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00317",
+        "callsign": "9W2KEB",
+        "name": "JAMARI BIN ISHAK",
+        "member_id": "30784",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00318",
+        "callsign": "9W2KG",
+        "name": "KEE GER KENG",
+        "member_id": "26149",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00319",
+        "callsign": "9W2KHB",
+        "name": "KANG HOK BENG",
+        "member_id": "22192",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00320",
+        "callsign": "9W2KJF",
+        "name": "KO JEN FOO",
+        "member_id": "30103",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00321",
+        "callsign": "9W2KKH",
+        "name": "KONG KIEN HONG",
+        "member_id": "27097",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00322",
+        "callsign": "9W2KNS",
+        "name": "KAYNIS CHONG",
+        "member_id": "27074",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00323",
+        "callsign": "9W2KOG",
+        "name": "LIM SOON CHAI",
+        "member_id": "30126",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00324",
+        "callsign": "9W2KPC",
+        "name": "YEOH CHOO JIN",
+        "member_id": "30038",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00325",
+        "callsign": "9W2KRK",
+        "name": "MOHAMAD KHAIRUL NIZAM BIN ZAINOL",
+        "member_id": "30409",
+        "expiry": "2017/06",
+        "is_local": false
+    },
+    {
+        "id": "M00326",
+        "callsign": "9W2KTQ",
+        "name": "MOHAMAD HAMIDI BIN A. HAMID",
+        "member_id": "30480",
+        "expiry": "2019/02",
+        "is_local": false
+    },
+    {
+        "id": "M00327",
+        "callsign": "9W2KVG",
+        "name": "KEVIN NG YIT FOONG",
+        "member_id": "30637",
+        "expiry": "2022/10",
+        "is_local": false
+    },
+    {
+        "id": "M00328",
+        "callsign": "9W2KWI",
+        "name": "AHMAD BIN ABDUL RAHMAN",
+        "member_id": "30142",
+        "expiry": "2023/07",
+        "is_local": false
+    },
+    {
+        "id": "M00329",
+        "callsign": "9W2KXK",
+        "name": "KAMARUDDIN BIN KADIS",
+        "member_id": "30864",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00330",
+        "callsign": "9W2KYN",
+        "name": "MOHAMMAD RIZAL BIN AHMAD",
+        "member_id": "30801",
+        "expiry": "2023/03",
+        "is_local": false
+    },
+    {
+        "id": "M00331",
+        "callsign": "9W2KZT",
+        "name": "NG SENG THONG",
+        "member_id": "30124",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00332",
+        "callsign": "9W2LBL",
+        "name": "LOW BENG LIANG",
+        "member_id": "29018",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00333",
+        "callsign": "9W2LC",
+        "name": "LIM CHIN LEONG",
+        "member_id": "10609",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00334",
+        "callsign": "9W2LCG",
+        "name": "LEE CHOEW GUAN",
+        "member_id": "27182",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00335",
+        "callsign": "9W2LCP",
+        "name": "LEE CHIIN PENG",
+        "member_id": "30183",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00336",
+        "callsign": "9W2LEC",
+        "name": "SEMA'ONSHA BIN APANDI",
+        "member_id": "30238",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00337",
+        "callsign": "9W2LGE",
+        "name": "MOHD AFFARIZAN BIN ZAINAL ANUAR",
+        "member_id": "30280",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00338",
+        "callsign": "9W2LHX",
+        "name": "MUHAMAD AMIN HUSNI ABDUL HARIS",
+        "member_id": "30707",
+        "expiry": "2021/10",
+        "is_local": false
+    },
+    {
+        "id": "M00339",
+        "callsign": "9W2LJ",
+        "name": "ZAHARAH BT RUSLAN",
+        "member_id": "10614",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00340",
+        "callsign": "9W2LKG",
+        "name": "LIM KAI GUAN",
+        "member_id": "30047",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00341",
+        "callsign": "9W2LKP",
+        "name": "LIM KIAN PENG",
+        "member_id": "24084",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00342",
+        "callsign": "9W2LLL",
+        "name": "KHAW GUAN SENG",
+        "member_id": "24053",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00343",
+        "callsign": "9W2LLW",
+        "name": "LAU KEOW IM",
+        "member_id": "25004",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00344",
+        "callsign": "9W2LOH",
+        "name": "ABDULLAH BIN YUSOFF",
+        "member_id": "30140",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00345",
+        "callsign": "9W2LOU",
+        "name": "MOHD SAFUAN BIN AHMAD NAWAWI",
+        "member_id": "30301",
+        "expiry": "2016/08",
+        "is_local": false
+    },
+    {
+        "id": "M00346",
+        "callsign": "9W2LP",
+        "name": "SANDRA LOW POH CHOO",
+        "member_id": "24047",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00347",
+        "callsign": "9W2LQT",
+        "name": "LUA SOH HUAN",
+        "member_id": "25151",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00348",
+        "callsign": "9W2LRN",
+        "name": "MOHAMAD SHAHRILL BIN BADRILLAH",
+        "member_id": "30564",
+        "expiry": "2019/05",
+        "is_local": false
+    },
+    {
+        "id": "M00349",
+        "callsign": "9W2LRX",
+        "name": "CHEN KAE ENN",
+        "member_id": "28017",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00350",
+        "callsign": "9W2LTB",
+        "name": "LEE TECK BONG",
+        "member_id": "30574",
+        "expiry": "2019/01",
+        "is_local": false
+    },
+    {
+        "id": "M00351",
+        "callsign": "9W2LTD",
+        "name": "MD RAZIB BIN JOHARI",
+        "member_id": "30839",
+        "expiry": "2023/09",
+        "is_local": false
+    },
+    {
+        "id": "M00352",
+        "callsign": "9W2LTS",
+        "name": "LOO TUCK SAM",
+        "member_id": "24002",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00353",
+        "callsign": "9W2LWH",
+        "name": "LIM WENG HONG",
+        "member_id": "25132",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00354",
+        "callsign": "9W2LWS",
+        "name": "LEONG WAI SENG",
+        "member_id": "25109",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00355",
+        "callsign": "9W2LXW",
+        "name": "HADIF SHAZANI BIN HELMIRIZAL",
+        "member_id": "30874",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00356",
+        "callsign": "9W2LYZ",
+        "name": "INTAN SHALIZA BINTI MOHD SUHAIMI",
+        "member_id": "28059",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00357",
+        "callsign": "9W2LZM",
+        "name": "LIM KHU PHANG",
+        "member_id": "26156",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00358",
+        "callsign": "9W2MAL",
+        "name": "MALWINDER SINGH",
+        "member_id": "25093",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00359",
+        "callsign": "9W2MBS",
+        "name": "MEJAR SHAMSUDIN BIN ISMAIL",
+        "member_id": "27173",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00360",
+        "callsign": "9W2MCT",
+        "name": "YEW WEI  KEAT",
+        "member_id": "27054",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00361",
+        "callsign": "9W2MEA",
+        "name": "MOHD MEERZA BIN MOHD PUZI",
+        "member_id": "30828",
+        "expiry": "2023/09",
+        "is_local": false
+    },
+    {
+        "id": "M00362",
+        "callsign": "9W2MEO",
+        "name": "MEOR HALIM B MEOR HAMZAH",
+        "member_id": "22118",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00363",
+        "callsign": "9W2MG",
+        "name": "LEE CHONG GUAN",
+        "member_id": "10627",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00364",
+        "callsign": "9W2MIE",
+        "name": "AZMI BIN ALI",
+        "member_id": "27168",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00365",
+        "callsign": "9W2MIK",
+        "name": "LAM KIM PENG",
+        "member_id": "27068",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00366",
+        "callsign": "9W2MIP",
+        "name": "MUHAMMAD IZWAN ANIS BIN MARAH AZMAN",
+        "member_id": "30800",
+        "expiry": "2023/02",
+        "is_local": false
+    },
+    {
+        "id": "M00367",
+        "callsign": "9W2MJO",
+        "name": "MUHAMMAD BIN SALLEH",
+        "member_id": "30626",
+        "expiry": "2020/07",
+        "is_local": false
+    },
+    {
+        "id": "M00368",
+        "callsign": "9W2MKZ",
+        "name": "MOHD KHAIRUL NIZAM B ABDUL TALIB",
+        "member_id": "30082",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00369",
+        "callsign": "9W2MMR",
+        "name": "LIM YEAN HIN",
+        "member_id": "25111",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00370",
+        "callsign": "9W2MN",
+        "name": "MOHD ZAKI BIN NURUD-DIN@NORDIN",
+        "member_id": "30010",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00371",
+        "callsign": "9W2MNR",
+        "name": "MUHAMMAD NABIL BIN REDZUAN",
+        "member_id": "25162",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00372",
+        "callsign": "9W2MON",
+        "name": "SALAMON ALI RIZAL BIN ABDUL RAHMAN",
+        "member_id": "30148",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00373",
+        "callsign": "9W2MPC",
+        "name": "KHAIRUL ANNUAR BIN SHAARI",
+        "member_id": "30544",
+        "expiry": "2024/04",
+        "is_local": false
+    },
+    {
+        "id": "M00374",
+        "callsign": "9W2MQL",
+        "name": "MOHD SALLEH BIN ZAINUDDIN",
+        "member_id": "30505",
+        "expiry": "2018/08",
+        "is_local": false
+    },
+    {
+        "id": "M00375",
+        "callsign": "9W2MRS",
+        "name": "MOHD RADZI B SHAHARI",
+        "member_id": "22169",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00376",
+        "callsign": "9W2MTR",
+        "name": "SUHAIMY BIN CHE EMBI@JAMIL",
+        "member_id": "30818",
+        "expiry": "2024/06",
+        "is_local": false
+    },
+    {
+        "id": "M00377",
+        "callsign": "9W2MTT",
+        "name": "ABDUL BASIR TAN BIN ABDULLAH",
+        "member_id": "27162",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00378",
+        "callsign": "9W2MTX",
+        "name": "TAN HOCK POH",
+        "member_id": "27161",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00379",
+        "callsign": "9W2MWS",
+        "name": "TAN WENG SON",
+        "member_id": "30185",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00380",
+        "callsign": "9W2MYB",
+        "name": "WAN KOK SUM",
+        "member_id": "30682",
+        "expiry": "2022/07",
+        "is_local": false
+    },
+    {
+        "id": "M00381",
+        "callsign": "9W2MZI",
+        "name": "MOHD ZAKI BIN IDRIS",
+        "member_id": "30680",
+        "expiry": "2022/06",
+        "is_local": false
+    },
+    {
+        "id": "M00382",
+        "callsign": "9W2NAD",
+        "name": "AHMAD NASIR BIN AHMAD DIN",
+        "member_id": "22274",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00383",
+        "callsign": "9W2NB",
+        "name": "BALAKRISHNAN A/L NAMA",
+        "member_id": "10639",
+        "expiry": "2021/12",
+        "is_local": false
+    },
+    {
+        "id": "M00384",
+        "callsign": "9W2NE",
+        "name": "SEBASTIAN GIM CHIAK MING",
+        "member_id": "10642",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00385",
+        "callsign": "9W2NHZ",
+        "name": "WAN NADZLIN BIN WAN MOHAMED",
+        "member_id": "27106",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00386",
+        "callsign": "9W2NIY",
+        "name": "SHAH NIZAM BIN IDRIS",
+        "member_id": "30384",
+        "expiry": "2019/05",
+        "is_local": false
+    },
+    {
+        "id": "M00387",
+        "callsign": "9W2NKP",
+        "name": "BERNARD NG KUAN POH",
+        "member_id": "22182",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00388",
+        "callsign": "9W2NMX",
+        "name": "ZAMRI BIN OMAR",
+        "member_id": "30330",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00389",
+        "callsign": "9W2NNU",
+        "name": "MOHD FAIRUS BIN JAMALY",
+        "member_id": "30490",
+        "expiry": "2018/03",
+        "is_local": false
+    },
+    {
+        "id": "M00390",
+        "callsign": "9W2NOD",
+        "name": "AHMAD NORDIN BIN SHUIB",
+        "member_id": "30482",
+        "expiry": "2018/02",
+        "is_local": false
+    },
+    {
+        "id": "M00391",
+        "callsign": "9W2NQA",
+        "name": "NOR HANIZAM BIN A.HALIP",
+        "member_id": "30370",
+        "expiry": "2017/04",
+        "is_local": false
+    },
+    {
+        "id": "M00392",
+        "callsign": "9W2NRL",
+        "name": "NURIL AFZAM BIN KAMARUDIN",
+        "member_id": "27206",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00393",
+        "callsign": "9W2NSQ",
+        "name": "NORSYAHRIL BIN NORZALAN",
+        "member_id": "30270",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00394",
+        "callsign": "9W2NSV",
+        "name": "MUHAMMAD NASIR ALWI BIN MOHAMAD ALI",
+        "member_id": "30246",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00395",
+        "callsign": "9W2NTH",
+        "name": "NGEE THIAM HUI",
+        "member_id": "25067",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00396",
+        "callsign": "9W2OBS",
+        "name": "MOHD BAKRI BIN HJ SAID",
+        "member_id": "30929",
+        "expiry": "2025/02",
+        "is_local": false
+    },
+    {
+        "id": "M00397",
+        "callsign": "9W2OCR",
+        "name": "HASAN BIN MUHAMAD",
+        "member_id": "30307",
+        "expiry": "2016/09",
+        "is_local": false
+    },
+    {
+        "id": "M00398",
+        "callsign": "9W2OEP",
+        "name": "OSMAN BIN IBRAHIM",
+        "member_id": "30524",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00399",
+        "callsign": "9W2OHK",
+        "name": "MUHAMAD AFIQ BIN MOHD HANIF",
+        "member_id": "30483",
+        "expiry": "2018/03",
+        "is_local": false
+    },
+    {
+        "id": "M00400",
+        "callsign": "9W2OKW",
+        "name": "OOI KOK WAH",
+        "member_id": "26022",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00401",
+        "callsign": "9W2OLE",
+        "name": "MOHD NAZARI BIN MOHD AMIN",
+        "member_id": "26155",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00402",
+        "callsign": "9W2ONG",
+        "name": "ONG SWEE JIN",
+        "member_id": "26078",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00403",
+        "callsign": "9W2OOK",
+        "name": "LEE CHOOK FONG",
+        "member_id": "30044",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00404",
+        "callsign": "9W2OOM",
+        "name": "SYED ZAHARUDIN BIN SYED NORRASHID",
+        "member_id": "T0053",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00405",
+        "callsign": "9W2OOO",
+        "name": "BADRUL HISHAM BIN ABDULLAH",
+        "member_id": "26055",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00406",
+        "callsign": "9W2OPJ",
+        "name": "RAMLI BIN ALI",
+        "member_id": "30221",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00407",
+        "callsign": "9W2OQI",
+        "name": "MUHAMMAD AMZAR BIN AZME",
+        "member_id": "30573",
+        "expiry": "2019/06",
+        "is_local": false
+    },
+    {
+        "id": "M00408",
+        "callsign": "9W2OSE",
+        "name": "ONG SOON EE",
+        "member_id": "25003",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00409",
+        "callsign": "9W2OTD",
+        "name": "TEO CHOR SIA",
+        "member_id": "26027",
+        "expiry": "2017",
+        "is_local": false
+    },
+    {
+        "id": "M00410",
+        "callsign": "9W2OYD",
+        "name": "MUHAMAD HASLIMIN BIN MOHD NASUSHARDIN",
+        "member_id": "30578",
+        "expiry": "2019/05",
+        "is_local": false
+    },
+    {
+        "id": "M00411",
+        "callsign": "9W2PA/ZLIKCA",
+        "name": "AW KEAN CHIN",
+        "member_id": "20019",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00412",
+        "callsign": "9W2PC",
+        "name": "POR CHEE SEONG",
+        "member_id": "10659",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00413",
+        "callsign": "9W2PEK",
+        "name": "PEK MIN HAN",
+        "member_id": "26106",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00414",
+        "callsign": "9W2PF",
+        "name": "RICHARD KHAW ENG WAN",
+        "member_id": "10662",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00415",
+        "callsign": "9W2PG",
+        "name": "TAN YEONG SHING",
+        "member_id": "10663",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00416",
+        "callsign": "9W2PGW",
+        "name": "OOI SU CHIN",
+        "member_id": "30169",
+        "expiry": "2025/11",
+        "is_local": false
+    },
+    {
+        "id": "M00417",
+        "callsign": "9W2PKG",
+        "name": "ENGKU MIN B ENGKU HASSAN",
+        "member_id": "22248",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00418",
+        "callsign": "9W2PKT",
+        "name": "ALVIN CHUAH POAY KIANG",
+        "member_id": "30019",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00419",
+        "callsign": "9W2PN",
+        "name": "PARAMASIVAM A/L NACHI",
+        "member_id": "10667",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00420",
+        "callsign": "9W2PNP",
+        "name": "MOHD FAUZI BIN OTHMAN",
+        "member_id": "30955",
+        "expiry": "2025/09",
+        "is_local": false
+    },
+    {
+        "id": "M00421",
+        "callsign": "9W2PO",
+        "name": "ONG GUAN LIN",
+        "member_id": "21063",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00422",
+        "callsign": "9W2POK",
+        "name": "HISHAMUDDIN BIN ABDULLAH",
+        "member_id": "27177",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00423",
+        "callsign": "9W2PP",
+        "name": "LOW TAI HUAT",
+        "member_id": "30181",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00424",
+        "callsign": "9W2PQS",
+        "name": "MOHAMAD AMIRUL OTHMAN",
+        "member_id": "30486",
+        "expiry": "2018/03",
+        "is_local": false
+    },
+    {
+        "id": "M00425",
+        "callsign": "9W2PRP",
+        "name": "SHAHRUL NIZAM BIN ZAINOL",
+        "member_id": "30155",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00426",
+        "callsign": "9W2PUM",
+        "name": "WOO SOON KENG",
+        "member_id": "27142",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00427",
+        "callsign": "9W2PWD",
+        "name": "SAFFUAN B. BOHORI @ BAHARI",
+        "member_id": "27180",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00428",
+        "callsign": "9W2PWR",
+        "name": "NOR FITRI BIN CHE HAMID",
+        "member_id": "26086",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00429",
+        "callsign": "9W2PXC",
+        "name": "NORAIZAL BIN MD ALI",
+        "member_id": "30928",
+        "expiry": "2025/02",
+        "is_local": false
+    },
+    {
+        "id": "M00430",
+        "callsign": "9W2PY",
+        "name": "ALAN TEH TENG HOE",
+        "member_id": "24081",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00431",
+        "callsign": "9W2PZE",
+        "name": "ZAINAL ABIDIN BIN HASSAN",
+        "member_id": "30368",
+        "expiry": "2017/04",
+        "is_local": false
+    },
+    {
+        "id": "M00432",
+        "callsign": "9W2QD",
+        "name": "MO LEAN CHOO",
+        "member_id": "22095",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00433",
+        "callsign": "9W2RAB",
+        "name": "MOHAMAD RAZIF BIN ABU BAKAR",
+        "member_id": "30310",
+        "expiry": "2017/09",
+        "is_local": false
+    },
+    {
+        "id": "M00434",
+        "callsign": "9W2RAW",
+        "name": "NG KEONG MING",
+        "member_id": "25110",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00435",
+        "callsign": "9W2RBR",
+        "name": "ROSLAN BIN ABDULLAH",
+        "member_id": "30159",
+        "expiry": "2021/12",
+        "is_local": false
+    },
+    {
+        "id": "M00436",
+        "callsign": "9W2RCH",
+        "name": "AHMAD RAFIQ BIN ABDUL RAHMAN",
+        "member_id": "30593",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00437",
+        "callsign": "9W2RCN",
+        "name": "MOHD ISKANDAR HASSAN",
+        "member_id": "28033",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00438",
+        "callsign": "9W2REN",
+        "name": "PUNNIAMOORTHY SELLATHURAI",
+        "member_id": "27101",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00439",
+        "callsign": "9W2RGD",
+        "name": "RAZALI BIN MAT",
+        "member_id": "30279",
+        "expiry": "2018/12",
+        "is_local": false
+    },
+    {
+        "id": "M00440",
+        "callsign": "9W2RGZ",
+        "name": "MOHAMMAD HIZAMI B KHORUDIN",
+        "member_id": "30674",
+        "expiry": "2021/04",
+        "is_local": false
+    },
+    {
+        "id": "M00441",
+        "callsign": "9W2RIP",
+        "name": "ARIF ALHAFIZ BIN MOHD NOR ARIFFIN",
+        "member_id": "28053",
+        "expiry": "2019",
+        "is_local": false
+    },
+    {
+        "id": "M00442",
+        "callsign": "9W2RLW",
+        "name": "SYAHRUL ANUAR BIN ABU SAMAH",
+        "member_id": "30463",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00443",
+        "callsign": "9W2RNT",
+        "name": "MUHAMMAD RAFIUDDIN BIN RAZALI",
+        "member_id": "30303",
+        "expiry": "2016/09",
+        "is_local": false
+    },
+    {
+        "id": "M00444",
+        "callsign": "9W2RRC",
+        "name": "SARJI BIN AB RAHMAN",
+        "member_id": "26048",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00445",
+        "callsign": "9W2RY",
+        "name": "RAMLAN BIN YAHIL",
+        "member_id": "10683",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00446",
+        "callsign": "9W2RYN",
+        "name": "NUR HAYATI BINTI ISMAIL",
+        "member_id": "30011",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00447",
+        "callsign": "9W2RYZ",
+        "name": "CHAN KIN HOU",
+        "member_id": "27069",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00448",
+        "callsign": "9W2RZD",
+        "name": "MUHAMMAD RIDZUAN CHAN BIN ABDULLAH",
+        "member_id": "30320",
+        "expiry": "2016/11",
+        "is_local": false
+    },
+    {
+        "id": "M00449",
+        "callsign": "9W2SAF",
+        "name": "SAFRI BIN MUHIYUDDIN",
+        "member_id": "30547",
+        "expiry": "2019/01",
+        "is_local": false
+    },
+    {
+        "id": "M00450",
+        "callsign": "9W2SAL",
+        "name": "ABDUL SALIM BIN FAZLAY RAHMAN",
+        "member_id": "27099",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00451",
+        "callsign": "9W2SAY",
+        "name": "MOHD SABRI BIN MAT JAYA",
+        "member_id": "26035",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00452",
+        "callsign": "9W2SBH",
+        "name": "SAIDI BIN HASAN",
+        "member_id": "28015",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00453",
+        "callsign": "9W2SCS",
+        "name": "CHANDRASEGARAN SUBBIAH",
+        "member_id": "30340",
+        "expiry": "2018/02",
+        "is_local": false
+    },
+    {
+        "id": "M00454",
+        "callsign": "9W2SFT",
+        "name": "SYAWAL FITTRY BIN MD YUSSOF",
+        "member_id": "30744",
+        "expiry": "2022/09",
+        "is_local": false
+    },
+    {
+        "id": "M00455",
+        "callsign": "9W2SHK",
+        "name": "ROSHEN A/L KUMARAVEL",
+        "member_id": "30749",
+        "expiry": "2025/10",
+        "is_local": false
+    },
+    {
+        "id": "M00456",
+        "callsign": "9W2SIB",
+        "name": "MUHAMMAD ISMAIL B. SAMSUDIN",
+        "member_id": "30813",
+        "expiry": "2023/06",
+        "is_local": false
+    },
+    {
+        "id": "M00457",
+        "callsign": "9W2SKK",
+        "name": "KOAY SENG KIE @ KOAY SENG KEE",
+        "member_id": "27143",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00458",
+        "callsign": "9W2SLU",
+        "name": "ABDUL RAHIM BIN CHE MOHAMAD",
+        "member_id": "30234",
+        "expiry": "2018/12",
+        "is_local": false
+    },
+    {
+        "id": "M00459",
+        "callsign": "9W2SMA",
+        "name": "SYED MUAMMAD AZANI B SYED ABU BAKAR",
+        "member_id": "26006",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00460",
+        "callsign": "9W2SMZ",
+        "name": "SUHAILA MD ZAINI",
+        "member_id": "24059",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00461",
+        "callsign": "9W2SNZ",
+        "name": "MOHD SHAHRUL NAZMI BIN NAROWI",
+        "member_id": "30752",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00462",
+        "callsign": "9W2SOT",
+        "name": "JONATHAN TAN JIN KHENG",
+        "member_id": "27045",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00463",
+        "callsign": "9W2SPY",
+        "name": "MUHAMMAD BIN NORDIN",
+        "member_id": "25074",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00464",
+        "callsign": "9W2SQA",
+        "name": "MOHD HASPIZA ASFAN B MOHD HARIFFADILLAH",
+        "member_id": "30204",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00465",
+        "callsign": "9W2SRW",
+        "name": "AUGUSTINE CHUA SIAN TIN",
+        "member_id": "30098",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00466",
+        "callsign": "9W2SSO",
+        "name": "SHAHNOOR BIN AHMAD SHAHRIR",
+        "member_id": "30147",
+        "expiry": "2015/12",
+        "is_local": false
+    },
+    {
+        "id": "M00467",
+        "callsign": "9W2SSS",
+        "name": "MOHD AZIZUL KAMAL BIN MUKHTAR",
+        "member_id": "30901",
+        "expiry": "2024/05",
+        "is_local": false
+    },
+    {
+        "id": "M00468",
+        "callsign": "9W2STS",
+        "name": "MOHAMAD RIDZUAN BIN MAKH HARI",
+        "member_id": "30790",
+        "expiry": "2024/01",
+        "is_local": false
+    },
+    {
+        "id": "M00469",
+        "callsign": "9W2STW",
+        "name": "NAI KES A/L NENG BUAH",
+        "member_id": "22285",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00470",
+        "callsign": "9W2SUQ",
+        "name": "MOHD SYUKRI SYAFIQ BIN HARON",
+        "member_id": "30666",
+        "expiry": "2021/03",
+        "is_local": false
+    },
+    {
+        "id": "M00471",
+        "callsign": "9W2SVY",
+        "name": "HISHAM BIN JAAFAR",
+        "member_id": "30259",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00472",
+        "callsign": "9W2SWW",
+        "name": "SEE TOH WAI YU",
+        "member_id": "27067",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00473",
+        "callsign": "9W2SYC",
+        "name": "AHMAD SYAKIR",
+        "member_id": "29022",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00474",
+        "callsign": "9W2SYM",
+        "name": "MUHD HISHAM BIN HUSSEIN",
+        "member_id": "25123",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00475",
+        "callsign": "9W2SZV",
+        "name": "SANUSI BIN SULONG",
+        "member_id": "30201",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00476",
+        "callsign": "9W2TAN",
+        "name": "TAN HOOI TEIK",
+        "member_id": "24139",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00477",
+        "callsign": "9W2TAT",
+        "name": "ABDUL SATTAR B MAT DAUD",
+        "member_id": "24054",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00478",
+        "callsign": "9W2TCJ",
+        "name": "SHUKRI BIN MAT YAACOB",
+        "member_id": "30493",
+        "expiry": "2024/03",
+        "is_local": false
+    },
+    {
+        "id": "M00479",
+        "callsign": "9W2TDD",
+        "name": "ROSLAN BIN MAT HASHIM",
+        "member_id": "30274",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00480",
+        "callsign": "9W2TEA",
+        "name": "THONG KAH CHING",
+        "member_id": "30013",
+        "expiry": "2021/12",
+        "is_local": false
+    },
+    {
+        "id": "M00481",
+        "callsign": "9W2TFB",
+        "name": "MUHAMAD KHUHAZRY BIN KHUZAIMI",
+        "member_id": "30379",
+        "expiry": "2017/05",
+        "is_local": false
+    },
+    {
+        "id": "M00482",
+        "callsign": "9W2TGJ",
+        "name": "MOHD HAFIZI BIN MOHD LATIFF",
+        "member_id": "30411",
+        "expiry": "2021/07",
+        "is_local": false
+    },
+    {
+        "id": "M00483",
+        "callsign": "9W2THS",
+        "name": "TAN HAN SENG",
+        "member_id": "25092",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00484",
+        "callsign": "9W2TK",
+        "name": "TAN KONG",
+        "member_id": "10709",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00485",
+        "callsign": "9W2TLC",
+        "name": "CHAN WEI CHUEN",
+        "member_id": "25157",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00486",
+        "callsign": "9W2TLS",
+        "name": "TENGKU MOHAMED AMIR BIN TENGKU LELA SEGARM",
+        "member_id": "30213",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00487",
+        "callsign": "9W2TM",
+        "name": "RAFEI BIN YAHIL",
+        "member_id": "30058",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00488",
+        "callsign": "9W2TMK",
+        "name": "TUAN MUSTAPHA KAMAL BIN TUAN IBRAHIM",
+        "member_id": "27017",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00489",
+        "callsign": "9W2TOD",
+        "name": "MUHAMMAD IZWAN BIN IDRIS",
+        "member_id": "30191",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00490",
+        "callsign": "9W2TOT",
+        "name": "AHMAD YUSNI BIN MOHD YUSOF",
+        "member_id": "30840",
+        "expiry": "2023/09",
+        "is_local": false
+    },
+    {
+        "id": "M00491",
+        "callsign": "9W2TQQ",
+        "name": "TEOH HONG CHUNG",
+        "member_id": "26081",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00492",
+        "callsign": "9W2TSK",
+        "name": "SUKUMAR @ RAMALINGAM A/L THEVIANNAN",
+        "member_id": "26128",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00493",
+        "callsign": "9W2TUL",
+        "name": "TAN CHENG JOO",
+        "member_id": "30553",
+        "expiry": "2021/03",
+        "is_local": false
+    },
+    {
+        "id": "M00494",
+        "callsign": "9W2TVE",
+        "name": "MOHD JEFFRY BIN ABD RAZAK",
+        "member_id": "30536",
+        "expiry": "2018/11",
+        "is_local": false
+    },
+    {
+        "id": "M00495",
+        "callsign": "9W2TY",
+        "name": "ANG SEK CHUAN",
+        "member_id": "24042",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00496",
+        "callsign": "9W2UDO",
+        "name": "AHMAD KAMIL BIN HARUN",
+        "member_id": "27134",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00497",
+        "callsign": "9W2UJR",
+        "name": "MOHAMAD FIRDAUS ABDULLAH",
+        "member_id": "30491",
+        "expiry": "2022/04",
+        "is_local": false
+    },
+    {
+        "id": "M00498",
+        "callsign": "9W2UMU",
+        "name": "SHAIFUL HUSNI BIN ABD RAHMAN",
+        "member_id": "30472",
+        "expiry": "2018/01",
+        "is_local": false
+    },
+    {
+        "id": "M00499",
+        "callsign": "9W2UND",
+        "name": "HAMZAH JUSOH",
+        "member_id": "30616",
+        "expiry": "2020/03",
+        "is_local": false
+    },
+    {
+        "id": "M00500",
+        "callsign": "9W2UPF",
+        "name": "MOHD YUSUP BIN MOHD ARIFF",
+        "member_id": "30753",
+        "expiry": "2022/05",
+        "is_local": false
+    },
+    {
+        "id": "M00501",
+        "callsign": "9W2UPP",
+        "name": "YAP HOCK CHENG",
+        "member_id": "28051",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00502",
+        "callsign": "9W2UR",
+        "name": "SARAVANAN A/L SAMINATHAN",
+        "member_id": "22082",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00503",
+        "callsign": "9W2UTC",
+        "name": "AHMAD ROSLAN HAIRUDIN",
+        "member_id": "22199",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00504",
+        "callsign": "9W2UUE",
+        "name": "AHMAD SYUKRI BIN MUSTAFFA",
+        "member_id": "30606",
+        "expiry": "2020/01",
+        "is_local": false
+    },
+    {
+        "id": "M00505",
+        "callsign": "9W2UUU",
+        "name": "ABDUL RAHIM BIN ABDUL AZIZ",
+        "member_id": "30090",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00506",
+        "callsign": "9W2VA",
+        "name": "AMRIT BIR SINGH",
+        "member_id": "25095",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00507",
+        "callsign": "9W2VE",
+        "name": "MOHD RAZALI B ABDUL RANI",
+        "member_id": "22079",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00508",
+        "callsign": "9W2VF",
+        "name": "BOEY TAIK HIN",
+        "member_id": "10719",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00509",
+        "callsign": "9W2VGE",
+        "name": "MUHD IZUAN SYAMIL BIN ABU BAKAR",
+        "member_id": "30834",
+        "expiry": "2024/10",
+        "is_local": false
+    },
+    {
+        "id": "M00510",
+        "callsign": "9W2VMF",
+        "name": "IKMAL ARIF BIN ABD JALAL",
+        "member_id": "30366",
+        "expiry": "2017/03",
+        "is_local": false
+    },
+    {
+        "id": "M00511",
+        "callsign": "9W2VMR",
+        "name": "MUHAMMAD RAMZI BIN MAT ALI",
+        "member_id": "30778",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00512",
+        "callsign": "9W2VNN",
+        "name": "MOHD NAJIB BIN MANSOR",
+        "member_id": "30789",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00513",
+        "callsign": "9W2VOB",
+        "name": "MOHD KUSHAIRI BIN AZMAN",
+        "member_id": "30355",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00514",
+        "callsign": "9W2VRK",
+        "name": "MOHD AZMI BIN MOHD JAYA @ MAT JAYA",
+        "member_id": "30797",
+        "expiry": "2023/02",
+        "is_local": false
+    },
+    {
+        "id": "M00515",
+        "callsign": "9W2VSA",
+        "name": "AHMAD SHAHRIN SYAFEEQ BIN AHMAD ZAMZURI",
+        "member_id": "30959",
+        "expiry": "2025/11",
+        "is_local": false
+    },
+    {
+        "id": "M00516",
+        "callsign": "9W2VTX",
+        "name": "SYAFIQ BIN SALLEH",
+        "member_id": "30429",
+        "expiry": "2025/01",
+        "is_local": false
+    },
+    {
+        "id": "M00517",
+        "callsign": "9W2VWR",
+        "name": "KHAIRUL ANUAR BIN MOHAMED",
+        "member_id": "30769",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00518",
+        "callsign": "9W2VX",
+        "name": "SHAFIK ZUHAIRI B ZUL HASSAN",
+        "member_id": "27081",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00519",
+        "callsign": "9W2VYL",
+        "name": "MUHIBBUDDIN MUHAMMAD ISA",
+        "member_id": "30958",
+        "expiry": "2025/11",
+        "is_local": false
+    },
+    {
+        "id": "M00520",
+        "callsign": "9W2VZT",
+        "name": "MOHAMAD ZAID BIN TALHA",
+        "member_id": "30359",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00521",
+        "callsign": "9W2WBN",
+        "name": "WAN BURAHANUDIN BIN WAN ISMAIL",
+        "member_id": "30960",
+        "expiry": "2025/11",
+        "is_local": false
+    },
+    {
+        "id": "M00522",
+        "callsign": "9W2WCC",
+        "name": "CHUNG WEI CHIUN",
+        "member_id": "29019",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00523",
+        "callsign": "9W2WET",
+        "name": "NURISHAM BIN YUSOFF",
+        "member_id": "30892",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00524",
+        "callsign": "9W2WHY",
+        "name": "NOR AIZAM JAMIRAN",
+        "member_id": "30641",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00525",
+        "callsign": "9W2WIL",
+        "name": "WILFRED YEO TEE WUI",
+        "member_id": "25164",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00526",
+        "callsign": "9W2WJD",
+        "name": "ABDUL WAHAB BIN YAACOB",
+        "member_id": "30658",
+        "expiry": "2021/01",
+        "is_local": false
+    },
+    {
+        "id": "M00527",
+        "callsign": "9W2WKF",
+        "name": "WONG AH TONG",
+        "member_id": "27204",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00528",
+        "callsign": "9W2WLC",
+        "name": "WONG LOON CHEONG",
+        "member_id": "25007",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00529",
+        "callsign": "9W2WM",
+        "name": "THONG WEI MENG",
+        "member_id": "10727",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00530",
+        "callsign": "9W2WOC",
+        "name": "JEFFRI BIN OMAR",
+        "member_id": "28020",
+        "expiry": "2016/04",
+        "is_local": false
+    },
+    {
+        "id": "M00531",
+        "callsign": "9W2WPZ",
+        "name": "KHAIRIL AMRI BIN BAKHARI",
+        "member_id": "30083",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00532",
+        "callsign": "9W2WRL",
+        "name": "RASHIDI BIN LAKIMIN",
+        "member_id": "30365",
+        "expiry": "2017/03",
+        "is_local": false
+    },
+    {
+        "id": "M00533",
+        "callsign": "9W2WSZ",
+        "name": "MOHAMMED SHAMERULLAH BIN MOHD ZAFARULLAH",
+        "member_id": "30174",
+        "expiry": "2016/12",
+        "is_local": false
+    },
+    {
+        "id": "M00534",
+        "callsign": "9W2WTO",
+        "name": "HALIL HISAM BIN HUSSIN",
+        "member_id": "30226",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00535",
+        "callsign": "9W2WUN",
+        "name": "MOHAMAD SUWARNO BIN KOSNON",
+        "member_id": "30512",
+        "expiry": "2018/05",
+        "is_local": false
+    },
+    {
+        "id": "M00536",
+        "callsign": "9W2WWC",
+        "name": "WAN KHAIRUL ANNUAR BIN WAN HUSSIN",
+        "member_id": "30773",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00537",
+        "callsign": "9W2WXX",
+        "name": "SHAMSUL BIN KAMARUDDIN",
+        "member_id": "30819",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00538",
+        "callsign": "9W2WZQ",
+        "name": "NOOR AZALIATI BINTI MOHD ISA",
+        "member_id": "30454",
+        "expiry": "2017/11",
+        "is_local": false
+    },
+    {
+        "id": "M00539",
+        "callsign": "9W2XBS",
+        "name": "BAHARI BIN DARUS",
+        "member_id": "30341",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00540",
+        "callsign": "9W2XDD",
+        "name": "MOHD ISHAIFUDDIN BIN MOHD ISHAK",
+        "member_id": "30962",
+        "expiry": "2025/11",
+        "is_local": false
+    },
+    {
+        "id": "M00541",
+        "callsign": "9W2XFZ",
+        "name": "FIKRI ZAKI BIN ISMAIL@SAID",
+        "member_id": "30545",
+        "expiry": "2019/01",
+        "is_local": false
+    },
+    {
+        "id": "M00542",
+        "callsign": "9W2XL",
+        "name": "MOHAMED AZAM ZAINAL ALI",
+        "member_id": "25089",
+        "expiry": "2011",
+        "is_local": false
+    },
+    {
+        "id": "M00543",
+        "callsign": "9W2XLD",
+        "name": "MOHAMMED SHAH BIN KHALID",
+        "member_id": "26025",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00544",
+        "callsign": "9W2XNC",
+        "name": "ABDUL HAKIM BIN BASARUDIN",
+        "member_id": "30434",
+        "expiry": "2018/08",
+        "is_local": false
+    },
+    {
+        "id": "M00545",
+        "callsign": "9W2XO",
+        "name": "MOHD JOHARI @ JOE B MOHD RAMLY",
+        "member_id": "24001",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00546",
+        "callsign": "9W2XPE",
+        "name": "SHAFIEE BIN SAAD",
+        "member_id": "30806",
+        "expiry": "2024/03",
+        "is_local": false
+    },
+    {
+        "id": "M00547",
+        "callsign": "9W2XPV",
+        "name": "MUHAMMAD SHAHMI BIN IBRAHIM",
+        "member_id": "30715",
+        "expiry": "2025/01",
+        "is_local": false
+    },
+    {
+        "id": "M00548",
+        "callsign": "9W2XRZ",
+        "name": "MOHD RIZAL BIN ADNAN",
+        "member_id": "30681",
+        "expiry": "2023/06",
+        "is_local": false
+    },
+    {
+        "id": "M00549",
+        "callsign": "9W2XSD",
+        "name": "SHARIFF B. DESA @ PIN",
+        "member_id": "27181",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00550",
+        "callsign": "9W2XV",
+        "name": "AZHARI BIN HUSSAIN",
+        "member_id": "25121",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00551",
+        "callsign": "9W2XWU",
+        "name": "MOHAMMAD EQHWAN SHAFIQ BIN NOORSHAH",
+        "member_id": "30720",
+        "expiry": "2022/01",
+        "is_local": false
+    },
+    {
+        "id": "M00552",
+        "callsign": "9W2XXL",
+        "name": "TAN CHEE HIN",
+        "member_id": "26029",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00553",
+        "callsign": "9W2XZI",
+        "name": "MOHAMAD RAZI AHMAD SUHAIMI",
+        "member_id": "30712",
+        "expiry": "2021/12",
+        "is_local": false
+    },
+    {
+        "id": "M00554",
+        "callsign": "9W2YC",
+        "name": "WONG SOOI CHONG",
+        "member_id": "20039",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00555",
+        "callsign": "9W2YCM",
+        "name": "CHE YAHYA BIN HAJI CHE MAN",
+        "member_id": "27138",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00556",
+        "callsign": "9W2YEE",
+        "name": "YEE AH HONG",
+        "member_id": "29012",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00557",
+        "callsign": "9W2YEX",
+        "name": "SYAHRIL NIZAM BIN YUSOP",
+        "member_id": "30786",
+        "expiry": "2023/01",
+        "is_local": false
+    },
+    {
+        "id": "M00558",
+        "callsign": "9W2YFM",
+        "name": "NORUL FATA BIN MUSARI",
+        "member_id": "30820",
+        "expiry": "2023/06",
+        "is_local": false
+    },
+    {
+        "id": "M00559",
+        "callsign": "9W2YHK",
+        "name": "MUHAMMAD KHAIRUL BASHAH BIN BAKAR",
+        "member_id": "30550",
+        "expiry": "2020/02",
+        "is_local": false
+    },
+    {
+        "id": "M00560",
+        "callsign": "9W2YIO",
+        "name": "ISMAIL BIN OSMAN",
+        "member_id": "30283",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00561",
+        "callsign": "9W2YJ",
+        "name": "RODNEY YEO CHUAN LYE",
+        "member_id": "24135",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00562",
+        "callsign": "9W2YKH",
+        "name": "KENNY YIP KEAN HOONG",
+        "member_id": "26089",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00563",
+        "callsign": "9W2YLZ",
+        "name": "SAIFULLIZAN BIN SAAD",
+        "member_id": "30584",
+        "expiry": "2019/03",
+        "is_local": false
+    },
+    {
+        "id": "M00564",
+        "callsign": "9W2YMR",
+        "name": "CHOY YONG CHIAN",
+        "member_id": "26132",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00565",
+        "callsign": "9W2YND",
+        "name": "MOHD SAHIDAN BIN ABDULLAH",
+        "member_id": "30262",
+        "expiry": "2022/12",
+        "is_local": false
+    },
+    {
+        "id": "M00566",
+        "callsign": "9W2YOE",
+        "name": "NASRUL ISHAK BIN MOHAMAD NOR",
+        "member_id": "30484",
+        "expiry": "2018/03",
+        "is_local": false
+    },
+    {
+        "id": "M00567",
+        "callsign": "9W2YOK",
+        "name": "MOHD FAROUK BIN DAUD",
+        "member_id": "30369",
+        "expiry": "2017/04",
+        "is_local": false
+    },
+    {
+        "id": "M00568",
+        "callsign": "9W2YPG",
+        "name": "TAN CHEONG HOO",
+        "member_id": "30568",
+        "expiry": "2021/06",
+        "is_local": false
+    },
+    {
+        "id": "M00569",
+        "callsign": "9W2YRS",
+        "name": "SHAHRUL NIZAR BIN SIRUN",
+        "member_id": "30671",
+        "expiry": "2021/04",
+        "is_local": false
+    },
+    {
+        "id": "M00570",
+        "callsign": "9W2YSL",
+        "name": "YEONG SENG HOONG",
+        "member_id": "30640",
+        "expiry": "2021/10",
+        "is_local": false
+    },
+    {
+        "id": "M00571",
+        "callsign": "9W2YVM",
+        "name": "LAM YEW LOON",
+        "member_id": "30611",
+        "expiry": "2024/01",
+        "is_local": false
+    },
+    {
+        "id": "M00572",
+        "callsign": "9W2YYH",
+        "name": "YEONG YOON HUAT",
+        "member_id": "27146",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00573",
+        "callsign": "9W2YZ",
+        "name": "LIM HIN CHONG",
+        "member_id": "22124",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00574",
+        "callsign": "9W2YZU",
+        "name": "ZURAIDAH BT ZAINAL ABIDIN",
+        "member_id": "28031",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00575",
+        "callsign": "9W2ZBV",
+        "name": "ZAMRI BIN AZIZ",
+        "member_id": "30288",
+        "expiry": "2015 (SK 9/10/19)",
+        "is_local": false
+    },
+    {
+        "id": "M00576",
+        "callsign": "9W2ZDI",
+        "name": "MOHD MUZAIDI BIN MANSOR",
+        "member_id": "30078",
+        "expiry": "2020/03",
+        "is_local": false
+    },
+    {
+        "id": "M00577",
+        "callsign": "9W2ZF",
+        "name": "HJ ZULFADZLI BIN HJ AHMAD",
+        "member_id": "27047",
+        "expiry": "2018/12",
+        "is_local": false
+    },
+    {
+        "id": "M00578",
+        "callsign": "9W2ZIE",
+        "name": "HAFIZIE BIN ADZMI",
+        "member_id": "27025",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00579",
+        "callsign": "9W2ZIZ",
+        "name": "ABDUL AZIZ BIN MOHAMED NOR",
+        "member_id": "30253",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00580",
+        "callsign": "9W2ZLX",
+        "name": "ZULKIFLI BIN MOHAMAD",
+        "member_id": "30430",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00581",
+        "callsign": "9W2ZRV",
+        "name": "MOHD ROZLAN BIN MOHAMED ALI",
+        "member_id": "30460",
+        "expiry": "2025/12",
+        "is_local": false
+    },
+    {
+        "id": "M00582",
+        "callsign": "9W2ZTT",
+        "name": "RAJA AIDIL AZUAR BIN RAJA AYOB",
+        "member_id": "30461",
+        "expiry": "2017/11",
+        "is_local": false
+    },
+    {
+        "id": "M00583",
+        "callsign": "9W2ZX",
+        "name": "ZAIRY BIN BAHAROM",
+        "member_id": "25122",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00584",
+        "callsign": "9W2ZZ",
+        "name": "MOHD AZLI ABDUL MALIK",
+        "member_id": "28048",
+        "expiry": "2024/12",
+        "is_local": false
+    },
+    {
+        "id": "M00585",
+        "callsign": "9W2ZZE",
+        "name": "AZIZI B SAMSURI",
+        "member_id": "22147",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00586",
+        "callsign": "9W3CAM",
+        "name": "AMIRUL ASHRAF BIN OTHMAN",
+        "member_id": "30946",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00587",
+        "callsign": "9W3MAT",
+        "name": "AHMAD HANIF BIN ABD RAHIM (MAT ANIP)",
+        "member_id": "30927",
+        "expiry": "2025/01",
+        "is_local": false
+    },
+    {
+        "id": "M00588",
+        "callsign": "9W6AIY",
+        "name": "MOHD ALI MOHD YUSOF",
+        "member_id": "30575",
+        "expiry": "2023/07",
+        "is_local": false
+    },
+    {
+        "id": "M00589",
+        "callsign": "9W6AZP",
+        "name": "LIEW KET HOW",
+        "member_id": "25159",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00590",
+        "callsign": "9W6FAD",
+        "name": "M FADLY BIN MUSTAPA",
+        "member_id": "30382",
+        "expiry": "2019/05",
+        "is_local": false
+    },
+    {
+        "id": "M00591",
+        "callsign": "9W6KCK",
+        "name": "DZULLMUKHRY BIN ISMAIL",
+        "member_id": "30500",
+        "expiry": "2018/06",
+        "is_local": false
+    },
+    {
+        "id": "M00592",
+        "callsign": "9W6VAT",
+        "name": "MAHATHIR BIN MUHAMMAD HANIFAH",
+        "member_id": "30684",
+        "expiry": "2021/08",
+        "is_local": false
+    },
+    {
+        "id": "M00593",
+        "callsign": "9W6YCT",
+        "name": "YUNG CHEE TIEN",
+        "member_id": "30633",
+        "expiry": "2020/08",
+        "is_local": false
+    },
+    {
+        "id": "M00594",
+        "callsign": "9W6ZIQ",
+        "name": "HAAZIQ ISMAIL MALAKALU BIN KHUMAINI MALAKALU",
+        "member_id": "30907",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00595",
+        "callsign": "9W8HWK",
+        "name": "DAVID HII WAN KUOK",
+        "member_id": "30762",
+        "expiry": "2022/03",
+        "is_local": false
+    },
+    {
+        "id": "M00596",
+        "callsign": "9W8IQA",
+        "name": "IQBAL BIN ABDULLAH",
+        "member_id": "30153",
+        "expiry": "2025/12",
+        "is_local": false
+    },
+    {
+        "id": "M00597",
+        "callsign": "9W8NK",
+        "name": "LAI NGEE KIOK @ CHANG NGEE KIOK",
+        "member_id": "30167",
+        "expiry": "2014 (SK 26 OCT 2015)",
+        "is_local": false
+    },
+    {
+        "id": "M00598",
+        "callsign": "9W8RAY",
+        "name": "RAYNOLD HARDY ANAKA BROMLEY",
+        "member_id": "30160",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00599",
+        "callsign": "9W8TBG",
+        "name": "LING CHOW YING",
+        "member_id": "30233",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00600",
+        "callsign": "G3YXH",
+        "name": "SIMON BRENDAN MARSHALL",
+        "member_id": "30105",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00601",
+        "callsign": "HS1TLI",
+        "name": "TEERAPONG NILPHANPONG",
+        "member_id": "25163",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00602",
+        "callsign": "JA1OCZ",
+        "name": "KOBAYASHI YOSHIAKI",
+        "member_id": "27004",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00603",
+        "callsign": "JE1KUC",
+        "name": "TAKESHI MIYAMA",
+        "member_id": "30118",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00604",
+        "callsign": "JH1GNU",
+        "name": "SHIGERU KOBAYASHI",
+        "member_id": "30154",
+        "expiry": "2017/12",
+        "is_local": false
+    },
+    {
+        "id": "M00605",
+        "callsign": "JJ2ONH",
+        "name": "YOSHIYA KANO",
+        "member_id": "30080",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00606",
+        "callsign": "JP1TRJ",
+        "name": "HIROYUKI TSUKAHARA",
+        "member_id": "30114",
+        "expiry": "2012",
+        "is_local": false
+    },
+    {
+        "id": "M00607",
+        "callsign": "JR3MVF",
+        "name": "KYOKO MIYOSHI",
+        "member_id": "30499",
+        "expiry": "2018/06",
+        "is_local": false
+    },
+    {
+        "id": "M00608",
+        "callsign": "KELAB1",
+        "name": "PERAK AMATEUR RADIO TRANSMITTERS' SOCIETY",
+        "member_id": "28001",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00609",
+        "callsign": "KELAB3",
+        "name": "KELAB PEMINAT RADIO AMATUR PERLIS (PARC)",
+        "member_id": "25012",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00610",
+        "callsign": "KELAB5",
+        "name": "KELAB RADIO AMATUR KOTA SETAR",
+        "member_id": "30446",
+        "expiry": "2023/10",
+        "is_local": false
+    },
+    {
+        "id": "M00611",
+        "callsign": "KELAB7",
+        "name": "PERSATUAN RADIO AMATUR MUAR, JOHOR",
+        "member_id": "30598",
+        "expiry": "2019/11",
+        "is_local": false
+    },
+    {
+        "id": "M00612",
+        "callsign": "SWL001",
+        "name": "OOI CHIN HOOI",
+        "member_id": "24009",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00613",
+        "callsign": "SWL003",
+        "name": "AWALUDDIN B SUIBEK",
+        "member_id": "22077",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00614",
+        "callsign": "SWL005",
+        "name": "HAMILUDING B ABDUL JALIL",
+        "member_id": "22151",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00615",
+        "callsign": "SWL007",
+        "name": "MOHD FADLY B ZAINUDIN",
+        "member_id": "22183",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00616",
+        "callsign": "SWL009",
+        "name": "YEO KOK LOONG",
+        "member_id": "22194",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00617",
+        "callsign": "SWL011",
+        "name": "CHAN SENG CHOONG",
+        "member_id": "22204",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00618",
+        "callsign": "SWL013",
+        "name": "WAN ASRI WAN MOHAMED",
+        "member_id": "22212",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00619",
+        "callsign": "SWL016",
+        "name": "CHYE AH KUAN",
+        "member_id": "22258",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00620",
+        "callsign": "SWL018",
+        "name": "ABDUL RAZAK BIN MOHAMAD NOR",
+        "member_id": "22284",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00621",
+        "callsign": "SWL020",
+        "name": "HEE SOON KENG",
+        "member_id": "22290",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00622",
+        "callsign": "SWL022",
+        "name": "NOOR AZMI B UJANG",
+        "member_id": "22301",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00623",
+        "callsign": "SWL024",
+        "name": "CHE AZMI B SALLEH",
+        "member_id": "22307",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00624",
+        "callsign": "SWL026",
+        "name": "MOHD ZAKI B MOHAMMAD",
+        "member_id": "24008",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00625",
+        "callsign": "SWL028",
+        "name": "MOHD AZIM BIN SIDIN",
+        "member_id": "24017",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00626",
+        "callsign": "SWL030",
+        "name": "MOHD BAZRI B MOHD SALLEH",
+        "member_id": "24019",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00627",
+        "callsign": "SWL032",
+        "name": "NOOR AZLAN B HJ MOHD BARDAM",
+        "member_id": "24021",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00628",
+        "callsign": "SWL034",
+        "name": "MHD NOOR HAZLEE B MHD NAWAWI",
+        "member_id": "24023",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00629",
+        "callsign": "SWL036",
+        "name": "ABU BAKAR B DAUD",
+        "member_id": "24025",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00630",
+        "callsign": "SWL038",
+        "name": "ZUL AKMAR AHMAD ALI",
+        "member_id": "24027",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00631",
+        "callsign": "SWL040",
+        "name": "HASHIM BIN ALI KAMARUDDIN",
+        "member_id": "24062",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00632",
+        "callsign": "SWL043",
+        "name": "NORHANA MOHD YUSOF",
+        "member_id": "24076",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00633",
+        "callsign": "SWL045",
+        "name": "CHAI KEAN CHONG",
+        "member_id": "24087",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00634",
+        "callsign": "SWL047",
+        "name": "FRANCIS KHOO TECK HUAT",
+        "member_id": "24091",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00635",
+        "callsign": "SWL049",
+        "name": "YEO KONG SENG",
+        "member_id": "24093",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00636",
+        "callsign": "SWL051",
+        "name": "YEOH CHUAN WOOI",
+        "member_id": "24095",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00637",
+        "callsign": "SWL053",
+        "name": "THAM KIN YIN",
+        "member_id": "24097",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00638",
+        "callsign": "SWL055",
+        "name": "FELIX STANLEY LOPEZ",
+        "member_id": "24099",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00639",
+        "callsign": "SWL057",
+        "name": "MAK CHEE WAH",
+        "member_id": "24105",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00640",
+        "callsign": "SWL059",
+        "name": "MOHD SABRI B ALI",
+        "member_id": "24108",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00641",
+        "callsign": "SWL061",
+        "name": "ZULKIFLI B AWANG SU",
+        "member_id": "24113",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00642",
+        "callsign": "SWL063",
+        "name": "SITI ZAITON BT JUSOH",
+        "member_id": "24115",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00643",
+        "callsign": "SWL065",
+        "name": "ZAWALI B HASSAN",
+        "member_id": "24117",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00644",
+        "callsign": "SWL067",
+        "name": "NORUL DJAMDI HISHAM B CHE WAN @ NORDIN",
+        "member_id": "24120",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00645",
+        "callsign": "SWL070",
+        "name": "WAN AZMAN B WAN IBRAHIM",
+        "member_id": "24124",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00646",
+        "callsign": "SWL072",
+        "name": "MOHD HUSAIMI B HUSSIN",
+        "member_id": "24126",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00647",
+        "callsign": "SWL074",
+        "name": "A AZIZ B JUSOH",
+        "member_id": "24128",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00648",
+        "callsign": "SWL076",
+        "name": "WAN SALLEH B WAN MUSA",
+        "member_id": "24130",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00649",
+        "callsign": "SWL078",
+        "name": "ROSLEE B ISMAIL",
+        "member_id": "24132",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00650",
+        "callsign": "SWL080",
+        "name": "HAMIDI B HARUN",
+        "member_id": "24138",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00651",
+        "callsign": "SWL082",
+        "name": "ERWAN TAHIR",
+        "member_id": "24142",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00652",
+        "callsign": "SWL084",
+        "name": "WAN ZAKARIA WAN DAUD",
+        "member_id": "24144",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00653",
+        "callsign": "SWL086",
+        "name": "MOHD FAZREI B RAZALI",
+        "member_id": "24146",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00654",
+        "callsign": "SWL088",
+        "name": "MUHAMAD TAUFIQ B SAMSOL",
+        "member_id": "24148",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00655",
+        "callsign": "SWL090",
+        "name": "LIEW CHEE HUA",
+        "member_id": "24150",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00656",
+        "callsign": "SWL092",
+        "name": "THEE BOK SENG",
+        "member_id": "24152",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00657",
+        "callsign": "SWL094",
+        "name": "CHIAH YEO SHONS",
+        "member_id": "24154",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00658",
+        "callsign": "SWL097",
+        "name": "ZABIDI B ISMAIL",
+        "member_id": "24159",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00659",
+        "callsign": "SWL099",
+        "name": "ALBERT SIM THENG KWEI",
+        "member_id": "24161",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00660",
+        "callsign": "SWL101",
+        "name": "PAN KOK FAI",
+        "member_id": "24165",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00661",
+        "callsign": "SWL103",
+        "name": "ABDUL RAHIM B IAMAIL",
+        "member_id": "24168",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00662",
+        "callsign": "SWL105",
+        "name": "CHIONG CHONG CHEE",
+        "member_id": "24171",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00663",
+        "callsign": "SWL107",
+        "name": "OU KEWAI CHOW",
+        "member_id": "24173",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00664",
+        "callsign": "SWL109",
+        "name": "NG JENN SHING",
+        "member_id": "24175",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00665",
+        "callsign": "SWL111",
+        "name": "YOW HAO LOON",
+        "member_id": "24177",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00666",
+        "callsign": "SWL113",
+        "name": "WOON TAT WOOI",
+        "member_id": "24179",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00667",
+        "callsign": "SWL115",
+        "name": "CHIN NIN KEE @ ALAN CHIN",
+        "member_id": "24181",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00668",
+        "callsign": "SWL117",
+        "name": "RAJA YOGAM",
+        "member_id": "25008",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00669",
+        "callsign": "SWL119",
+        "name": "MD JAN BIN MOHD",
+        "member_id": "25017",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00670",
+        "callsign": "SWL121",
+        "name": "KOMALJIT KAUR A/P JAGJIT SINGH",
+        "member_id": "25023",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00671",
+        "callsign": "SWL124",
+        "name": "AZIZUL EAMY BIN ARSAD",
+        "member_id": "25026",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00672",
+        "callsign": "SWL126",
+        "name": "KELVIN KUMARASWARAN A/L A DASS",
+        "member_id": "25028",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00673",
+        "callsign": "SWL128",
+        "name": "LOW AH LIT",
+        "member_id": "25044",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00674",
+        "callsign": "SWL130",
+        "name": "FIZA SHIRIN BINTI MOHD YASIN",
+        "member_id": "25055",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00675",
+        "callsign": "SWL132",
+        "name": "KAMAR ZAMAN BIN MOHAMAD",
+        "member_id": "25060",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00676",
+        "callsign": "SWL134",
+        "name": "ABDULLAH BIN YUSOFF",
+        "member_id": "25063",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00677",
+        "callsign": "SWL136",
+        "name": "PANG WENG LEONG",
+        "member_id": "25076",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00678",
+        "callsign": "SWL138",
+        "name": "KHOR VI AN",
+        "member_id": "25080",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00679",
+        "callsign": "SWL140",
+        "name": "ALBERT FOO SHYE KWONG",
+        "member_id": "25087",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00680",
+        "callsign": "SWL143",
+        "name": "LEE CHEONG PENG",
+        "member_id": "25108",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00681",
+        "callsign": "SWL145",
+        "name": "HOH YOOK KONG",
+        "member_id": "25113",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00682",
+        "callsign": "SWL147",
+        "name": "MD TAHA AYUB",
+        "member_id": "25115",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00683",
+        "callsign": "SWL149",
+        "name": "TAWFEK BIN MOKHTAR",
+        "member_id": "25117",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00684",
+        "callsign": "SWL152",
+        "name": "FAZELI BIN ISMAIL",
+        "member_id": "25125",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00685",
+        "callsign": "SWL155",
+        "name": "LOW KAM CHOON",
+        "member_id": "25127",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00686",
+        "callsign": "SWL157",
+        "name": "QUAH BENG KWANG",
+        "member_id": "25129",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00687",
+        "callsign": "SWL159",
+        "name": "LIEW KUAI SANG",
+        "member_id": "25133",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00688",
+        "callsign": "SWL162",
+        "name": "JOHNNY LEE YUEN KUN",
+        "member_id": "25152",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00689",
+        "callsign": "SWL164",
+        "name": "NG YEE LEONG",
+        "member_id": "25165",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00690",
+        "callsign": "SWL166",
+        "name": "CHANG AN JIN",
+        "member_id": "25172",
+        "expiry": "2005",
+        "is_local": false
+    },
+    {
+        "id": "M00691",
+        "callsign": "SWL168",
+        "name": "OTHMAN BIN ISMAIL",
+        "member_id": "26011",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00692",
+        "callsign": "SWL170",
+        "name": "ABDULLAH BIN MOHD",
+        "member_id": "26013",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00693",
+        "callsign": "SWL172",
+        "name": "SHANSUDDIN BIN AHMAD",
+        "member_id": "26015",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00694",
+        "callsign": "SWL174",
+        "name": "MOHD RAZALI BIN SULAIMAN",
+        "member_id": "26017",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00695",
+        "callsign": "SWL176",
+        "name": "MOHD ZAKI BIN AMBAK",
+        "member_id": "26019",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00696",
+        "callsign": "SWL178",
+        "name": "MAT SALLEH BIN CHE MAT",
+        "member_id": "26021",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00697",
+        "callsign": "SWL181",
+        "name": "SHAKRI BIN CHE PA",
+        "member_id": "26038",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00698",
+        "callsign": "SWL183",
+        "name": "ROSDI BIN YAHYA",
+        "member_id": "26040",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00699",
+        "callsign": "SWL185",
+        "name": "SALLEH BIN JUSOH",
+        "member_id": "26058",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00700",
+        "callsign": "SWL187",
+        "name": "AHMAD ZOHIR BIN HARON",
+        "member_id": "26063",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00701",
+        "callsign": "SWL189",
+        "name": "HJ ABDUL RANI MOHD AMIN",
+        "member_id": "26065",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00702",
+        "callsign": "SWL191",
+        "name": "MOHD HASNAN BIN SALLEH",
+        "member_id": "26067",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00703",
+        "callsign": "SWL193",
+        "name": "MUHAMAD IDERIS",
+        "member_id": "26069",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00704",
+        "callsign": "SWL195",
+        "name": "AMIR ZAKIR BIN MAMAT @ MUKHTAR",
+        "member_id": "26074",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00705",
+        "callsign": "SWL197",
+        "name": "CHE ABDUL AZIZ BIN CHE A HAMID",
+        "member_id": "26079",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00706",
+        "callsign": "SWL199",
+        "name": "CHAI CHUAN TAT",
+        "member_id": "26093",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00707",
+        "callsign": "SWL201",
+        "name": "TEOH SENG LAI",
+        "member_id": "26096",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00708",
+        "callsign": "SWL203",
+        "name": "ELIJAH LOW ERN TZE",
+        "member_id": "26100",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00709",
+        "callsign": "SWL205",
+        "name": "POONGKODI A/P ARUMASALAM",
+        "member_id": "26102",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00710",
+        "callsign": "SWL208",
+        "name": "YADID BIN MAT HUSSIN",
+        "member_id": "26109",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00711",
+        "callsign": "SWL210",
+        "name": "AHMAD FAUZI BIN HAMZAH",
+        "member_id": "26111",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00712",
+        "callsign": "SWL212",
+        "name": "TAN TEIK KEAN",
+        "member_id": "26116",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00713",
+        "callsign": "SWL214",
+        "name": "OOI TZE HOWE",
+        "member_id": "26118",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00714",
+        "callsign": "SWL216",
+        "name": "KHAW TING YI",
+        "member_id": "28003",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00715",
+        "callsign": "SWL218",
+        "name": "YEOH KOON YONG",
+        "member_id": "26123",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00716",
+        "callsign": "SWL220",
+        "name": "LAI ONN MUN",
+        "member_id": "26127",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00717",
+        "callsign": "SWL222",
+        "name": "LAU AH BOI @ LAU HEE HUAT",
+        "member_id": "26130",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00718",
+        "callsign": "SWL224",
+        "name": "TAM KOK SHYAN",
+        "member_id": "26137",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00719",
+        "callsign": "SWL226",
+        "name": "MOHD HAJIS BIN JORI",
+        "member_id": "26139",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00720",
+        "callsign": "SWL228",
+        "name": "ABU BAKAR BIN ISMAIL",
+        "member_id": "26153",
+        "expiry": "2006",
+        "is_local": false
+    },
+    {
+        "id": "M00721",
+        "callsign": "SWL230",
+        "name": "NASARUDDIN BIN IDRIS",
+        "member_id": "27016",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00722",
+        "callsign": "SWL232",
+        "name": "RUZIAH BT RAWI @ CHE TEH",
+        "member_id": "27019",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00723",
+        "callsign": "SWL235",
+        "name": "MOHD NAWAWI BIN MD SALLEH",
+        "member_id": "27030",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00724",
+        "callsign": "SWL237",
+        "name": "KUAN ENG SENG",
+        "member_id": "27033",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00725",
+        "callsign": "SWL239",
+        "name": "LEE EE SENG",
+        "member_id": "27038",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00726",
+        "callsign": "SWL241",
+        "name": "WAN LATIP BIN WAN HASSAN",
+        "member_id": "27040",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00727",
+        "callsign": "SWL243",
+        "name": "EDWARD YONG CHEE HUNG",
+        "member_id": "27076",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00728",
+        "callsign": "SWL245",
+        "name": "LIM TAO YEE",
+        "member_id": "27102",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00729",
+        "callsign": "SWL247",
+        "name": "MOHAMAD AZAMAN",
+        "member_id": "28021",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00730",
+        "callsign": "SWL249",
+        "name": "HAZURA ALIAS",
+        "member_id": "28029",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00731",
+        "callsign": "SWL251",
+        "name": "MOHAMED SAMSUDDIN BIN SARMAN",
+        "member_id": "27117",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00732",
+        "callsign": "SWL253",
+        "name": "SOO TUCK CHEONG",
+        "member_id": "27131",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00733",
+        "callsign": "SWL255",
+        "name": "ERIC FONG HENG WAH",
+        "member_id": "27140",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00734",
+        "callsign": "SWL257",
+        "name": "SAW LIEW KIM",
+        "member_id": "27150",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00735",
+        "callsign": "SWL259",
+        "name": "SOON BIN YUN",
+        "member_id": "27152",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00736",
+        "callsign": "SWL262",
+        "name": "WILLIAM FOONG CHEE SEONG",
+        "member_id": "27155",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00737",
+        "callsign": "SWL264",
+        "name": "ARMUNI BIN A. RAHMAN",
+        "member_id": "27158",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00738",
+        "callsign": "SWL266",
+        "name": "RAJA SHAHARIL NASIR BIN RAJA SHUKRI AMRUN",
+        "member_id": "27170",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00739",
+        "callsign": "SWL268",
+        "name": "HENG KOK HOOI",
+        "member_id": "27189",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00740",
+        "callsign": "SWL270",
+        "name": "LEE SENG HOW",
+        "member_id": "27191",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00741",
+        "callsign": "SWL272",
+        "name": "ROSNAN BIN NAYAN",
+        "member_id": "27193",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00742",
+        "callsign": "SWL274",
+        "name": "GUNASEGARAN RAMU",
+        "member_id": "27201",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00743",
+        "callsign": "SWL276",
+        "name": "LIM WEI BING",
+        "member_id": "27203",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00744",
+        "callsign": "SWL278",
+        "name": "MD YUSOP B TALIB",
+        "member_id": "65974",
+        "expiry": "2004",
+        "is_local": false
+    },
+    {
+        "id": "M00745",
+        "callsign": "SWL280",
+        "name": "MOHD FAIS B. HASSAN",
+        "member_id": "T0059",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00746",
+        "callsign": "SWL282",
+        "name": "NORREHAN BIN ALI",
+        "member_id": "28008",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00747",
+        "callsign": "SWL284",
+        "name": "CHAN YEE KENG",
+        "member_id": "28010",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00748",
+        "callsign": "SWL286",
+        "name": "LIM CHOU CHINN",
+        "member_id": "28013",
+        "expiry": "2008",
+        "is_local": false
+    },
+    {
+        "id": "M00749",
+        "callsign": "SWL289",
+        "name": "AZMI MOHD NOOR",
+        "member_id": "29005",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00750",
+        "callsign": "SWL291",
+        "name": "YUSERI BIN MUSTAFA",
+        "member_id": "29007",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00751",
+        "callsign": "SWL293",
+        "name": "MOHAMAD BIN MAT ZIN",
+        "member_id": "29009",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00752",
+        "callsign": "SWL295",
+        "name": "MAT RASID BIN MOHAMED",
+        "member_id": "29011",
+        "expiry": "2009",
+        "is_local": false
+    },
+    {
+        "id": "M00753",
+        "callsign": "SWL297",
+        "name": "AB AZIZ B WAHAB",
+        "member_id": "24121",
+        "expiry": "2007",
+        "is_local": false
+    },
+    {
+        "id": "M00754",
+        "callsign": "SWL299",
+        "name": "MOHD MUKHYUDDIN B SARWANI",
+        "member_id": "30033",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00755",
+        "callsign": "SWL301",
+        "name": "DR GOH JIN CHEONG",
+        "member_id": "30066",
+        "expiry": "2010",
+        "is_local": false
+    },
+    {
+        "id": "M00756",
+        "callsign": "SWL303",
+        "name": "CHUAH WHENG HOE",
+        "member_id": "D30152",
+        "expiry": "2013",
+        "is_local": false
+    },
+    {
+        "id": "M00757",
+        "callsign": "SWL307",
+        "name": "MD DAN BIN ABD RAHMAN",
+        "member_id": "30206",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00758",
+        "callsign": "SWL309",
+        "name": "ASMADI BIN ALI",
+        "member_id": "30209",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00759",
+        "callsign": "SWL311",
+        "name": "MOHAMAD NORIZWAN BIN MOHAMMAD NOOR",
+        "member_id": "30212",
+        "expiry": "2014",
+        "is_local": false
+    },
+    {
+        "id": "M00760",
+        "callsign": "SWL313",
+        "name": "MAZLAN BIN JEHARI",
+        "member_id": "30216",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00761",
+        "callsign": "SWL315",
+        "name": "HASHIM BIN YACOB",
+        "member_id": "30293",
+        "expiry": "2015",
+        "is_local": false
+    },
+    {
+        "id": "M00762",
+        "callsign": "SWL320",
+        "name": "SOMU VENGADASAN",
+        "member_id": "30344",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00763",
+        "callsign": "SWL322",
+        "name": "AHMAD SHAHFARRIQ BIN ZOLKOLNIN",
+        "member_id": "30346",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00764",
+        "callsign": "SWL324",
+        "name": "MOHD AZHAM BIN MOHD AZHAR",
+        "member_id": "30348",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00765",
+        "callsign": "SWL326",
+        "name": "ADLI PUTRA BIN MASHUDI",
+        "member_id": "30350",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00766",
+        "callsign": "SWL328",
+        "name": "SHERRY NOR SHIELLA SOEP",
+        "member_id": "30352",
+        "expiry": "2017/02",
+        "is_local": false
+    },
+    {
+        "id": "M00767",
+        "callsign": "SWL330",
+        "name": "AZRI BIN ZAINAL ABDIN",
+        "member_id": "30375",
+        "expiry": "2017/04",
+        "is_local": false
+    },
+    {
+        "id": "M00768",
+        "callsign": "SWL333",
+        "name": "SHAHARUDDIN BIN ABDULLAH",
+        "member_id": "30385",
+        "expiry": "2017/05",
+        "is_local": false
+    },
+    {
+        "id": "M00769",
+        "callsign": "SWL337",
+        "name": "ONG EN LI",
+        "member_id": "30389",
+        "expiry": "2017/05",
+        "is_local": false
+    },
+    {
+        "id": "M00770",
+        "callsign": "SWL339",
+        "name": "MUHD SYAZWAN BIN ABDUL RANI",
+        "member_id": "30391",
+        "expiry": "2017/05",
+        "is_local": false
+    },
+    {
+        "id": "M00771",
+        "callsign": "SWL342",
+        "name": "SHAROM ANUAR BIN SAHIMI",
+        "member_id": "30394",
+        "expiry": "2017/05",
+        "is_local": false
+    },
+    {
+        "id": "M00772",
+        "callsign": "SWL344",
+        "name": "ZULKARNAEN BIN KAMAL",
+        "member_id": "30396",
+        "expiry": "2017/05",
+        "is_local": false
+    },
+    {
+        "id": "M00773",
+        "callsign": "SWL347",
+        "name": "SAHARUL ANUAR BIN SAMSUDDIN",
+        "member_id": "30407",
+        "expiry": "2017/06",
+        "is_local": false
+    },
+    {
+        "id": "M00774",
+        "callsign": "SWL349",
+        "name": "MOHAMAD RAZALI BIN IBNO HAJAR",
+        "member_id": "30428",
+        "expiry": "2017/08",
+        "is_local": false
+    },
+    {
+        "id": "M00775",
+        "callsign": "SWL353",
+        "name": "MOHD NIZAM BIN CHE AHMAD",
+        "member_id": "30465",
+        "expiry": "2018/12",
+        "is_local": false
+    },
+    {
+        "id": "M00776",
+        "callsign": "SWL356",
+        "name": "YUSRA BINTI ABDULLAH",
+        "member_id": "30513",
+        "expiry": "2018/05",
+        "is_local": false
+    },
+    {
+        "id": "M00777",
+        "callsign": "SWL358",
+        "name": "MOHD SYAHARUDIN B HJ ABDUL SHARIF",
+        "member_id": "30534",
+        "expiry": "2018/11",
+        "is_local": false
+    },
+    {
+        "id": "M00778",
+        "callsign": "SWL360",
+        "name": "DONALD GIN HOR, TAN",
+        "member_id": "30557",
+        "expiry": "2022/11",
+        "is_local": false
+    },
+    {
+        "id": "M00779",
+        "callsign": "SWL363",
+        "name": "TAN THEAN WOOI",
+        "member_id": "30597",
+        "expiry": "2019/11",
+        "is_local": false
+    },
+    {
+        "id": "M00780",
+        "callsign": "SWL366",
+        "name": "MUHAMAD SABRI MUSTAFA",
+        "member_id": "30601",
+        "expiry": "2019/11",
+        "is_local": false
+    },
+    {
+        "id": "M00781",
+        "callsign": "SWL368",
+        "name": "NOR AZMI BIN MOHAMED SANI",
+        "member_id": "30604",
+        "expiry": "2019/12",
+        "is_local": false
+    },
+    {
+        "id": "M00782",
+        "callsign": "SWL371",
+        "name": "AHMAD RUSLANI BIN AHMAD RUSMILI",
+        "member_id": "30653",
+        "expiry": "2021/01",
+        "is_local": false
+    },
+    {
+        "id": "M00783",
+        "callsign": "SWL373",
+        "name": "LIM SOON MUN @ ALBERT",
+        "member_id": "30670",
+        "expiry": "2021/04",
+        "is_local": false
+    },
+    {
+        "id": "M00784",
+        "callsign": "SWL375",
+        "name": "BRUNO CLERMONT",
+        "member_id": "30675",
+        "expiry": "2021/04",
+        "is_local": false
+    },
+    {
+        "id": "M00785",
+        "callsign": "SWL377",
+        "name": "WU JAW CHYANG @ GOH JAW CHAYNG",
+        "member_id": "30718",
+        "expiry": "2024/11",
+        "is_local": false
+    },
+    {
+        "id": "M00786",
+        "callsign": "SWL379",
+        "name": "ASHWIN ANTHONY NAZARETH",
+        "member_id": "30740",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00787",
+        "callsign": "SWL382",
+        "name": "BRAXTON CHIN WIN KEEN",
+        "member_id": "30745",
+        "expiry": "2025/10",
+        "is_local": false
+    },
+    {
+        "id": "M00788",
+        "callsign": "SWL395",
+        "name": "YEAP YEE LIN",
+        "member_id": "30894",
+        "expiry": "2023/12",
+        "is_local": false
+    },
+    {
+        "id": "M00789",
+        "callsign": "SWL504",
+        "name": "MUHAMMAD HAFIZ BIN HUSAIN",
+        "member_id": "30923",
+        "expiry": "2024/11",
+        "is_local": false
+    },
+    {
+        "id": "M00790",
+        "callsign": "SWL506",
+        "name": "RAFLINA BINTI RUSLI",
+        "member_id": "30925",
+        "expiry": "2024/11",
+        "is_local": false
+    },
+    {
+        "id": "M00791",
+        "callsign": "SWL508",
+        "name": "SHARIZAT BIN ABDUL RAHMAN",
+        "member_id": "30945",
+        "expiry": "2025/06",
+        "is_local": false
+    },
+    {
+        "id": "M00792",
+        "callsign": "VK2AYA",
+        "name": "GEOFFREY ALLEN LEE",
+        "member_id": "30158",
+        "expiry": "2014",
         "is_local": false
     }
 ]
