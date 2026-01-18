@@ -5,7 +5,6 @@ import { MemberCard, Member } from '@/components/MemberCard';
 import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus, Baby } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { getRegion, getLicenseClass, isYOTA, Region, LicenseClass } from '@/lib/callsign-utils';
-import { Button } from '@/components/ui/button'; // Assuming we have or will mock
 import Link from 'next/link';
 
 // Mock UI components if missing tailored for this file
