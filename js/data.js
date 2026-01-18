@@ -8,7 +8,7 @@ const SUPABASE_URL = 'https://arxffqjvlsdfsswayecb.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFyeGZmcWp2bHNkZnNzd2F5ZWNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg2OTI5MzYsImV4cCI6MjA4NDI2ODkzNn0.U7V_fuBvk0cVxlH2hnqkhzEl-coJCiV0smw_6oQax-g';
 
 // Initialize Supabase client
-let supabase = null;
+let supabaseClient = null;
 
 // Data state
 let membersData = [];
@@ -19,7 +19,7 @@ let isSupabaseConnected = false;
  */
 function initSupabase() {
     if (typeof window.supabase !== 'undefined' && SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
-        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         isSupabaseConnected = true;
         console.log('✅ Supabase connected');
         return true;
@@ -42,7 +42,7 @@ async function loadMembers() {
                 let hasMore = true;
 
                 while (hasMore) {
-                    const { data, error } = await supabase
+                    const { data, error } = await supabaseClient
                         .from('members')
                         .select('*')
                         .order('callsign', { ascending: true })
@@ -117,8 +117,8 @@ async function addMember(member) {
             created_at: new Date().toISOString()
         };
 
-        if (isSupabaseConnected && supabase) {
-            const { data, error } = await supabase
+        if (isSupabaseConnected && supabaseClient) {
+            const { data, error } = await supabaseClient
                 .from('members')
                 .insert([newMember])
                 .select()
@@ -160,8 +160,8 @@ async function updateMember(id, updates) {
             if (updateData[key] === undefined) delete updateData[key];
         });
 
-        if (isSupabaseConnected && supabase) {
-            const { data, error } = await supabase
+        if (isSupabaseConnected && supabaseClient) {
+            const { data, error } = await supabaseClient
                 .from('members')
                 .update(updateData)
                 .eq('id', id)
@@ -200,8 +200,8 @@ async function deleteMember(id) {
     try {
         const member = membersData.find(m => m.id === id);
 
-        if (isSupabaseConnected && supabase) {
-            const { error } = await supabase
+        if (isSupabaseConnected && supabaseClient) {
+            const { error } = await supabaseClient
                 .from('members')
                 .delete()
                 .eq('id', id);
@@ -231,9 +231,9 @@ async function deleteMember(id) {
  */
 async function bulkInsertMembers(members) {
     try {
-        if (isSupabaseConnected && supabase) {
+        if (isSupabaseConnected && supabaseClient) {
             // Clear existing data first
-            await supabase.from('members').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+            await supabaseClient.from('members').delete().neq('id', '00000000-0000-0000-0000-000000000000');
 
             // Insert in batches of 500
             const batchSize = 500;
@@ -248,7 +248,7 @@ async function bulkInsertMembers(members) {
                     created_at: new Date().toISOString()
                 }));
 
-                const { error } = await supabase.from('members').insert(batch);
+                const { error } = await supabaseClient.from('members').insert(batch);
                 if (error) throw error;
 
                 console.log(`📦 Inserted batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(members.length / batchSize)}`);
