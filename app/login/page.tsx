@@ -2,11 +2,8 @@
 
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
 
-// Stub UI components if not present (simplified for now to avoid dependency hell)
 function SimpleButton({ children, onClick, disabled, className }: any) {
     return (
         <button
@@ -33,6 +30,8 @@ function SimpleInput({ type, placeholder, value, onChange, className }: any) {
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isPasswordLogin, setIsPasswordLogin] = useState(false);
     const [loading, setLoading] = useState(false);
     const [sent, setSent] = useState(false);
     const [error, setError] = useState('');
@@ -42,18 +41,32 @@ export default function LoginPage() {
         setLoading(true);
         setError('');
 
-        const { error } = await supabase.auth.signInWithOtp({
-            email,
-            options: {
-                // Redirect to home after login
-                emailRedirectTo: typeof window !== 'undefined' ? `${window.location.origin}/` : undefined,
-            },
-        });
+        let result;
+
+        if (isPasswordLogin) {
+            result = await supabase.auth.signInWithPassword({
+                email,
+                password,
+            });
+        } else {
+            result = await supabase.auth.signInWithOtp({
+                email,
+                options: {
+                    emailRedirectTo: typeof window !== 'undefined' ? `${window.location.origin}/` : undefined,
+                },
+            });
+        }
+
+        const { error } = result;
 
         if (error) {
             setError(error.message);
         } else {
-            setSent(true);
+            if (isPasswordLogin) {
+                window.location.href = '/';
+            } else {
+                setSent(true);
+            }
         }
         setLoading(false);
     };
@@ -72,6 +85,7 @@ export default function LoginPage() {
                         <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto" />
                         <h2 className="text-xl font-bold text-foreground">Link Sent</h2>
                         <p className="text-muted-foreground">Check your comms device ({email}) for the access link.</p>
+                        <button onClick={() => setSent(false)} className="text-primary hover:underline text-sm font-rajdhani">Try again</button>
                     </div>
                 ) : (
                     <form onSubmit={handleLogin} className="space-y-4">
@@ -83,15 +97,38 @@ export default function LoginPage() {
                                 onChange={(e: any) => setEmail(e.target.value)}
                             />
                         </div>
+
+                        {isPasswordLogin && (
+                            <div className="animate-in fade-in slide-in-from-top-2 duration-300">
+                                <SimpleInput
+                                    type="password"
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={(e: any) => setPassword(e.target.value)}
+                                />
+                            </div>
+                        )}
+
                         {error && (
                             <div className="bg-red-500/10 border border-red-500/50 p-3 rounded flex items-center gap-2 text-red-500 text-sm">
                                 <AlertCircle className="w-4 h-4" />
                                 {error}
                             </div>
                         )}
+
                         <SimpleButton disabled={loading} className="w-full font-orbitron tracking-widest">
-                            {loading ? 'AUTHENTICATING...' : 'SEND MAGIC LINK'}
+                            {loading ? 'AUTHENTICATING...' : (isPasswordLogin ? 'LOGIN WITH PASSWORD' : 'SEND MAGIC LINK')}
                         </SimpleButton>
+
+                        <div className="text-center">
+                            <button
+                                type="button"
+                                onClick={() => setIsPasswordLogin(!isPasswordLogin)}
+                                className="text-xs text-muted-foreground hover:text-primary transition-colors font-orbitron tracking-wider"
+                            >
+                                {isPasswordLogin ? 'USE MAGIC LINK INSTEAD' : 'LOGIN WITH PASSWORD'}
+                            </button>
+                        </div>
                     </form>
                 )}
             </div>
