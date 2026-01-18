@@ -329,18 +329,7 @@ function updateStats() {
     elements.filteredCount.textContent = filteredMembers.length.toLocaleString();
 }
 
-/**
- * Update last sync time display
- */
-function updateLastSync() {
-    const lastSync = DataManager.getLastSync();
-    if (lastSync) {
-        const date = new Date(lastSync);
-        elements.lastSync.textContent = `Last sync: ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-    } else {
-        elements.lastSync.textContent = 'Last sync: Never';
-    }
-}
+
 
 /**
  * Open member modal for add/edit
