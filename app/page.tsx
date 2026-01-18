@@ -53,7 +53,8 @@ export default function Home() {
         const { data, error } = await supabase
             .from('members')
             .select('*')
-            .order('callsign', { ascending: true });
+            .order('callsign', { ascending: true })
+            .limit(10000); // Override default 1000 limit
 
         if (error) {
             console.error('Error fetching members:', error);
