@@ -1,0 +1,58 @@
+name: Member Issue Ops
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  manage-member:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'member-add') || contains(github.event.issue.labels.*.name, 'member-delete')
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Determine Action Type
+        id: action-type
+        run: |
+          if [[ "${{ contains(github.event.issue.labels.*.name, 'member-add') }}" == "true" ]]; then
+            echo "type=add" >> $GITHUB_OUTPUT
+          elif [[ "${{ contains(github.event.issue.labels.*.name, 'member-delete') }}" == "true" ]]; then
+            echo "type=delete" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Process Member Data
+        env:
+          ACTION_TYPE: ${{ steps.action-type.outputs.type }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node scripts/manage_members.js
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/members.json
+          git commit -m "chore: ${{ steps.action-type.outputs.type }} member via issue #${{ github.event.issue.number }}"
+          git push
+
+      - name: Comment and Close Issue
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ✅ **Success!**
+            The member data has been updated. The changes should be live on the website shortly.
+      
+      - name: Close Issue
+        run: gh issue close ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

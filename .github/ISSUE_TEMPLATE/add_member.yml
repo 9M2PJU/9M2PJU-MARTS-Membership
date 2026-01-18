@@ -1,0 +1,41 @@
+name: Add New Member
+description: Register a new member to the directory
+title: "[ADD]: "
+labels: ["member-add"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the details below to add a new member.
+  - type: input
+    id: callsign
+    attributes:
+      label: Callsign
+      description: The amateur radio callsign (e.g., 9M2ABC)
+      placeholder: 9M2ABC
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Full name of the member
+      placeholder: AHMAD BIN ALI
+    validations:
+      required: true
+  - type: input
+    id: member_id
+    attributes:
+      label: Membership ID
+      description: MARTS membership number
+      placeholder: 12345
+    validations:
+      required: true
+  - type: input
+    id: expiry
+    attributes:
+      label: Expiry Date
+      description: License or membership expiry (YYYY/MM)
+      placeholder: 2026/12
+    validations:
+      required: true

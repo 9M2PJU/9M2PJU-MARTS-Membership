@@ -1,0 +1,17 @@
+name: Delete Member
+description: Remove a member from the directory
+title: "[DELETE]: "
+labels: ["member-delete"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please specify the callsign of the member to delete.
+  - type: input
+    id: callsign
+    attributes:
+      label: Callsign to Delete
+      description: The amateur radio callsign (e.g., 9M2ABC)
+      placeholder: 9M2ABC
+    validations:
+      required: true
