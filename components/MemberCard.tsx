@@ -1,4 +1,4 @@
-import { Calendar, IdCard } from "lucide-react"
+import { Calendar, IdCard, Pencil, Trash2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export type Member = {
@@ -12,9 +12,10 @@ export type Member = {
 
 interface MemberCardProps {
     member: Member
+    isAdmin?: boolean;
 }
 
-export function MemberCard({ member }: MemberCardProps) {
+export function MemberCard({ member, isAdmin }: MemberCardProps) {
     // Helpers
     const isExpired = (expiryStr: string) => {
         if (!expiryStr || expiryStr === '-') return false;
@@ -74,6 +75,18 @@ export function MemberCard({ member }: MemberCardProps) {
                     </div>
                 </div>
 
+                {/* Admin Controls */}
+                {isAdmin && (
+                    <div className="flex gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity absolute top-2 right-2">
+                        <button className="bg-primary hover:bg-white text-black p-1.5 rounded-full transition-colors" title="Edit">
+                            <Pencil className="w-3 h-3" />
+                        </button>
+                        <button className="bg-red-500 hover:bg-red-400 text-white p-1.5 rounded-full transition-colors" title="Delete">
+                            <Trash2 className="w-3 h-3" />
+                        </button>
+                    </div>
+                )}
+
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent my-1" />
 
                 <div className="grid grid-cols-2 gap-2 text-sm font-rajdhani">
@@ -92,8 +105,3 @@ export function MemberCard({ member }: MemberCardProps) {
         </div>
     )
 }
-
-// Minimal stub for Card components if we don't install shadcn fully yet
-// We will just use divs in the main card code above if needed, but I kept imports.
-// Actually, since I didn't install shadcn, I should remove those imports or create simple versions.
-// I'll rewrite MemberCard to not depend on @/components/ui/card yet to be safe.

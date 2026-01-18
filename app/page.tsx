@@ -2,20 +2,94 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { MemberCard, Member } from '@/components/MemberCard';
-import { Search, Filter, RefreshCw, Smartphone } from 'lucide-react';
-import membersData from '@/public/data/members.json'; // Direct import
+import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
+import { Button } from '@/components/ui/button'; // Assuming we have or will mock
+import Link from 'next/link';
 
-// Ensure data is typed
-const allMembers = membersData as Member[];
+// Mock UI components if missing tailored for this file
+const MyButton = ({ children, onClick, className, variant, size }: any) => (
+    <button
+        onClick={onClick}
+        className={`px-4 py-2 rounded-lg font-orbitron tracking-widest transition-all ${className} ${variant === 'outline' ? 'border border-primary text-primary hover:bg-primary/10' : 'bg-primary text-background hover:bg-primary/90'}`}
+    >
+        {children}
+    </button>
+);
 
 export default function Home() {
+    const [allMembers, setAllMembers] = useState<Member[]>([]);
+    const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
     const [statusFilter, setStatusFilter] = useState('all');
     const [page, setPage] = useState(1);
     const ITEMS_PER_PAGE = 24;
 
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
+    // Auth State
+    const [user, setUser] = useState<any>(null);
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [isSuperAdmin, setIsSuperAdmin] = useState(false);
+
+    useEffect(() => {
+        fetchData();
+        checkAuth();
+
+        // Listen for auth changes
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+            setUser(session?.user ?? null);
+            if (session?.user) checkRole(session.user.email);
+            else {
+                setIsAdmin(false);
+                setIsSuperAdmin(false);
+            }
+        });
+
+        return () => subscription.unsubscribe();
+    }, []);
+
+    const fetchData = async () => {
+        setLoading(true);
+        // Fetch from Supabase
+        const { data, error } = await supabase
+            .from('members')
+            .select('*')
+            .order('callsign', { ascending: true });
+
+        if (error) {
+            console.error('Error fetching members:', error);
+            // Fallback or empty
+        } else {
+            setAllMembers(data || []);
+        }
+        setLoading(false);
+    };
+
+    const checkAuth = async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        setUser(user);
+        if (user) checkRole(user.email);
+    };
+
+    const checkRole = async (email: string | undefined) => {
+        if (!email) return;
+        const { data, error } = await supabase
+            .from('app_admins')
+            .select('role')
+            .eq('email', email)
+            .single();
+
+        if (data) {
+            setIsAdmin(true);
+            if (data.role === 'super_admin') setIsSuperAdmin(true);
+        }
+    };
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut();
+        setUser(null);
+        setIsAdmin(false);
+        setIsSuperAdmin(false);
+    };
 
     const stats = useMemo(() => {
         const total = allMembers.length;
@@ -32,7 +106,7 @@ export default function Home() {
             else active++;
         });
         return { total, active, expired };
-    }, []);
+    }, [allMembers]);
 
     const filteredMembers = useMemo(() => {
         let result = allMembers;
@@ -42,12 +116,12 @@ export default function Home() {
             const q = search.toLowerCase();
             result = result.filter(m =>
                 m.callsign.toLowerCase().includes(q) ||
-                m.name.toLowerCase().includes(q) ||
-                m.member_id.includes(q)
+                m.name?.toLowerCase().includes(q) ||
+                m.member_id?.includes(q)
             );
         }
 
-        // Status Filter (Simple implementation)
+        // Status Filter 
         if (statusFilter !== 'all') {
             const now = new Date();
             result = result.filter(m => {
@@ -62,14 +136,11 @@ export default function Home() {
             });
         }
 
-        // Sort by Callsign
-        return result.sort((a, b) => a.callsign.localeCompare(b.callsign));
-    }, [search, statusFilter]);
+        return result; // Already sorted by DB usually, but could sort here
+    }, [allMembers, search, statusFilter]);
 
     const displayedMembers = filteredMembers.slice(0, page * ITEMS_PER_PAGE);
     const showLoadMore = displayedMembers.length < filteredMembers.length;
-
-    if (!mounted) return null; // Prevent hydration mismatch on dates
 
     return (
         <main className="min-h-screen relative p-4 md:p-8 max-w-7xl mx-auto">
@@ -88,21 +159,48 @@ export default function Home() {
                     </p>
                 </div>
 
-                {/* Stats */}
-                <div className="flex gap-4 md:gap-8 bg-card/40 backdrop-blur-md p-4 rounded-xl border border-primary/20">
-                    <div className="text-center">
-                        <div className="text-2xl md:text-3xl font-orbitron font-bold text-foreground">{stats.total}</div>
-                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Total</div>
+                {/* Stats & Auth */}
+                <div className="flex flex-col gap-4 items-end">
+                    <div className="flex gap-4 md:gap-8 bg-card/40 backdrop-blur-md p-4 rounded-xl border border-primary/20">
+                        <div className="text-center">
+                            <div className="text-2xl md:text-3xl font-orbitron font-bold text-foreground">{stats.total}</div>
+                            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Total</div>
+                        </div>
+                        <div className="w-px bg-border"></div>
+                        <div className="text-center">
+                            <div className="text-2xl md:text-3xl font-orbitron font-bold text-primary drop-shadow-[0_0_5px_var(--primary)]">{stats.active}</div>
+                            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Active</div>
+                        </div>
+                        <div className="w-px bg-border"></div>
+                        <div className="text-center">
+                            <div className="text-2xl md:text-3xl font-orbitron font-bold text-red-500 drop-shadow-[0_0_5px_rgba(239,68,68,0.5)]">{stats.expired}</div>
+                            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Expired</div>
+                        </div>
                     </div>
-                    <div className="w-px bg-border"></div>
-                    <div className="text-center">
-                        <div className="text-2xl md:text-3xl font-orbitron font-bold text-primary drop-shadow-[0_0_5px_var(--primary)]">{stats.active}</div>
-                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Active</div>
-                    </div>
-                    <div className="w-px bg-border"></div>
-                    <div className="text-center">
-                        <div className="text-2xl md:text-3xl font-orbitron font-bold text-red-500 drop-shadow-[0_0_5px_rgba(239,68,68,0.5)]">{stats.expired}</div>
-                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Expired</div>
+
+                    <div className="flex gap-2">
+                        {user ? (
+                            <>
+                                <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded text-green-500 text-xs font-orbitron">
+                                    <Shield className="w-3 h-3" />
+                                    {isAdmin ? (isSuperAdmin ? 'SUPER ADMIN' : 'ADMIN') : 'MEMBER'}
+                                </div>
+                                {isSuperAdmin && (
+                                    <Link href="/admin/users">
+                                        <MyButton variant="outline" className="text-xs py-1">MANAGE ADMINS</MyButton>
+                                    </Link>
+                                )}
+                                <MyButton onClick={handleLogout} variant="outline" className="text-xs py-1 flex items-center gap-2">
+                                    <LogOut className="w-3 h-3" /> LOGOUT
+                                </MyButton>
+                            </>
+                        ) : (
+                            <Link href="/login">
+                                <MyButton className="text-xs py-1 flex items-center gap-2">
+                                    <LogIn className="w-3 h-3" /> ADMIN ACCESS
+                                </MyButton>
+                            </Link>
+                        )}
                     </div>
                 </div>
             </header>
@@ -138,14 +236,28 @@ export default function Home() {
                 </div>
             </div>
 
+            {/* Admin Add Button */}
+            {isAdmin && (
+                <div className="flex justify-end mb-4">
+                    <MyButton className="flex items-center gap-2">
+                        <UserPlus className="w-4 h-4" /> ADD NEW MEMBER
+                    </MyButton>
+                </div>
+            )}
+
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
                 {displayedMembers.map(member => (
-                    <MemberCard key={member.id} member={member} />
+                    <MemberCard key={member.id} member={member} isAdmin={isAdmin} />
                 ))}
-                {displayedMembers.length === 0 && (
+                {!loading && displayedMembers.length === 0 && (
                     <div className="col-span-full py-20 text-center text-muted-foreground font-rajdhani text-xl">
                         No members found matching your search coordinates.
+                    </div>
+                )}
+                {loading && (
+                    <div className="col-span-full py-20 text-center text-primary font-orbitron animate-pulse">
+                        INITIALIZING DATA STREAM...
                     </div>
                 )}
             </div>
