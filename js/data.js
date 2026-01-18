@@ -1,103 +1,67 @@
 /**
- * MARTS Membership - Data Layer with Supabase Integration
- * Handles all CRUD operations with Supabase backend
+ * MARTS Membership - Data Layer (Local JSON + LocalStorage)
+ * Handles all data operations using static JSON and browser storage
  */
-
-// Supabase Configuration
-const SUPABASE_URL = 'https://arxffqjvlsdfsswayecb.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFyeGZmcWp2bHNkZnNzd2F5ZWNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg2OTI5MzYsImV4cCI6MjA4NDI2ODkzNn0.U7V_fuBvk0cVxlH2hnqkhzEl-coJCiV0smw_6oQax-g';
-
-// Initialize Supabase client
-let supabaseClient = null;
 
 // Data state
 let membersData = [];
-let isSupabaseConnected = false;
 
 /**
- * Initialize Supabase client
+ * Initialize Data Layer (Simplified)
  */
-function initSupabase() {
-    if (typeof window.supabase !== 'undefined' && SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
-        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        isSupabaseConnected = true;
-        console.log('✅ Supabase connected');
-        return true;
-    }
-    console.log('⚠️ Supabase not configured, using local storage fallback');
-    return false;
+function init() {
+    console.log('✅ Data Manager initialized (Local Mode)');
+    return true;
 }
 
 /**
- * Load members from Supabase or localStorage
+ * Load members from LocalStorage or static JSON
  */
 async function loadMembers() {
     try {
-        if (isSupabaseConnected && supabaseClient) {
+        // 1. Try to load from LocalStorage first (contains user edits)
+        const localData = localStorage.getItem('marts_members');
+
+        if (localData) {
             try {
-                // Fetch all records using pagination (Supabase default limit is 1000)
-                let allData = [];
-                let from = 0;
-                const batchSize = 1000;
-                let hasMore = true;
+                membersData = JSON.parse(localData);
+                console.log(`💾 Loaded ${membersData.length} members from localStorage`);
 
-                while (hasMore) {
-                    const { data, error } = await supabaseClient
-                        .from('members')
-                        .select('*')
-                        .order('callsign', { ascending: true })
-                        .range(from, from + batchSize - 1);
-
-                    if (error) throw error;
-
-                    if (data && data.length > 0) {
-                        allData = allData.concat(data);
-                        from += batchSize;
-                        hasMore = data.length === batchSize;
-                    } else {
-                        hasMore = false;
-                    }
-                }
-
-                if (allData.length > 0) {
-                    membersData = allData;
-                    console.log(`📡 Loaded ${membersData.length} members from Supabase`);
-                    return membersData;
-                } else {
-                    console.warn('⚠️ Supabase returned no data, falling back to local...');
-                }
-            } catch (err) {
-                console.error('❌ Supabase load failed:', err);
-                console.log('⚠️ Falling back to local storage/file...');
+                // If we have data, we're good. But we might want to check if it's stale compared to JSON?
+                // For now, local edits take precedence.
+                return membersData;
+            } catch (e) {
+                console.error('Error parsing localStorage:', e);
+                // Fall through to load from file
             }
         }
 
-        // Fallback flow (runs if Supabase disabled, failed, or empty)
-        // 1. Try localStorage
-        const localData = localStorage.getItem('marts_members');
-        if (localData) {
-            membersData = JSON.parse(localData);
-            console.log(`💾 Loaded ${membersData.length} members from localStorage`);
-        } else {
-            // Load from static JSON file
-            try {
-                const response = await fetch('data/members.json');
-                if (response.ok) {
-                    membersData = await response.json();
-                    console.log(`📄 Loaded ${membersData.length} members from static file`);
-                    // Save to localStorage for future use
-                    saveToLocalStorage();
-                }
-            } catch (e) {
-                console.log('📭 No static data file found, starting empty');
+        // 2. Load from static JSON file
+        try {
+            console.log('📄 Fetching data/members.json...');
+            const response = await fetch('data/members.json');
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            membersData = await response.json();
+            console.log(`📄 Loaded ${membersData.length} members from static file`);
+
+            // Save to localStorage for future access/edits
+            saveToLocalStorage();
+            return membersData;
+        } catch (e) {
+            console.error('❌ Error loading members.json:', e);
+            // If both fail, we start empty
+            if (membersData.length === 0) {
+                console.warn('⚠️ Starting with empty member list');
                 membersData = [];
             }
+            return membersData;
         }
-
-        return membersData;
     } catch (error) {
-        console.error('Error loading members:', error);
-        showToast('Error loading members', 'error');
+        console.error('CRITICAL: Error in loadMembers:', error);
         return [];
     }
 }
@@ -117,21 +81,9 @@ async function addMember(member) {
             created_at: new Date().toISOString()
         };
 
-        if (isSupabaseConnected && supabaseClient) {
-            const { data, error } = await supabaseClient
-                .from('members')
-                .insert([newMember])
-                .select()
-                .single();
-
-            if (error) throw error;
-            membersData.push(data);
-            console.log('✅ Member added to Supabase:', data.callsign);
-        } else {
-            membersData.push(newMember);
-            saveToLocalStorage();
-            console.log('💾 Member added to localStorage:', newMember.callsign);
-        }
+        membersData.push(newMember);
+        saveToLocalStorage();
+        console.log('💾 Member added to localStorage:', newMember.callsign);
 
         showToast(`Member ${newMember.callsign} added successfully`, 'success');
         return newMember;
@@ -160,28 +112,13 @@ async function updateMember(id, updates) {
             if (updateData[key] === undefined) delete updateData[key];
         });
 
-        if (isSupabaseConnected && supabaseClient) {
-            const { data, error } = await supabaseClient
-                .from('members')
-                .update(updateData)
-                .eq('id', id)
-                .select()
-                .single();
-
-            if (error) throw error;
-
-            const index = membersData.findIndex(m => m.id === id);
-            if (index !== -1) {
-                membersData[index] = data;
-            }
-            console.log('✅ Member updated in Supabase:', data.callsign);
+        const index = membersData.findIndex(m => m.id === id);
+        if (index !== -1) {
+            membersData[index] = { ...membersData[index], ...updateData };
+            saveToLocalStorage();
+            console.log('💾 Member updated in localStorage:', membersData[index].callsign);
         } else {
-            const index = membersData.findIndex(m => m.id === id);
-            if (index !== -1) {
-                membersData[index] = { ...membersData[index], ...updateData };
-                saveToLocalStorage();
-                console.log('💾 Member updated in localStorage:', membersData[index].callsign);
-            }
+            throw new Error('Member not found');
         }
 
         showToast('Member updated successfully', 'success');
@@ -199,23 +136,10 @@ async function updateMember(id, updates) {
 async function deleteMember(id) {
     try {
         const member = membersData.find(m => m.id === id);
-
-        if (isSupabaseConnected && supabaseClient) {
-            const { error } = await supabaseClient
-                .from('members')
-                .delete()
-                .eq('id', id);
-
-            if (error) throw error;
-            console.log('✅ Member deleted from Supabase');
-        }
-
         membersData = membersData.filter(m => m.id !== id);
 
-        if (!isSupabaseConnected) {
-            saveToLocalStorage();
-            console.log('💾 Member deleted from localStorage');
-        }
+        saveToLocalStorage();
+        console.log('💾 Member deleted from localStorage');
 
         showToast(`Member ${member?.callsign || ''} deleted`, 'success');
         return true;
@@ -228,39 +152,24 @@ async function deleteMember(id) {
 
 /**
  * Bulk insert members (used for sync)
+ * For local mode, this overwrites the current list with the synced list
  */
 async function bulkInsertMembers(members) {
     try {
-        if (isSupabaseConnected && supabaseClient) {
-            // Clear existing data first
-            await supabaseClient.from('members').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+        // Prepare new data
+        const newMembers = members.map(m => ({
+            id: m.id || generateId(),
+            callsign: m.callsign?.toUpperCase().trim() || '',
+            name: m.name?.toUpperCase().trim() || '',
+            member_id: m.memberId || m.member_id || '',
+            expiry: m.expiry?.trim() || '',
+            is_local: false,
+            created_at: new Date().toISOString()
+        }));
 
-            // Insert in batches of 500
-            const batchSize = 500;
-            for (let i = 0; i < members.length; i += batchSize) {
-                const batch = members.slice(i, i + batchSize).map(m => ({
-                    id: m.id || generateId(),
-                    callsign: m.callsign?.toUpperCase().trim() || '',
-                    name: m.name?.toUpperCase().trim() || '',
-                    member_id: m.memberId || m.member_id || '',
-                    expiry: m.expiry?.trim() || '',
-                    is_local: false,
-                    created_at: new Date().toISOString()
-                }));
-
-                const { error } = await supabaseClient.from('members').insert(batch);
-                if (error) throw error;
-
-                console.log(`📦 Inserted batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(members.length / batchSize)}`);
-            }
-
-            membersData = members;
-            console.log(`✅ Bulk inserted ${members.length} members to Supabase`);
-        } else {
-            membersData = members;
-            saveToLocalStorage();
-            console.log(`💾 Bulk saved ${members.length} members to localStorage`);
-        }
+        membersData = newMembers;
+        saveToLocalStorage();
+        console.log(`💾 Bulk saved ${membersData.length} members to localStorage`);
 
         return true;
     } catch (error) {
@@ -301,11 +210,17 @@ function exportMembersJSON() {
 }
 
 /**
- * Save to localStorage (fallback)
+ * Save to localStorage
  */
 function saveToLocalStorage() {
-    localStorage.setItem('marts_members', JSON.stringify(membersData));
-    localStorage.setItem('marts_last_sync', new Date().toISOString());
+    try {
+        localStorage.setItem('marts_members', JSON.stringify(membersData));
+        const now = new Date().toISOString();
+        localStorage.setItem('marts_last_sync', now);
+    } catch (e) {
+        console.error('Error saving to localStorage:', e);
+        showToast('Warning: Could not save to local storage (quota exceeded?)', 'warning');
+    }
 }
 
 /**
@@ -332,7 +247,7 @@ function generateId() {
 }
 
 /**
- * Show toast notification (will be implemented in app.js)
+ * Show toast notification
  */
 function showToast(message, type = 'info') {
     if (typeof window.showToastNotification === 'function') {
@@ -378,16 +293,9 @@ function getMemberStatus(expiry) {
     return 'active';
 }
 
-/**
- * Check if Supabase is configured
- */
-function isSupabaseConfigured() {
-    return SUPABASE_URL !== 'YOUR_SUPABASE_URL' && SUPABASE_ANON_KEY !== 'YOUR_SUPABASE_ANON_KEY';
-}
-
 // Export functions for use in other modules
 window.DataManager = {
-    init: initSupabase,
+    init: init,
     load: loadMembers,
     add: addMember,
     update: updateMember,
@@ -400,6 +308,6 @@ window.DataManager = {
     getStatus: getMemberStatus,
     getLastSync: getLastSyncTime,
     setLastSync: setLastSyncTime,
-    isConnected: () => isSupabaseConnected,
-    isConfigured: isSupabaseConfigured
+    isConnected: () => false, // Always false as we are local only
+    isConfigured: () => true  // Always true as we don't need config
 };
