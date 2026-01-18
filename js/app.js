@@ -100,7 +100,6 @@ function cacheElements() {
     elements.statusFilter = document.getElementById('status-filter');
     elements.resetFiltersBtn = document.getElementById('reset-filters');
     elements.addMemberBtn = document.getElementById('add-member-btn');
-    elements.syncDataBtn = document.getElementById('sync-data-btn');
     elements.exportBtn = document.getElementById('export-btn');
     elements.loadMoreBtn = document.getElementById('load-more-btn');
     elements.loadMoreContainer = document.getElementById('load-more-container');
@@ -135,7 +134,6 @@ function bindEvents() {
 
     // Actions
     elements.addMemberBtn.addEventListener('click', () => openMemberModal());
-    elements.syncDataBtn.addEventListener('click', handleSync);
     elements.exportBtn.addEventListener('click', () => DataManager.export());
     elements.loadMoreBtn.addEventListener('click', loadMore);
 
