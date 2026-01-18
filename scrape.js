@@ -2,18 +2,20 @@ const fs = require('fs');
 
 async function scrapeMartsData() {
     const allData = [];
-    const totalPages = 73; // Exact count from user
 
-    console.log(`🚀 Starting TARGETED scraper (Pages 1-${totalPages})...`);
+    // Auto-detect end of pagination
+    // We expect around 73 pages, but we'll let it grow naturally.
+    let page = 1;
+    let hasMore = true;
+    let consecutiveEmptyPages = 0;
 
-    // We can probably do this reasonably fast but safe. 
-    // 73 pages is small. 
+    console.log(`🚀 Starting SMART scraper (Auto-Detect Pages)...`);
 
-    for (let page = 1; page <= totalPages; page++) {
+    while (hasMore) {
         try {
-            console.log(`Fetching page ${page}/${totalPages}...`);
+            console.log(`Fetching page ${page}...`);
 
-            // Small random delay 500ms-1500ms to be safe but brisk
+            // Small random delay 500ms-1500ms
             const delay = Math.floor(Math.random() * 1000) + 500;
             if (page > 1) {
                 await new Promise(resolve => setTimeout(resolve, delay));
@@ -62,9 +64,30 @@ async function scrapeMartsData() {
 
             console.log(`✅ Page ${page}: Found ${pageCount} members. Total: ${allData.length}`);
 
+            if (pageCount === 0) {
+                consecutiveEmptyPages++;
+            } else {
+                consecutiveEmptyPages = 0;
+            }
+
+            // Stop if we hit 5 empty pages in a row (end of list)
+            if (consecutiveEmptyPages >= 5) {
+                console.log('🛑 No data for 5 consecutive pages. Stopping.');
+                hasMore = false;
+            }
+
+            // Safety limit (e.g., 200 pages) just in case
+            if (page > 200) {
+                console.log('🛑 Reached safety limit of 200 pages. Stopping.');
+                hasMore = false;
+            }
+
+            page++;
+
         } catch (error) {
             console.error(`❌ Error fetching page ${page}:`, error);
-            // Retry logic could go here, but for now we just log
+            // Wait a bit longer on error
+            await new Promise(resolve => setTimeout(resolve, 2000));
         }
     }
 
