@@ -17,69 +17,34 @@ function init() {
 /**
  * Load members from LocalStorage or static JSON
  */
+/**
+ * Load members from static JSON only
+ */
 async function loadMembers() {
     try {
-        let serverData = [];
-        let localData = [];
+        console.log('📄 Fetching data/members.json...');
+        // Always fetch fresh data from the JSON file
+        const response = await fetch('data/members.json');
 
-        // 1. Try to load from static JSON file (SERVER SOURCE)
-        try {
-            console.log('📄 Fetching data/members.json...');
-            const response = await fetch('data/members.json');
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            serverData = await response.json();
-            console.log(`📄 Loaded ${serverData.length} members from static file`);
-        } catch (e) {
-            console.error('❌ Error loading members.json:', e);
-            // Don't fail yet, try local storage
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        // 2. Load and merge with LocalStorage (USER EDITS)
-        try {
-            const localRaw = localStorage.getItem('marts_members');
-            if (localRaw) {
-                localData = JSON.parse(localRaw);
-                console.log(`💾 Found ${localData.length} members in localStorage`);
+        const members = await response.json();
 
-                // OPTIONAL: logic to merge edits could go here. 
-                // For now, if server data is present, we prefer it for the bulk list, 
-                // but realistically we should merge user-specific edits. 
-                // A simple strategy: ID server data exists, use it. 
+        // Update in-memory store
+        membersData = members;
+        // lastSync = new Date().toISOString(); 
 
-                // If server data failed, use local data
-                if (serverData.length === 0 && localData.length > 0) {
-                    console.log('⚠️ Using localStorage fallback');
-                    membersData = localData;
-                    return membersData;
-                }
-            }
-        } catch (e) {
-            console.error('Error parsing localStorage:', e);
-        }
+        console.log(`✅ Loaded ${members.length} members from file`);
 
-        // 3. Final Decision
-        if (serverData.length > 0) {
-            // Update local storage to match server (refresh cache)
-            membersData = serverData;
-            saveToLocalStorage();
-            return membersData;
-        }
-
-        // Fallback if everything failed
-        if (membersData.length === 0) {
-            console.warn('⚠️ No data available from server or cache');
-        }
-        return membersData;
-
+        return members;
     } catch (error) {
-        console.error('CRITICAL: Error in loadMembers:', error);
+        console.error('❌ Error loading members.json:', error);
         return [];
     }
 }
+
 
 /**
  * Add a new member
