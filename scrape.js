@@ -9,6 +9,21 @@ async function scrapeMartsData() {
     let hasMore = true;
     let consecEmptyPages = 0;
 
+    // Load existing data if possible so we don't start from scratch if restarting
+    if (fs.existsSync('data/members.json')) {
+        try {
+            const existing = JSON.parse(fs.readFileSync('data/members.json'));
+            if (Array.isArray(existing) && existing.length > 0) {
+                // Actually, better to start fresh to ensure clean state, 
+                // or maybe append? Let's start fresh to avoid duplicates/stale data
+                // but keep file backup logic if needed.
+                // For now, let's just Overwrite to be sure we get a Source of Truth.
+            }
+        } catch (e) {
+            console.log('Starting fresh...');
+        }
+    }
+
     while (hasMore) {
         try {
             console.log(`Fetching page ${page}...`);
@@ -16,7 +31,7 @@ async function scrapeMartsData() {
             // Random delay 2-5 seconds to simulate user reading
             const delay = Math.floor(Math.random() * 3000) + 2000;
             if (page > 1) {
-                console.log(`Waiting ${delay}ms...`);
+                // console.log(`Waiting ${delay}ms...`);
                 await new Promise(resolve => setTimeout(resolve, delay));
             }
 
@@ -35,8 +50,7 @@ async function scrapeMartsData() {
 
             const html = await response.text();
 
-            // Simple regex parsing since we don't have DOMParser in Node
-            // Looking for rows: <tr><td>...</td><td>CALLSIGN</td><td>NAME</td><td>ID</td><td>EXPIRY</td></tr>
+            // Row Parsing
             const rowRegex = /<tr>\s*<td>.*?<\/td>\s*<td>(.*?)<\/td>\s*<td>(.*?)<\/td>\s*<td>(.*?)<\/td>\s*<td>(.*?)<\/td>/g;
 
             let match;
@@ -48,7 +62,6 @@ async function scrapeMartsData() {
                 const expiry = match[4].replace(/<[^>]*>/g, '').trim();
 
                 if (callsign && name && memberId && callsign !== 'CALLSIGN' && callsign !== 'Callsign') {
-                    // Check if already exists (handle potential duplicates across pages if any)
                     if (!allData.find(m => m.callsign === callsign)) {
                         allData.push({
                             id: 'M' + String(allData.length + 1).padStart(5, '0'),
@@ -71,34 +84,36 @@ async function scrapeMartsData() {
                 console.log(`✅ Found ${pageCount} members on page ${page} (Total: ${allData.length})`);
             }
 
-            // The list has gaps, so we need to be more persistent. 
-            // Try up to 50 empty pages before giving up? 
-            // Or just hard limit at a reasonable number like 1000 for safely grabbing everything?
-            // Let's use a dynamic safe limit.
-
+            // Stop conditions
             if (consecEmptyPages >= 20) {
                 console.log('🛑 No more data found for 20 consecutive pages. Stopping.');
                 hasMore = false;
             }
 
-            // Hard limit to prevent infinite loops if logic fails
-            if (page > 300) {
-                console.log('🛑 Reached page 300 limit. Stopping for safety.');
+            // Safe limit
+            if (page > 1000) {
+                console.log('🛑 Reached page 1000 limit. Stopping.');
                 hasMore = false;
             }
 
             page++;
 
+            // Save every 10 pages so we don't lose everything if crashed
+            if (page % 10 === 0 && allData.length > 0) {
+                fs.writeFileSync('data/members.json', JSON.stringify(allData, null, 4));
+                console.log('💾 Intermediary save...');
+            }
+
         } catch (error) {
             console.error(`Error fetching page ${page}:`, error);
-            // Retry once? Or just skip
+            await new Promise(resolve => setTimeout(resolve, 5000)); // Wait longer on error
         }
     }
 
+    // Final Save
     console.log(`✅ Scraped ${allData.length} members`);
-
     fs.writeFileSync('data/members.json', JSON.stringify(allData, null, 4));
-    console.log('💾 Saved to data/members.json');
+    console.log('💾 Final Save to data/members.json');
 }
 
 scrapeMartsData();

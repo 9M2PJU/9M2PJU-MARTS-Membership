@@ -6422,13 +6422,5 @@
         "member_id": "30158",
         "expiry": "2014",
         "is_local": false
-    },
-    {
-        "id": "M9M2PJU",
-        "callsign": "9M2PJU",
-        "name": "MARTS MEMBER",
-        "member_id": "99999",
-        "expiry": "2026/12",
-        "is_local": false
     }
 ]
