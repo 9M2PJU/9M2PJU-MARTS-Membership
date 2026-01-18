@@ -51,10 +51,10 @@ npx serve .
 ### Automatic Updates
 The directory is automatically updated **every Sunday at 00:00 UTC** by the [Member Scraper workflow](.github/workflows/scrape.yml).
 
-### Manual Management (Admins)
-You can manually add, edit, or delete members without touching the code:
+### Manual Management (Admins Only via GitHub)
+**The web interface allows viewing only.** To add, edit, or delete members:
 
-1.  Go to the **[Issues](../../issues/new/choose)** tab.
+1.  Go to the **[Issues](../../issues/new/choose)** tab on GitHub.
 2.  Select **Add New Member**, **Edit Member details**, or **Delete Member**.
 3.  Fill out the form and submit.
 4.  A GitHub Action will automatically process your request and update the directory within ~30 seconds.
