@@ -1,16 +1,23 @@
 :root {
-    /* Cyberpunk Palette */
-    --primary: #00f3ff;
-    --primary-dim: rgba(0, 243, 255, 0.1);
-    --secondary: #ff003c;
-    --secondary-dim: rgba(255, 0, 60, 0.1);
-    --bg-dark: #050510;
-    --bg-card: rgba(10, 10, 25, 0.7);
-    --text-main: #e0e0e0;
-    --text-muted: #8892b0;
-    --success: #00ff9d;
-    --warning: #fcee0a;
-    --danger: #ff003c;
+    /* Star Wars Palette */
+    --primary: #FFE81F;
+    /* Star Wars Yellow */
+    --primary-dim: rgba(255, 232, 31, 0.15);
+    --secondary: #2E67F8;
+    /* Jedi Blue */
+    --secondary-dim: rgba(46, 103, 248, 0.15);
+    --bg-dark: #000000;
+    /* Deep Space */
+    --bg-card: rgba(18, 18, 18, 0.85);
+    /* Dark Imperial Grey */
+    --text-main: #EDEDED;
+    --text-muted: #888888;
+    --success: #4BD964;
+    /* Luke's Green Saber */
+    --warning: #FFE81F;
+    /* Caution Yellow */
+    --danger: #FF0000;
+    /* Sith Red Saber */
 
     /* Fonts */
     --font-heading: 'Orbitron', sans-serif;
@@ -18,12 +25,13 @@
 }
 
 [data-theme="light"] {
-    /* Light Mode - Inverted Cyberpunk? Or just keep dark? 
-       Cyberpunk works consistently better in dark. Let's force a "Day" mode that's strict high contrast tech. */
-    --bg-dark: #f0f0f5;
+    /* "Hoth" Mode (Light) */
+    --bg-dark: #F0F0F0;
     --bg-card: rgba(255, 255, 255, 0.9);
-    --text-main: #1a1a2e;
-    --text-muted: #4a4e69;
+    --text-main: #111111;
+    --text-muted: #555555;
+    --primary: #2E67F8;
+    /* Switch to Blue for readability on white */
 }
 
 * {
@@ -39,10 +47,14 @@ body {
     line-height: 1.6;
     transition: all 0.3s ease;
     overflow-x: hidden;
+
+    /* Star Field Background */
     background-image:
-        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 2px),
+        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
 }
 
 /* Header */
@@ -318,17 +330,17 @@ select:focus {
 }
 
 .status-ACTIVE {
-    background: rgba(0, 255, 157, 0.1);
+    background: rgba(75, 217, 100, 0.1);
     color: var(--success);
     border: 1px solid var(--success);
-    box-shadow: 0 0 5px rgba(0, 255, 157, 0.2);
+    box-shadow: 0 0 8px rgba(75, 217, 100, 0.4);
 }
 
 .status-EXPIRED {
-    background: rgba(255, 0, 60, 0.1);
+    background: rgba(255, 0, 0, 0.1);
     color: var(--danger);
     border: 1px solid var(--danger);
-    box-shadow: 0 0 5px rgba(255, 0, 60, 0.2);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
 
 .member-name {
