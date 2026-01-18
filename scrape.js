@@ -2,36 +2,20 @@ const fs = require('fs');
 
 async function scrapeMartsData() {
     const allData = [];
+    const totalPages = 73; // Exact count from user
 
-    console.log('🚀 Starting SAFE scraper (User-Agent + Random Delays)...');
+    console.log(`🚀 Starting TARGETED scraper (Pages 1-${totalPages})...`);
 
-    let page = 1;
-    let hasMore = true;
-    let consecEmptyPages = 0;
+    // We can probably do this reasonably fast but safe. 
+    // 73 pages is small. 
 
-    // Load existing data if possible so we don't start from scratch if restarting
-    if (fs.existsSync('data/members.json')) {
+    for (let page = 1; page <= totalPages; page++) {
         try {
-            const existing = JSON.parse(fs.readFileSync('data/members.json'));
-            if (Array.isArray(existing) && existing.length > 0) {
-                // Actually, better to start fresh to ensure clean state, 
-                // or maybe append? Let's start fresh to avoid duplicates/stale data
-                // but keep file backup logic if needed.
-                // For now, let's just Overwrite to be sure we get a Source of Truth.
-            }
-        } catch (e) {
-            console.log('Starting fresh...');
-        }
-    }
+            console.log(`Fetching page ${page}/${totalPages}...`);
 
-    while (hasMore) {
-        try {
-            console.log(`Fetching page ${page}...`);
-
-            // Random delay 2-5 seconds to simulate user reading
-            const delay = Math.floor(Math.random() * 3000) + 2000;
+            // Small random delay 500ms-1500ms to be safe but brisk
+            const delay = Math.floor(Math.random() * 1000) + 500;
             if (page > 1) {
-                // console.log(`Waiting ${delay}ms...`);
                 await new Promise(resolve => setTimeout(resolve, delay));
             }
 
@@ -76,44 +60,18 @@ async function scrapeMartsData() {
                 }
             }
 
-            if (pageCount === 0) {
-                consecEmptyPages++;
-                console.log(`⚠️ No members found on page ${page}`);
-            } else {
-                consecEmptyPages = 0;
-                console.log(`✅ Found ${pageCount} members on page ${page} (Total: ${allData.length})`);
-            }
-
-            // Stop conditions
-            if (consecEmptyPages >= 20) {
-                console.log('🛑 No more data found for 20 consecutive pages. Stopping.');
-                hasMore = false;
-            }
-
-            // Safe limit
-            if (page > 1000) {
-                console.log('🛑 Reached page 1000 limit. Stopping.');
-                hasMore = false;
-            }
-
-            page++;
-
-            // Save every 10 pages so we don't lose everything if crashed
-            if (page % 10 === 0 && allData.length > 0) {
-                fs.writeFileSync('data/members.json', JSON.stringify(allData, null, 4));
-                console.log('💾 Intermediary save...');
-            }
+            console.log(`✅ Page ${page}: Found ${pageCount} members. Total: ${allData.length}`);
 
         } catch (error) {
-            console.error(`Error fetching page ${page}:`, error);
-            await new Promise(resolve => setTimeout(resolve, 5000)); // Wait longer on error
+            console.error(`❌ Error fetching page ${page}:`, error);
+            // Retry logic could go here, but for now we just log
         }
     }
 
     // Final Save
-    console.log(`✅ Scraped ${allData.length} members`);
+    console.log(`🏁 Scrape Complete! Total Members: ${allData.length}`);
     fs.writeFileSync('data/members.json', JSON.stringify(allData, null, 4));
-    console.log('💾 Final Save to data/members.json');
+    console.log('💾 Saved to data/members.json');
 }
 
 scrapeMartsData();
