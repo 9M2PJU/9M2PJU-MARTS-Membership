@@ -1,5 +1,6 @@
-import { Calendar, IdCard, Pencil, Trash2 } from "lucide-react"
+import { Calendar, IdCard, Pencil, Trash2, Baby } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { isYOTA } from "@/lib/callsign-utils"
 
 export type Member = {
     id: string
@@ -50,6 +51,7 @@ export function MemberCard({ member, isAdmin }: MemberCardProps) {
 
     const status = getStatus(member.expiry);
     const isLocal = member.is_local;
+    const isYouth = isYOTA(member.date_of_birth);
 
     return (
         <div className={cn(
@@ -66,8 +68,13 @@ export function MemberCard({ member, isAdmin }: MemberCardProps) {
             <div className="p-5 flex flex-col gap-3 relative z-10">
                 <div className="flex justify-between items-start">
                     <div>
-                        <h3 className="font-orbitron font-bold text-2xl tracking-wider text-foreground group-hover:text-primary transition-colors">
+                        <h3 className="font-orbitron font-bold text-2xl tracking-wider text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
                             {member.callsign}
+                            {isYouth && (
+                                <span className="inline-flex items-center gap-1 rounded bg-purple-500/20 border border-purple-500/50 px-1.5 py-0.5 text-[10px] text-purple-400 font-orbitron tracking-widest uppercase">
+                                    <Baby className="w-3 h-3" /> YOTA
+                                </span>
+                            )}
                         </h3>
                         <p className="font-rajdhani font-medium text-muted-foreground text-sm line-clamp-1 mt-1" title={member.name}>
                             {member.name}
