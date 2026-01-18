@@ -39,6 +39,7 @@ export default function Home() {
     };
 
     const handleDelete = async (id: string) => {
+        console.log('Delete requested for:', id);
         if (!confirm('WARNING: Are you sure you want to delete this member? This action cannot be undone.')) return;
 
         const { error } = await supabase.from('members').delete().eq('id', id);
