@@ -99,7 +99,6 @@ function cacheElements() {
     elements.monthFilter = document.getElementById('month-filter');
     elements.statusFilter = document.getElementById('status-filter');
     elements.resetFiltersBtn = document.getElementById('reset-filters');
-    elements.addMemberBtn = document.getElementById('add-member-btn');
     elements.exportBtn = document.getElementById('export-btn');
     elements.loadMoreBtn = document.getElementById('load-more-btn');
     elements.loadMoreContainer = document.getElementById('load-more-container');
@@ -133,7 +132,6 @@ function bindEvents() {
     elements.resetFiltersBtn.addEventListener('click', handleResetFilters);
 
     // Actions
-    elements.addMemberBtn.addEventListener('click', () => openMemberModal());
     elements.exportBtn.addEventListener('click', () => DataManager.export());
     elements.loadMoreBtn.addEventListener('click', loadMore);
 
@@ -304,19 +302,7 @@ function createMemberCard(member) {
                 <span>📅</span> ${escapeHtml(member.expiry || '-')}
             </span>
         </div>
-        <div class="card-actions">
-            <button class="btn btn-secondary btn-edit" data-id="${member.id}">
-                ✏️ Edit
-            </button>
-            <button class="btn btn-danger btn-delete" data-id="${member.id}">
-                🗑️ Delete
-            </button>
-        </div>
     `;
-
-    // Bind card action events
-    card.querySelector('.btn-edit').addEventListener('click', () => openMemberModal(member));
-    card.querySelector('.btn-delete').addEventListener('click', () => openDeleteModal(member));
 
     return card;
 }

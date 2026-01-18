@@ -290,7 +290,12 @@ function parseExpiryDate(expiry) {
 
     if (isNaN(year)) return null;
 
-    return new Date(year, month, 1);
+    // Set to the LAST day of the month to avoid premature expiry
+    // new Date(year, month + 1, 0) gives the 0th day of the next month = last day of current month
+    const lastDayOfMonth = new Date(year, month + 1, 0);
+    lastDayOfMonth.setHours(23, 59, 59, 999); // End of the day
+
+    return lastDayOfMonth;
 }
 
 /**

@@ -153,9 +153,7 @@
                 <button id="reset-filters" class="btn btn-secondary">
                     <span>🔄</span> Reset Filters
                 </button>
-                <button id="add-member-btn" class="btn btn-primary">
-                    <span class="btn-icon">➕</span> Add Member
-                </button>
+
                 <button id="export-btn" class="btn btn-secondary">
                     <span class="btn-icon">📥</span> Export JSON
                 </button>
@@ -196,98 +194,6 @@
             </p>
         </div>
     </footer>
-
-    <!-- Add/Edit Modal -->
-    <div id="member-modal" class="modal hidden">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modal-title">Add New Member</h2>
-                <button class="modal-close" id="modal-close">✕</button>
-            </div>
-            <form id="member-form">
-                <div class="form-group">
-                    <label for="member-callsign">Callsign *</label>
-                    <input type="text" id="member-callsign" required placeholder="e.g., 9M2ABC" pattern="[A-Za-z0-9/]+"
-                        autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <label for="member-name">Full Name *</label>
-                    <input type="text" id="member-name" required placeholder="e.g., AHMAD BIN ISMAIL"
-                        autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <label for="member-id">Member ID *</label>
-                    <input type="text" id="member-member-id" required placeholder="e.g., 30123" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <label for="member-expiry">Expiry Date *</label>
-                    <input type="text" id="member-expiry" required placeholder="YYYY/MM (e.g., 2026/05)"
-                        pattern="\d{4}(/\d{2})?" autocomplete="off">
-                    <small>Format: YYYY or YYYY/MM</small>
-                </div>
-                <input type="hidden" id="member-edit-id">
-                <div class="form-actions">
-                    <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
-                    <button type="submit" class="btn btn-primary" id="modal-submit">Save Member</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Delete Confirmation Modal -->
-    <div id="delete-modal" class="modal hidden">
-        <div class="modal-overlay"></div>
-        <div class="modal-content modal-small">
-            <div class="modal-header">
-                <h2>Confirm Delete</h2>
-                <button class="modal-close" id="delete-modal-close">✕</button>
-            </div>
-            <div class="modal-body">
-                <p>Are you sure you want to delete member <strong id="delete-callsign"></strong>?</p>
-                <p class="text-muted">This action cannot be undone.</p>
-            </div>
-            <div class="form-actions">
-                <button type="button" class="btn btn-secondary" id="delete-cancel">Cancel</button>
-                <button type="button" class="btn btn-danger" id="delete-confirm">Delete</button>
-            </div>
-            <input type="hidden" id="delete-member-id">
-        </div>
-    </div>
-
-    <!-- Sync Modal -->
-    <div id="sync-modal" class="modal hidden">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Sync Data from MARTS</h2>
-                <button class="modal-close" id="sync-modal-close">✕</button>
-            </div>
-            <div class="modal-body">
-                <div id="sync-progress" class="sync-progress">
-                    <div class="sync-spinner"></div>
-                    <p id="sync-status">Preparing to sync...</p>
-                    <div class="progress-bar">
-                        <div id="sync-progress-bar" class="progress-fill" style="width: 0%"></div>
-                    </div>
-                    <p id="sync-details" class="text-muted">Fetching page 0 of 73...</p>
-                </div>
-                <div id="sync-complete" class="sync-complete hidden">
-                    <span class="success-icon">✅</span>
-                    <h3>Sync Complete!</h3>
-                    <p id="sync-result">Loaded 0 members from MARTS</p>
-                </div>
-                <div id="sync-error" class="sync-error hidden">
-                    <span class="error-icon">❌</span>
-                    <h3>Sync Failed</h3>
-                    <p id="sync-error-msg">Unable to connect to MARTS server</p>
-                </div>
-            </div>
-            <div class="form-actions">
-                <button type="button" class="btn btn-secondary" id="sync-close">Close</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Toast Container -->
     <div id="toast-container" class="toast-container"></div>
