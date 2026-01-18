@@ -8,26 +8,33 @@ interface EditMemberModalProps {
     isOpen: boolean;
     onClose: () => void;
     onSave: () => void;
+    isSuperAdmin: boolean;
 }
 
-export function EditMemberModal({ member, isOpen, onClose, onSave }: EditMemberModalProps) {
+export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin }: EditMemberModalProps) {
     const [formData, setFormData] = useState<Partial<Member>>({});
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         if (member) {
-            setFormData({
+            const initialData: Partial<Member> = {
                 callsign: member.callsign,
                 name: member.name,
                 member_id: member.member_id,
                 expiry: member.expiry,
-                ic_number: member.ic_number || '',
-                date_of_birth: member.date_of_birth || '',
                 status: member.status || 'active',
                 is_local: member.is_local
-            });
+            };
+
+            // Only populate sensitive data for Super Admin
+            if (isSuperAdmin) {
+                initialData.ic_number = member.ic_number || '';
+                initialData.date_of_birth = member.date_of_birth || '';
+            }
+
+            setFormData(initialData);
         }
-    }, [member]);
+    }, [member, isSuperAdmin]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -118,22 +125,25 @@ export function EditMemberModal({ member, isOpen, onClose, onSave }: EditMemberM
 
                     <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
                         <div className="space-y-1">
-                            <label className="text-xs uppercase text-primary/70 tracking-wider">Identity Card (Private)</label>
+                            <label className="text-xs uppercase text-primary/70 tracking-wider">Identity Card {isSuperAdmin ? '(Private)' : '(Restricted)'}</label>
                             <input
                                 className="w-full bg-secondary/30 border border-input/50 rounded p-2 focus:ring-2 focus:ring-primary/30 outline-none"
                                 value={formData.ic_number || ''}
                                 onChange={e => setFormData({ ...formData, ic_number: e.target.value })}
-                                placeholder="######-##-####"
+                                placeholder={isSuperAdmin ? "######-##-####" : "Wait for Super Admin"}
+                                disabled={!isSuperAdmin && !formData.ic_number} // Optional: allow editing if they really want to overwrite? current requirement "normal admin just can submit" implies they might need to ADD it. Let's keep editable but empty.
                             />
+                            {!isSuperAdmin && <p className="text-[9px] text-muted-foreground">Hidden. Type to overwrite.</p>}
                         </div>
                         <div className="space-y-1">
-                            <label className="text-xs uppercase text-primary/70 tracking-wider">Date of Birth (Private)</label>
+                            <label className="text-xs uppercase text-primary/70 tracking-wider">Date of Birth {isSuperAdmin ? '(Private)' : '(Restricted)'}</label>
                             <input
                                 type="date"
                                 className="w-full bg-secondary/30 border border-input/50 rounded p-2 focus:ring-2 focus:ring-primary/30 outline-none"
                                 value={formData.date_of_birth || ''}
                                 onChange={e => setFormData({ ...formData, date_of_birth: e.target.value })}
                             />
+                            {!isSuperAdmin && <p className="text-[9px] text-muted-foreground">Hidden. Type to overwrite.</p>}
                         </div>
                     </div>
 
