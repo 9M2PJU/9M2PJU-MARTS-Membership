@@ -49,36 +49,41 @@ let deferredPrompt = null;
 async function initApp() {
     console.log('🚀 Initializing MARTS Membership App...');
 
-    // Cache DOM elements
-    cacheElements();
+    try {
+        // Cache DOM elements
+        cacheElements();
 
-    // Initialize theme
-    initTheme();
+        // Initialize theme
+        initTheme();
 
-    // Initialize Supabase
-    DataManager.init();
+        // Initialize Supabase
+        DataManager.init();
 
-    // Load data
-    await DataManager.load();
+        // Load data
+        await DataManager.load();
 
-    // Populate year filter
-    populateYearFilter();
+        // Populate year filter
+        populateYearFilter();
 
-    // Initial render
-    renderMembers();
-    updateStats();
-    updateLastSync();
+        // Initial render
+        renderMembers();
+        updateStats();
+        updateLastSync();
 
-    // Bind events
-    bindEvents();
+        // Bind events
+        bindEvents();
 
-    // Register service worker
-    registerServiceWorker();
+        // Register service worker
+        registerServiceWorker();
 
-    // Hide loading overlay
-    hideLoading();
-
-    console.log('✅ App initialized successfully');
+        console.log('✅ App initialized successfully');
+    } catch (error) {
+        console.error('❌ Error initializing app:', error);
+        showToastNotification('Error loading application. Please refresh.', 'error');
+    } finally {
+        // Hide loading overlay
+        hideLoading();
+    }
 }
 
 /**

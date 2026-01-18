@@ -34,60 +34,72 @@ function initSupabase() {
 async function loadMembers() {
     try {
         if (isSupabaseConnected && supabase) {
-            // Fetch all records using pagination (Supabase default limit is 1000)
-            let allData = [];
-            let from = 0;
-            const batchSize = 1000;
-            let hasMore = true;
+            try {
+                // Fetch all records using pagination (Supabase default limit is 1000)
+                let allData = [];
+                let from = 0;
+                const batchSize = 1000;
+                let hasMore = true;
 
-            while (hasMore) {
-                const { data, error } = await supabase
-                    .from('members')
-                    .select('*')
-                    .order('callsign', { ascending: true })
-                    .range(from, from + batchSize - 1);
+                while (hasMore) {
+                    const { data, error } = await supabase
+                        .from('members')
+                        .select('*')
+                        .order('callsign', { ascending: true })
+                        .range(from, from + batchSize - 1);
 
-                if (error) throw error;
+                    if (error) throw error;
 
-                if (data && data.length > 0) {
-                    allData = allData.concat(data);
-                    from += batchSize;
-                    hasMore = data.length === batchSize;
-                } else {
-                    hasMore = false;
-                }
-            }
-
-            membersData = allData;
-            console.log(`📡 Loaded ${membersData.length} members from Supabase`);
-        } else {
-            // Fallback to localStorage
-            const localData = localStorage.getItem('marts_members');
-            if (localData) {
-                membersData = JSON.parse(localData);
-                console.log(`💾 Loaded ${membersData.length} members from localStorage`);
-            } else {
-                // Load from static JSON file
-                try {
-                    const response = await fetch('data/members.json');
-                    if (response.ok) {
-                        membersData = await response.json();
-                        console.log(`📄 Loaded ${membersData.length} members from static file`);
-                        // Save to localStorage for future use
-                        saveToLocalStorage();
+                    if (data && data.length > 0) {
+                        allData = allData.concat(data);
+                        from += batchSize;
+                        hasMore = data.length === batchSize;
+                    } else {
+                        hasMore = false;
                     }
-                } catch (e) {
-                    console.log('📭 No static data file found, starting empty');
-                    membersData = [];
                 }
+
+                if (allData.length > 0) {
+                    membersData = allData;
+                    console.log(`📡 Loaded ${membersData.length} members from Supabase`);
+                    return membersData;
+                } else {
+                    console.warn('⚠️ Supabase returned no data, falling back to local...');
+                }
+            } catch (err) {
+                console.error('❌ Supabase load failed:', err);
+                console.log('⚠️ Falling back to local storage/file...');
             }
         }
-        return membersData;
-    } catch (error) {
-        console.error('Error loading members:', error);
-        showToast('Error loading members', 'error');
-        return [];
+
+        // Fallback flow (runs if Supabase disabled, failed, or empty)
+        // 1. Try localStorage
+        const localData = localStorage.getItem('marts_members');
+        if (localData) {
+            membersData = JSON.parse(localData);
+            console.log(`💾 Loaded ${membersData.length} members from localStorage`);
+        } else {
+            // Load from static JSON file
+            try {
+                const response = await fetch('data/members.json');
+                if (response.ok) {
+                    membersData = await response.json();
+                    console.log(`📄 Loaded ${membersData.length} members from static file`);
+                    // Save to localStorage for future use
+                    saveToLocalStorage();
+                }
+            } catch (e) {
+                console.log('📭 No static data file found, starting empty');
+                membersData = [];
+            }
+        }
     }
+        return membersData;
+} catch (error) {
+    console.error('Error loading members:', error);
+    showToast('Error loading members', 'error');
+    return [];
+}
 }
 
 /**
