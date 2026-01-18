@@ -19,24 +19,10 @@ function init() {
  */
 async function loadMembers() {
     try {
-        // 1. Try to load from LocalStorage first (contains user edits)
-        const localData = localStorage.getItem('marts_members');
+        let serverData = [];
+        let localData = [];
 
-        if (localData) {
-            try {
-                membersData = JSON.parse(localData);
-                console.log(`💾 Loaded ${membersData.length} members from localStorage`);
-
-                // If we have data, we're good. But we might want to check if it's stale compared to JSON?
-                // For now, local edits take precedence.
-                return membersData;
-            } catch (e) {
-                console.error('Error parsing localStorage:', e);
-                // Fall through to load from file
-            }
-        }
-
-        // 2. Load from static JSON file
+        // 1. Try to load from static JSON file (SERVER SOURCE)
         try {
             console.log('📄 Fetching data/members.json...');
             const response = await fetch('data/members.json');
@@ -45,21 +31,50 @@ async function loadMembers() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
-            membersData = await response.json();
-            console.log(`📄 Loaded ${membersData.length} members from static file`);
-
-            // Save to localStorage for future access/edits
-            saveToLocalStorage();
-            return membersData;
+            serverData = await response.json();
+            console.log(`📄 Loaded ${serverData.length} members from static file`);
         } catch (e) {
             console.error('❌ Error loading members.json:', e);
-            // If both fail, we start empty
-            if (membersData.length === 0) {
-                console.warn('⚠️ Starting with empty member list');
-                membersData = [];
+            // Don't fail yet, try local storage
+        }
+
+        // 2. Load and merge with LocalStorage (USER EDITS)
+        try {
+            const localRaw = localStorage.getItem('marts_members');
+            if (localRaw) {
+                localData = JSON.parse(localRaw);
+                console.log(`💾 Found ${localData.length} members in localStorage`);
+
+                // OPTIONAL: logic to merge edits could go here. 
+                // For now, if server data is present, we prefer it for the bulk list, 
+                // but realistically we should merge user-specific edits. 
+                // A simple strategy: ID server data exists, use it. 
+
+                // If server data failed, use local data
+                if (serverData.length === 0 && localData.length > 0) {
+                    console.log('⚠️ Using localStorage fallback');
+                    membersData = localData;
+                    return membersData;
+                }
             }
+        } catch (e) {
+            console.error('Error parsing localStorage:', e);
+        }
+
+        // 3. Final Decision
+        if (serverData.length > 0) {
+            // Update local storage to match server (refresh cache)
+            membersData = serverData;
+            saveToLocalStorage();
             return membersData;
         }
+
+        // Fallback if everything failed
+        if (membersData.length === 0) {
+            console.warn('⚠️ No data available from server or cache');
+        }
+        return membersData;
+
     } catch (error) {
         console.error('CRITICAL: Error in loadMembers:', error);
         return [];
