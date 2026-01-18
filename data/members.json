@@ -1,0 +1,26 @@
+[
+    {
+        "id": "M00001",
+        "callsign": "9M2ABC",
+        "name": "AHMAD BIN ISMAIL",
+        "member_id": "30001",
+        "expiry": "2026/05",
+        "is_local": false
+    },
+    {
+        "id": "M00002",
+        "callsign": "9W2XYZ",
+        "name": "MUHAMMAD BIN AHMAD",
+        "member_id": "30002",
+        "expiry": "2025/12",
+        "is_local": false
+    },
+    {
+        "id": "M00003",
+        "callsign": "9M6RST",
+        "name": "JOHN DOE",
+        "member_id": "30003",
+        "expiry": "2027/03",
+        "is_local": false
+    }
+]

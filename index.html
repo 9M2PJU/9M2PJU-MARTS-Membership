@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Malaysian Amateur Radio Transmitter's Society (MARTS) Membership Directory - Search and manage MARTS member callsigns">
+    <meta name="theme-color" content="#4a90d9">
+    <title>MARTS Membership Directory</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <span class="loader-text">Loading MARTS Members...</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">📻</span>
+                <div class="logo-text">
+                    <h1>MARTS Membership</h1>
+                    <span class="subtitle">Malaysian Amateur Radio Transmitter's Society</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn btn-icon" title="Toggle Theme">
+                    <span class="icon-light">☀️</span>
+                    <span class="icon-dark">🌙</span>
+                </button>
+                <button id="install-btn" class="btn btn-primary btn-install hidden">
+                    <span>📲</span> Install App
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-value" id="total-count">0</span>
+            <span class="stat-label">Total Members</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" id="active-count">0</span>
+            <span class="stat-label">Active</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" id="expired-count">0</span>
+            <span class="stat-label">Expired</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" id="filtered-count">0</span>
+            <span class="stat-label">Showing</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Search & Filters -->
+        <div class="filters-section">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Search by callsign, name, or member ID..."
+                    autocomplete="off">
+                <button id="clear-search" class="btn-clear hidden">✕</button>
+            </div>
+
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="prefix-filter">Callsign Prefix</label>
+                    <select id="prefix-filter">
+                        <option value="">All Prefixes</option>
+                        <optgroup label="Class A (9M)">
+                            <option value="9M2">9M2 - Peninsular</option>
+                            <option value="9M4">9M4 - Peninsular</option>
+                            <option value="9M6">9M6 - Sabah</option>
+                            <option value="9M8">9M8 - Sarawak</option>
+                        </optgroup>
+                        <optgroup label="Class B (9W)">
+                            <option value="9W2">9W2 - Peninsular</option>
+                            <option value="9W4">9W4 - Peninsular</option>
+                            <option value="9W6">9W6 - Sabah</option>
+                            <option value="9W8">9W8 - Sarawak</option>
+                            <option value="9W3">9W3 - Special</option>
+                        </optgroup>
+                        <optgroup label="Special">
+                            <option value="9M0">9M0 - Special Event</option>
+                            <option value="SWL">SWL - Short Wave Listener</option>
+                            <option value="FOREIGN">Foreign Callsigns</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="year-filter">Expiry Year</label>
+                    <select id="year-filter">
+                        <option value="">All Years</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="month-filter">Expiry Month</label>
+                    <select id="month-filter">
+                        <option value="">All Months</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="status-filter">Status</label>
+                    <select id="status-filter">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="expired">Expired</option>
+                        <option value="expiring">Expiring Soon (90 days)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="action-row">
+                <button id="reset-filters" class="btn btn-secondary">
+                    <span>🔄</span> Reset Filters
+                </button>
+                <button id="add-member-btn" class="btn btn-primary">
+                    <span>➕</span> Add Member
+                </button>
+                <button id="sync-data-btn" class="btn btn-secondary">
+                    <span>🔄</span> Sync from MARTS
+                </button>
+                <button id="export-btn" class="btn btn-secondary">
+                    <span>📤</span> Export JSON
+                </button>
+            </div>
+        </div>
+
+        <!-- Members Grid -->
+        <div id="members-grid" class="members-grid">
+            <!-- Member cards will be rendered here -->
+        </div>
+
+        <!-- Load More -->
+        <div id="load-more-container" class="load-more-container hidden">
+            <button id="load-more-btn" class="btn btn-primary btn-large">
+                Load More Members
+            </button>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state hidden">
+            <span class="empty-icon">📭</span>
+            <h3>No Members Found</h3>
+            <p>Try adjusting your search or filters</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>MARTS Membership Directory © 2026 | Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank"
+                    rel="noopener">9M2PJU</a></p>
+            <p class="footer-links">
+                <a href="https://marts.org.my" target="_blank" rel="noopener">MARTS Official</a>
+                <span class="divider">•</span>
+                <a href="https://ahli.marts.org.my" target="_blank" rel="noopener">Original Database</a>
+                <span class="divider">•</span>
+                <span id="last-sync">Last sync: Never</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Add/Edit Modal -->
+    <div id="member-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Member</h2>
+                <button class="modal-close" id="modal-close">✕</button>
+            </div>
+            <form id="member-form">
+                <div class="form-group">
+                    <label for="member-callsign">Callsign *</label>
+                    <input type="text" id="member-callsign" required placeholder="e.g., 9M2ABC" pattern="[A-Za-z0-9/]+"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="member-name">Full Name *</label>
+                    <input type="text" id="member-name" required placeholder="e.g., AHMAD BIN ISMAIL"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="member-id">Member ID *</label>
+                    <input type="text" id="member-member-id" required placeholder="e.g., 30123" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="member-expiry">Expiry Date *</label>
+                    <input type="text" id="member-expiry" required placeholder="YYYY/MM (e.g., 2026/05)"
+                        pattern="\d{4}(/\d{2})?" autocomplete="off">
+                    <small>Format: YYYY or YYYY/MM</small>
+                </div>
+                <input type="hidden" id="member-edit-id">
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="modal-submit">Save Member</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Confirm Delete</h2>
+                <button class="modal-close" id="delete-modal-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete member <strong id="delete-callsign"></strong>?</p>
+                <p class="text-muted">This action cannot be undone.</p>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="delete-cancel">Cancel</button>
+                <button type="button" class="btn btn-danger" id="delete-confirm">Delete</button>
+            </div>
+            <input type="hidden" id="delete-member-id">
+        </div>
+    </div>
+
+    <!-- Sync Modal -->
+    <div id="sync-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sync Data from MARTS</h2>
+                <button class="modal-close" id="sync-modal-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <div id="sync-progress" class="sync-progress">
+                    <div class="sync-spinner"></div>
+                    <p id="sync-status">Preparing to sync...</p>
+                    <div class="progress-bar">
+                        <div id="sync-progress-bar" class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <p id="sync-details" class="text-muted">Fetching page 0 of 73...</p>
+                </div>
+                <div id="sync-complete" class="sync-complete hidden">
+                    <span class="success-icon">✅</span>
+                    <h3>Sync Complete!</h3>
+                    <p id="sync-result">Loaded 0 members from MARTS</p>
+                </div>
+                <div id="sync-error" class="sync-error hidden">
+                    <span class="error-icon">❌</span>
+                    <h3>Sync Failed</h3>
+                    <p id="sync-error-msg">Unable to connect to MARTS server</p>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="sync-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
