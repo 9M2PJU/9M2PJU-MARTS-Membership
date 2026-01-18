@@ -49,6 +49,24 @@ export default function LoginPage() {
                 password,
             });
         } else {
+            // SECURITY CHECK: Verify email exists in restricted admin list first
+            const { data: isAdmin, error: rpcError } = await supabase.rpc('check_is_admin', { check_email: email });
+
+            if (rpcError) {
+                console.error('RPC Error:', rpcError);
+                // Fail safe: proceed if RPC fails but warn? Or strictly block? 
+                // Let's block to be safe if user wants strict mode.
+                setError('Security Check Failed. Access Denied.');
+                setLoading(false);
+                return;
+            }
+
+            if (!isAdmin) {
+                setError('Access Denied. You are not an authorized officer.');
+                setLoading(false);
+                return;
+            }
+
             result = await supabase.auth.signInWithOtp({
                 email,
                 options: {
