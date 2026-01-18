@@ -68,6 +68,24 @@ async function main() {
         } else {
             console.log(`Deleted member ${targetCallsign}.`);
         }
+
+    } else if (action === 'edit') {
+        const targetCallsign = inputData.callsign.toUpperCase();
+        const index = members.findIndex(m => m.callsign === targetCallsign);
+
+        if (index !== -1) {
+            console.log(`Editing member ${targetCallsign}...`);
+            const currentMember = members[index];
+
+            // Only update fields that are provided and not empty
+            if (inputData.name) currentMember.name = inputData.name.toUpperCase();
+            if (inputData.member_id || inputData.new_membership_id) currentMember.member_id = inputData.member_id || inputData.new_membership_id;
+            if (inputData.expiry || inputData.new_expiry_date) currentMember.expiry = inputData.expiry || inputData.new_expiry_date;
+
+            members[index] = currentMember;
+        } else {
+            console.log(`Member ${targetCallsign} not found.`);
+        }
     }
 
     fs.writeFileSync(MEMBERS_FILE, JSON.stringify(members, null, 4));

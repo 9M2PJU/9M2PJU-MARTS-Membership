@@ -2,145 +2,91 @@
 
 A modern, responsive web application for managing Malaysian Amateur Radio Transmitter's Society (MARTS) membership directory.
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Data Update](https://github.com/9m2pju/9M2PJU-MARTS-Membership/actions/workflows/scrape.yml/badge.svg)
+
 ## Features
 
 - 🔍 **Search & Filter** - Real-time search by callsign, name, or member ID
 - 📊 **Multiple Filters** - Filter by prefix (9M/9W), expiry year/month, status
-- ✏️ **CRUD Operations** - Add, edit, and delete members
-- 🔄 **Sync from MARTS** - Pull latest data from official MARTS database
 - 📱 **PWA Support** - Install as app on desktop and mobile
 - 🌙 **Dark/Light Mode** - Toggle between themes
 - 📤 **Export JSON** - Download membership data
-- 💾 **Offline Support** - Works without internet (cached data)
+- 💾 **Offline First** - Works without internet using local JSON data
+- 🤖 **Automated Sync** - Weekly automated scraping of official MARTS data
+- 📝 **Issue Ops Management** - Add/Delete members via GitHub Issues
+
+## Architecture
+
+This project uses a **GitOps** approach for data management:
+
+1.  **Frontend**: Pure HTML/CSS/JS hosted on GitHub Pages.
+2.  **Data Source**: `data/members.json` is the single source of truth.
+3.  **Automation**:
+    *   **Weekly Scraper**: A GitHub Action runs every Sunday to fetch the latest list from the official MARTS website.
+    *   **Member Management**: Administrators can add or delete members by simply opening a GitHub Issue.
 
 ## Quick Start
 
-### Option 1: Static Hosting (No Backend)
-Simply host the files on any static server (GitHub Pages, Netlify, etc.)
+### 1. View Live Site
+Visit the [GitHub Pages Deployment](https://9m2pju.github.io/9M2PJU-MARTS-Membership/).
+
+### 2. Run Locally
+To test or develop locally:
 
 ```bash
 # Clone the repository
 git clone https://github.com/YOUR_USERNAME/9M2PJU-MARTS-Membership.git
 cd 9M2PJU-MARTS-Membership
 
+# Install dependencies (only needed for scraper scripts)
+npm install
+
 # Serve locally
 npx serve .
 ```
 
-Open http://localhost:3000 in your browser.
+## Data Management
 
-### Option 2: With Supabase Backend (Recommended)
+### Automatic Updates
+The directory is automatically updated **every Sunday at 00:00 UTC** by the [Member Scraper workflow](.github/workflows/scrape.yml).
 
-1. **Create a Supabase Project**
-   - Go to [supabase.com](https://supabase.com)
-   - Create a free account and new project
-   
-2. **Create the Members Table**
-   Run this SQL in Supabase SQL Editor:
-   ```sql
-   -- Create members table
-   CREATE TABLE members (
-     id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
-     callsign TEXT NOT NULL,
-     name TEXT NOT NULL,
-     member_id TEXT NOT NULL,
-     expiry TEXT,
-     is_local BOOLEAN DEFAULT false,
-     created_at TIMESTAMPTZ DEFAULT NOW(),
-     updated_at TIMESTAMPTZ DEFAULT NOW()
-   );
+### Manual Management (Admins)
+You can manually add, edit, or delete members without touching the code:
 
-   -- Create indexes for search
-   CREATE INDEX idx_members_callsign ON members(callsign);
-   CREATE INDEX idx_members_name ON members(name);
-   CREATE INDEX idx_members_expiry ON members(expiry);
-
-   -- Enable Row Level Security (optional)
-   ALTER TABLE members ENABLE ROW LEVEL SECURITY;
-
-   -- Allow public read access (adjust as needed)
-   CREATE POLICY "Allow public read" ON members
-     FOR SELECT USING (true);
-
-   -- Allow public insert/update/delete (for demo - restrict in production)
-   CREATE POLICY "Allow public write" ON members
-     FOR ALL USING (true);
-   ```
-
-3. **Configure the App**
-   Edit `js/data.js` and replace the placeholder values:
-   ```javascript
-   const SUPABASE_URL = 'https://YOUR_PROJECT_ID.supabase.co';
-   const SUPABASE_ANON_KEY = 'your-anon-key-here';
-   ```
-   
-   Find these values in: Supabase Dashboard > Settings > API
-
-4. **Deploy to GitHub Pages**
-   ```bash
-   git add .
-   git commit -m "Configure Supabase"
-   git push origin main
-   ```
-   Enable GitHub Pages in repository settings.
-
-## Usage
-
-### Syncing Data from MARTS
-1. Click the "🔄 Sync from MARTS" button
-2. Wait for all 73 pages to be fetched (~2 minutes)
-3. Data will be saved to Supabase (or localStorage)
-
-### Managing Members
-- **Add**: Click "➕ Add Member" button
-- **Edit**: Click "✏️ Edit" on any member card
-- **Delete**: Click "🗑️ Delete" on any member card
-
-### Filters
-- **Prefix**: 9M2, 9M4, 9M6, 9M8, 9W2, 9W4, 9W6, 9W8, 9M0, SWL, Foreign
-- **Year**: Filter by expiry year
-- **Month**: Filter by expiry month
-- **Status**: Active, Expired, Expiring Soon (90 days)
+1.  Go to the **[Issues](../../issues/new/choose)** tab.
+2.  Select **Add New Member**, **Edit Member details**, or **Delete Member**.
+3.  Fill out the form and submit.
+4.  A GitHub Action will automatically process your request and update the directory within ~30 seconds.
 
 ## Tech Stack
 
-- **Frontend**: Vanilla HTML/CSS/JavaScript
-- **Styling**: Custom CSS with glassmorphism effects
-- **Database**: Supabase (PostgreSQL) or localStorage fallback
+- **Frontend**: Vanilla HTML5, CSS3 (Glassmorphism), JavaScript (ES6+)
+- **Data**: JSON (stored in repo)
+- **CI/CD**: GitHub Actions (Node.js)
 - **PWA**: Service Worker for offline support
-- **Fonts**: Inter from Google Fonts
 
 ## File Structure
 
 ```
 ├── index.html          # Main HTML page
 ├── manifest.json       # PWA manifest
-├── sw.js              # Service worker
+├── sw.js               # Service worker
 ├── css/
-│   └── style.css      # Glassmorphism styling
+│   └── style.css       # Styling
 ├── js/
-│   ├── data.js        # Supabase/localStorage CRUD
-│   ├── filters.js     # Filter logic
-│   └── app.js         # Main app logic
+│   ├── data.js         # Data layer (JSON + LocalStorage)
+│   ├── filters.js      # Filter logic
+│   └── app.js          # Main app logic
 ├── data/
-│   └── members.json   # Sample/fallback data
-└── icons/             # PWA icons
+│   └── members.json    # The Database (JSON)
+├── scripts/
+│   ├── scrape.js          # Web scraper script
+│   └── manage_members.js  # Issue Ops processor
+└── .github/
+    ├── workflows/      # CI/CD pipelines
+    └── ISSUE_TEMPLATE/ # Forms for data management
 ```
-
-## Callsign Prefixes
-
-| Prefix | Region | Class |
-|--------|--------|-------|
-| 9M2 | Peninsular Malaysia | A |
-| 9M4 | Peninsular Malaysia | A |
-| 9M6 | Sabah | A |
-| 9M8 | Sarawak | A |
-| 9M0 | Special Event | - |
-| 9W2 | Peninsular Malaysia | B |
-| 9W4 | Peninsular Malaysia | B |
-| 9W6 | Sabah | B |
-| 9W8 | Sarawak | B |
-| 9W3 | Special | B |
 
 ## License
 

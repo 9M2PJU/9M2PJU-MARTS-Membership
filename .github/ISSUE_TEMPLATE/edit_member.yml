@@ -1,0 +1,41 @@
+name: Edit Member details
+description: Update details of an existing member
+title: "[EDIT]: "
+labels: ["member-edit"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please specify the callsign and the new details. Leave fields blank if they shouldn't change.
+  - type: input
+    id: callsign
+    attributes:
+      label: Callsign
+      description: The amateur radio callsign to edit (e.g., 9M2ABC)
+      placeholder: 9M2ABC
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: New Name
+      description: Full name (leave blank to keep current)
+      placeholder: AHMAD BIN ALI
+    validations:
+      required: false
+  - type: input
+    id: member_id
+    attributes:
+      label: New Membership ID
+      description: MARTS membership number (leave blank to keep current)
+      placeholder: 12345
+    validations:
+      required: false
+  - type: input
+    id: expiry
+    attributes:
+      label: New Expiry Date
+      description: License or membership expiry (YYYY/MM) (leave blank to keep current)
+      placeholder: 2026/12
+    validations:
+      required: false
