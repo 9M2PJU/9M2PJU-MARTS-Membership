@@ -34,6 +34,7 @@ export default function Home() {
     // ... (Auth effects remain) ...
 
     const handleEdit = (member: Member) => {
+        console.log('Edit clicked for:', member.callsign);
         setEditingMember(member);
     };
 
@@ -359,6 +360,7 @@ export default function Home() {
                 isOpen={!!editingMember}
                 onClose={() => setEditingMember(null)}
                 onSave={handleSave}
+                isSuperAdmin={isSuperAdmin}
             />
 
             {/* Load More */}
