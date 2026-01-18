@@ -88,6 +88,21 @@ You can manually add, edit, or delete members without touching the code:
     └── ISSUE_TEMPLATE/ # Forms for data management
 ```
 
+## Callsign Prefixes
+
+| Prefix | Region | Class |
+|--------|--------|-------|
+| 9M2 | Peninsular Malaysia | A |
+| 9M4 | Peninsular Malaysia | A |
+| 9M6 | Sabah | A |
+| 9M8 | Sarawak | A |
+| 9M0 | Special Event | - |
+| 9W2 | Peninsular Malaysia | B |
+| 9W4 | Peninsular Malaysia | B |
+| 9W6 | Sabah | B |
+| 9W8 | Sarawak | B |
+| 9W3 | Malaysia (All States) | C |
+
 ## License
 
 MIT License - Feel free to use and modify!
