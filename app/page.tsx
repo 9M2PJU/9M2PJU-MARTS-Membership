@@ -85,19 +85,35 @@ export default function Home() {
 
     const fetchData = async () => {
         setLoading(true);
-        // Fetch from Supabase
-        const { data, error } = await supabase
-            .from('members')
-            .select('*')
-            .order('created_at', { ascending: false })
-            .limit(10000); // Override default 1000 limit
+        let allData: Member[] = [];
+        let from = 0;
+        const step = 1000;
+        let hasMore = true;
 
-        if (error) {
-            console.error('Error fetching members:', error);
-            // Fallback or empty
-        } else {
-            setAllMembers(data || []);
+        while (hasMore) {
+            const { data, error } = await supabase
+                .from('members')
+                .select('*')
+                .order('created_at', { ascending: false })
+                .range(from, from + step - 1);
+
+            if (error) {
+                console.error('Error fetching members:', error);
+                hasMore = false;
+            } else {
+                if (data && data.length > 0) {
+                    allData = [...allData, ...data];
+                    if (data.length < step) {
+                        hasMore = false;
+                    } else {
+                        from += step;
+                    }
+                } else {
+                    hasMore = false;
+                }
+            }
         }
+        setAllMembers(allData);
         setLoading(false);
     };
 
