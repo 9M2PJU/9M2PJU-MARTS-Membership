@@ -9,7 +9,7 @@ const rajdhani = Rajdhani({ subsets: ['latin'], weight: ['300', '400', '500', '6
 
 export const metadata: Metadata = {
     title: 'MARTS Membership Directory',
-    description: 'Official Malaysian Amateur Radio Transmitters\' Society Membership Directory',
+    description: 'Unofficial Malaysian Amateur Radio Transmitters\' Society Membership Directory',
 }
 
 export default function RootLayout({
