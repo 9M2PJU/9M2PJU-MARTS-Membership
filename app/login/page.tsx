@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { AlertCircle, CheckCircle2 } from 'lucide-react';
+import { AlertCircle, CheckCircle2, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 function SimpleButton({ children, onClick, disabled, className }: any) {
     return (
@@ -55,8 +56,11 @@ export default function LoginPage() {
     return (
         <main className="min-h-screen flex items-center justify-center p-4 relative">
             <div className="stars" />
-            <div className="max-w-md w-full bg-card/50 backdrop-blur-md p-8 rounded-xl border border-primary/20 shadow-2xl">
-                <div className="text-center mb-8">
+            <div className="max-w-md w-full bg-card/50 backdrop-blur-md p-8 rounded-xl border border-primary/20 shadow-2xl relative">
+                <Link href="/" className="absolute top-4 left-4 text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowLeft className="w-5 h-5" />
+                </Link>
+                <div className="text-center mb-8 pt-4">
                     <h1 className="text-3xl font-orbitron font-bold text-primary mb-2">System Access</h1>
                     <p className="text-muted-foreground font-rajdhani">Identify yourself, officer.</p>
                 </div>
