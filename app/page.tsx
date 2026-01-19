@@ -322,7 +322,7 @@ export default function Home() {
                         </h1>
                     </div>
                     <p className="text-muted-foreground font-rajdhani tracking-widest uppercase mt-2 text-xs md:text-base">
-                        Unofficial MARTS Membership Database. Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-amber-400 transition-colors">9M2PJU</a>
+                        Unofficial MARTS Membership Database. <br /> Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-amber-400 transition-colors">9M2PJU</a>
                     </p>
                 </div>
 
