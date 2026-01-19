@@ -2,17 +2,25 @@
 
 import { createClient } from '@supabase/supabase-js';
 
+// Initialize client lazily or check inside function to avoid top-level crash?
+// Top-level crash on Vercel might result in 500 error for the action.
+// Let's protect the initialization.
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-
-const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
-    auth: {
-        autoRefreshToken: false,
-        persistSession: false
-    }
-});
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 export async function createAdminUser(formData: FormData) {
+    if (!supabaseServiceKey) {
+        console.error('SUPABASE_SERVICE_ROLE_KEY is missing');
+        return { error: 'Server misconfiguration: Service Role Key is missing.' };
+    }
+
+    const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
+        auth: {
+            autoRefreshToken: false,
+            persistSession: false
+        }
+    });
+
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
     const role = formData.get('role') as string || 'admin';

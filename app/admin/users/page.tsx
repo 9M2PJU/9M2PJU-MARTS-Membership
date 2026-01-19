@@ -127,8 +127,9 @@ export default function AdminUsersPage() {
                                 setNewPassword('');
                                 await fetchAdmins(); // Refresh list
                             }
-                        } catch (err) {
-                            alert('Transmission Error.');
+                        } catch (err: any) {
+                            const errorMsg = err?.message || 'Transmission Error';
+                            alert(`Error: ${errorMsg}`);
                             console.error(err);
                         } finally {
                             setFormLoading(false);
