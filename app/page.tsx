@@ -1,6 +1,4 @@
-'use client';
-
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react'; // Added useRef
 import { MemberCard, Member } from '@/components/MemberCard';
 import { EditMemberModal } from '@/components/EditMemberModal';
 import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus, Baby } from 'lucide-react';
@@ -27,6 +25,7 @@ export default function Home() {
     const [classFilter, setClassFilter] = useState<LicenseClass | 'All'>('All');
     const [yotaFilter, setYotaFilter] = useState(false);
     const [page, setPage] = useState(1);
+    const observerTarget = useRef(null); // Ref for infinite scroll
 
     // Modal State
     const [editingMember, setEditingMember] = useState<Member | null>(null);
@@ -197,6 +196,28 @@ export default function Home() {
 
     const displayedMembers = filteredMembers.slice(0, page * ITEMS_PER_PAGE);
     const showLoadMore = displayedMembers.length < filteredMembers.length;
+
+    // Infinite Scroll Effect
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            entries => {
+                if (entries[0].isIntersecting && showLoadMore) {
+                    setPage(prev => prev + 1);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (observerTarget.current) {
+            observer.observe(observerTarget.current);
+        }
+
+        return () => {
+            if (observerTarget.current) {
+                observer.unobserve(observerTarget.current);
+            }
+        };
+    }, [showLoadMore]); // Re-run when showLoadMore changes to ensure fresh state
 
     return (
         <main className="min-h-screen relative p-4 md:p-8 max-w-7xl mx-auto">
@@ -371,15 +392,10 @@ export default function Home() {
                 isSuperAdmin={isSuperAdmin}
             />
 
-            {/* Load More */}
+            {/* Infinite Scroll Sentinel */}
             {showLoadMore && (
-                <div className="flex justify-center pb-20">
-                    <button
-                        onClick={() => setPage(p => p + 1)}
-                        className="px-8 py-4 bg-secondary/80 hover:bg-primary hover:text-background border border-primary/30 rounded-full font-orbitron tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_var(--primary)]"
-                    >
-                        LOAD MORE DATA
-                    </button>
+                <div ref={observerTarget} className="flex justify-center pb-20 py-10 opacity-0">
+                    <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full"></div>
                 </div>
             )}
         </main>
