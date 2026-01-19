@@ -5,9 +5,12 @@ import { supabase } from '@/lib/supabase';
 import { Trash2, Shield, ShieldAlert, UserPlus, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
+import { createAdminUser } from '@/app/actions/create-admin';
+
 export default function AdminUsersPage() {
     const [admins, setAdmins] = useState<any[]>([]);
     const [newEmail, setNewEmail] = useState('');
+    const [newPassword, setNewPassword] = useState('');
     const [loading, setLoading] = useState(true);
     const [currentUserRole, setCurrentUserRole] = useState('');
 
@@ -22,7 +25,7 @@ export default function AdminUsersPage() {
             const { data } = await supabase
                 .from('app_admins')
                 .select('role')
-                .ilike('email', user.email)
+                .ilike('email', user.email!)
                 .single();
             setCurrentUserRole(data?.role || '');
         }
@@ -35,19 +38,8 @@ export default function AdminUsersPage() {
         setLoading(false);
     };
 
-    const addAdmin = async (e: React.FormEvent) => {
-        e.preventDefault();
-        const { error } = await supabase.from('app_admins').insert({
-            email: newEmail,
-            role: 'admin' // Default to normal admin
-        });
-
-        if (error) alert(error.message);
-        else {
-            setNewEmail('');
-            fetchAdmins();
-        }
-    };
+    // Old client-side function removed in favor of Server Action
+    // const addAdmin = ...
 
     const removeAdmin = async (email: string) => {
         if (!confirm(`Revoke admin access for ${email}?`)) return;
@@ -79,17 +71,66 @@ export default function AdminUsersPage() {
             {/* Add New */}
             <div className="bg-card/50 border border-primary/20 p-6 rounded-xl mb-8 backdrop-blur-md">
                 <h3 className="text-lg font-orbitron text-foreground mb-4">GRANT CLEARANCE</h3>
-                <form onSubmit={addAdmin} className="flex gap-4">
-                    <input
-                        type="email"
-                        placeholder="officer@email.com"
-                        className="flex-1 bg-secondary/50 border border-input rounded px-4 py-2 focus:ring-2 focus:ring-primary/50 outline-none"
-                        value={newEmail}
-                        onChange={e => setNewEmail(e.target.value)}
-                        required
-                    />
-                    <button className="bg-primary text-background font-bold px-6 py-2 rounded hover:bg-primary/90 flex items-center gap-2 font-orbitron">
-                        <UserPlus className="w-4 h-4" /> ADD ADMIN
+                <form action={async (formData) => {
+                    setLoading(true);
+                    const res = await createAdminUser(formData);
+                    if (res?.error) {
+                        alert(res.error);
+                    } else {
+                        setNewEmail(''); // We can't clear form data easily with just action prop without hydration trick or reset, but this is simple enough for now if we don't control the input value bind.
+                        // Actually since we bind value={newEmail} we need to clear it manually.
+                        // But wait, using action prop bypasses the onSubmit event handler logic unless we wrap it.
+                        // Let's stick to onSubmit for better control over state clearance, but call the server action inside.
+                        alert('Officer Access Granted.');
+                        fetchAdmins();
+                    }
+                    setLoading(false);
+                }}
+                    onSubmit={async (e) => {
+                        e.preventDefault();
+                        setLoading(true);
+                        const formData = new FormData(e.currentTarget);
+                        const res = await createAdminUser(formData);
+
+                        if (res?.error) {
+                            alert(res.error);
+                        } else {
+                            alert('Officer Access Granted.');
+                            setNewEmail('');
+                            setNewPassword('');
+                            fetchAdmins();
+                        }
+                        setLoading(false);
+                    }}
+                    className="flex flex-col md:flex-row gap-4 items-end"
+                >
+                    <div className="flex-1 w-full">
+                        <label className="text-xs font-orbitron text-primary mb-1 block">OFFICER EMAIL</label>
+                        <input
+                            name="email"
+                            type="email"
+                            placeholder="officer@email.com"
+                            className="w-full bg-secondary/50 border border-input rounded px-4 py-2 focus:ring-2 focus:ring-primary/50 outline-none"
+                            value={newEmail}
+                            onChange={e => setNewEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="flex-1 w-full">
+                        <label className="text-xs font-orbitron text-primary mb-1 block">ACCESS CODE (PASSWORD)</label>
+                        <input
+                            name="password"
+                            type="text" // Visible by default for admin convenience? Or password type? Let's use text for easy copying, or password for security. User asked to "set password", usually implies known value. Let's use text type but call it Access Code for theme.
+                            placeholder="Secret123!"
+                            className="w-full bg-secondary/50 border border-input rounded px-4 py-2 focus:ring-2 focus:ring-primary/50 outline-none font-mono"
+                            value={newPassword}
+                            onChange={e => setNewPassword(e.target.value)}
+                            required
+                            minLength={6}
+                        />
+                    </div>
+                    <button disabled={loading} className="bg-primary text-background font-bold px-6 py-2 rounded hover:bg-primary/90 flex items-center gap-2 font-orbitron w-full md:w-auto justify-center disabled:opacity-50">
+                        <UserPlus className="w-4 h-4" /> {loading ? 'GRANTING...' : 'GRANT ACCESS'}
                     </button>
                 </form>
             </div>
