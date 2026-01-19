@@ -1,7 +1,18 @@
 import { memo } from 'react';
 import { Calendar, IdCard, Pencil, Trash2, Baby } from "lucide-react"
+import { Member } from '@/app/page';
+import { isYOTA } from '@/lib/callsign-utils';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
-// ... imports
+interface MemberCardProps {
+    member: Member;
+    index: number;
+    isAdmin: boolean;
+    onEdit?: (member: Member) => void;
+    onDelete?: (id: string) => void;
+    onClick?: (member: Member) => void;
+}
 
 export const MemberCard = memo(function MemberCard({ member, index, isAdmin, onEdit, onDelete, onClick }: MemberCardProps) {
     // ... implementation
