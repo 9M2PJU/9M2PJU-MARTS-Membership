@@ -354,9 +354,10 @@ export default function Home() {
                         <div className="w-px bg-border"></div>
                         <div className="text-center flex-1 md:flex-none min-w-[80px] flex flex-col items-center justify-center">
                             <img
-                                src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F9M2PJU%2F9M2PJU-MARTS-Membership&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"
+                                src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2F9m2pju-marts-membership.vercel.app&label=VISITS&countColor=%234ade80&style=flat&labelStyle=upper"
                                 alt="Total Visits"
                                 className="h-6 mt-1 opacity-90"
+                                referrerPolicy="no-referrer"
                             />
                             <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">Visits</div>
                         </div>
