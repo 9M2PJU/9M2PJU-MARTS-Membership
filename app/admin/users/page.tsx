@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
-import { Trash2, Shield, ShieldAlert, UserPlus, ArrowLeft } from 'lucide-react';
+import { Trash2, Shield, ShieldAlert, UserPlus, ArrowLeft, Key } from 'lucide-react';
 import Link from 'next/link';
 
 import { createAdminUser } from '@/app/actions/create-admin';
@@ -180,13 +180,30 @@ export default function AdminUsersPage() {
                         </div>
 
                         {admin.role !== 'super_admin' && (
-                            <button
-                                onClick={() => removeAdmin(admin.email)}
-                                className="text-red-500 hover:bg-red-500/10 p-2 rounded transition-colors"
-                                title="Revoke Access"
-                            >
-                                <Trash2 className="w-5 h-5" />
-                            </button>
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={() => {
+                                        setNewEmail(admin.email);
+                                        setNewPassword('');
+                                        // Focus the password input
+                                        const passwordInput = document.querySelector('input[name="password"]') as HTMLInputElement;
+                                        if (passwordInput) passwordInput.focus();
+                                        // Scroll to form
+                                        passwordInput?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    }}
+                                    className="text-amber-500 hover:bg-amber-500/10 p-2 rounded transition-colors"
+                                    title="Reset Password"
+                                >
+                                    <Key className="w-5 h-5" />
+                                </button>
+                                <button
+                                    onClick={() => removeAdmin(admin.email)}
+                                    className="text-red-500 hover:bg-red-500/10 p-2 rounded transition-colors"
+                                    title="Revoke Access"
+                                >
+                                    <Trash2 className="w-5 h-5" />
+                                </button>
+                            </div>
                         )}
                     </div>
                 ))}
