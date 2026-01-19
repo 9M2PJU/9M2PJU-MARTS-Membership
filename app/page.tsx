@@ -362,9 +362,10 @@ export default function Home() {
 
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
-                {displayedMembers.map(member => (
+                {displayedMembers.map((member, i) => (
                     <MemberCard
                         key={member.id}
+                        index={i + 1}
                         member={member}
                         isAdmin={isAdmin}
                         onEdit={handleEdit}

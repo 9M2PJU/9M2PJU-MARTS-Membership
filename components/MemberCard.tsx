@@ -16,12 +16,13 @@ export type Member = {
 
 interface MemberCardProps {
     member: Member
+    index?: number;
     isAdmin?: boolean;
     onEdit?: (member: Member) => void;
     onDelete?: (id: string) => void;
 }
 
-export function MemberCard({ member, isAdmin, onEdit, onDelete }: MemberCardProps) {
+export function MemberCard({ member, index, isAdmin, onEdit, onDelete }: MemberCardProps) {
     // Helpers
     const isExpired = (expiryStr: string) => {
         if (!expiryStr || expiryStr === '-') return false;
@@ -55,11 +56,21 @@ export function MemberCard({ member, isAdmin, onEdit, onDelete }: MemberCardProp
     const isLocal = member.is_local;
     const isYouth = isYOTA(member.date_of_birth);
 
+    // Format index strictly to 3 digits like #001, #045, #1999 (ok 4 digits if needed)
+    const formattedIndex = index ? `#${index.toString().padStart(3, '0')}` : '';
+
     return (
         <div className={cn(
             "relative group overflow-hidden rounded-xl border bg-card/50 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,215,0,0.1)]",
             status.label === 'High Council Expelled' ? 'hover:shadow-[0_0_20px_rgba(239,68,68,0.2)] border-red-900/30' : 'border-primary/20'
         )}>
+
+            {/* Scale/Index Number watermark */}
+            {formattedIndex && (
+                <div className="absolute -top-4 -left-2 text-[60px] font-black text-primary/5 font-orbitron select-none pointer-events-none z-0">
+                    {formattedIndex.replace('#', '')}
+                </div>
+            )}
 
             {/* Glow Effect */}
             <div className={cn(
@@ -70,6 +81,9 @@ export function MemberCard({ member, isAdmin, onEdit, onDelete }: MemberCardProp
             <div className="p-5 flex flex-col gap-3 relative z-10">
                 <div className="flex justify-between items-start">
                     <div>
+                        <div className="text-[10px] uppercase tracking-widest text-primary/40 font-bold mb-1 font-orbitron">
+                            {formattedIndex}
+                        </div>
                         <h3 className="font-orbitron font-bold text-2xl tracking-wider text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
                             {member.callsign}
                             {isYouth && (
