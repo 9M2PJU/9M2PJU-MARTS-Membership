@@ -354,8 +354,7 @@ export default function Home() {
 
                         <div className="h-4 w-px bg-border/50 hidden md:block"></div>
 
-                        {/* Region */}
-                        <div className="flex bg-secondary/50 p-1 rounded-lg overflow-x-auto max-w-[200px] md:max-w-none scrollbar-hide">
+                        <div className="flex bg-secondary/50 p-1 rounded-lg flex-wrap md:flex-nowrap justify-center md:justify-start">
                             {['All', 'West Malaysia', 'Sabah', 'Sarawak', 'Foreign'].map(r => (
                                 <button
                                     key={r}
