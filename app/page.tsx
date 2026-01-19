@@ -22,6 +22,7 @@ const MyButton = ({ children, onClick, className, variant, size }: any) => (
 export default function Home() {
     const [allMembers, setAllMembers] = useState<Member[]>([]);
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState('');
     const [debouncedSearch, setDebouncedSearch] = useState('');
 
     // Performance: Debounce search input to avoid re-filtering 2000+ items on every keystroke
