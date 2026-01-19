@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useMemo, useEffect, useRef } from 'react'; // Added useRef
 import { MemberCard, Member } from '@/components/MemberCard';
 import { EditMemberModal } from '@/components/EditMemberModal';
