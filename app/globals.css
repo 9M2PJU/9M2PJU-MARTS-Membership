@@ -43,6 +43,16 @@
 
     body {
         @apply bg-background text-foreground;
+        cursor: url('/rocket.svg') 12 2, auto;
+    }
+
+    a,
+    button,
+    [role="button"],
+    input,
+    select,
+    textarea {
+        cursor: url('/rocket.svg') 12 2, pointer;
     }
 }
 
