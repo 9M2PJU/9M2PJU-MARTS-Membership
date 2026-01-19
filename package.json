@@ -1,6 +1,6 @@
 {
   "name": "9m2pju-marts-membership",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A modern, responsive web application for managing Malaysian Amateur Radio Transmitter's Society (MARTS) membership directory.",
   "scripts": {
     "dev": "next dev",

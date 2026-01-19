@@ -1,6 +1,6 @@
 <div align="center">
   <img src="public/logo.png" alt="MARTS Logo" width="120" />
-  <h1>MARTS Membership Directory</h1>
+  <h1>Malaysian Amateur Radio Transmitters' Society (MARTS) Membership Directory</h1>
   <p><strong>The Unofficial Modern Membership Database for 9M/9W Hams</strong></p>
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

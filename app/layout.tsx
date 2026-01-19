@@ -30,7 +30,7 @@ export default function RootLayout({
                 <BackToHomeButton />
                 <footer className="w-full py-6 text-center text-sm text-muted-foreground border-t border-border/40 backdrop-blur-md bg-background/80">
                     <p>
-                        © {new Date().getFullYear()} Unofficial MARTS Membership Database. Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">9M2PJU</a>
+                        © {new Date().getFullYear()} Unofficial Malaysian Amateur Radio Transmitters' Society Membership Database. Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">9M2PJU</a>
                     </p>
                 </footer>
             </body>
