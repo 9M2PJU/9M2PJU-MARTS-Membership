@@ -106,7 +106,7 @@ export default function Home() {
         const { data, error } = await supabase
             .from('app_admins')
             .select('role')
-            .eq('email', email)
+            .ilike('email', email)
             .single();
 
         if (data) {

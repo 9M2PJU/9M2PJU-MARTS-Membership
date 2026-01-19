@@ -22,7 +22,7 @@ export default function AdminUsersPage() {
             const { data } = await supabase
                 .from('app_admins')
                 .select('role')
-                .eq('email', user.email)
+                .ilike('email', user.email)
                 .single();
             setCurrentUserRole(data?.role || '');
         }

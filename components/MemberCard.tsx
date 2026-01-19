@@ -89,7 +89,7 @@ export function MemberCard({ member, isAdmin, onEdit, onDelete }: MemberCardProp
 
                 {/* Admin Controls */}
                 {isAdmin && (
-                    <div className="flex gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity absolute top-2 right-2 z-50">
+                    <div className="flex gap-2 mt-2 absolute top-2 right-2 z-50">
                         <button
                             onClick={() => onEdit?.(member)}
                             className="bg-primary hover:bg-white text-black p-1.5 rounded-full transition-colors"
