@@ -260,7 +260,7 @@ export default function Home() {
                         MARTS
                     </h1>
                     <p className="text-muted-foreground font-rajdhani tracking-widest uppercase mt-2 text-xs md:text-base">
-                        Membership Database Access Terminal
+                        Unofficial MARTS Membership Database. Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-amber-400 transition-colors">9M2PJU</a>
                     </p>
                 </div>
 
