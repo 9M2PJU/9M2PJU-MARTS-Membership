@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
     - Added Search Debouncing (improves responsiveness).
     - Memoized Member Cards (reduces re-renders).
     - Optimized images using `next/image`.
+- **Navigation**: Added a floating "Back to Home" button for improved navigation on non-home pages.
 
 ### Fixed
 - **Security**: Removed hardcoded credentials from scripts.

@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     description: 'Unofficial Malaysian Amateur Radio Transmitters\' Society Membership Directory',
 }
 
+import BackToHomeButton from '@/components/BackToHomeButton'
+
 export default function RootLayout({
     children,
 }: {
@@ -23,6 +25,7 @@ export default function RootLayout({
                 <div className="flex-grow">
                     {children}
                 </div>
+                <BackToHomeButton />
                 <footer className="w-full py-6 text-center text-sm text-muted-foreground border-t border-border/40 backdrop-blur-md bg-background/80">
                     <p>
                         © {new Date().getFullYear()} Unofficial MARTS Membership Database. Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">9M2PJU</a>
