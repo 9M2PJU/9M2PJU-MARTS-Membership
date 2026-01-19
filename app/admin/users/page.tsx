@@ -122,7 +122,7 @@ export default function AdminUsersPage() {
                             if (res?.error) {
                                 alert(res.error);
                             } else {
-                                alert('Officer Access Granted.');
+                                alert(res.message || 'Officer Access Granted.');
                                 setNewEmail('');
                                 setNewPassword('');
                                 await fetchAdmins(); // Refresh list
@@ -163,7 +163,7 @@ export default function AdminUsersPage() {
                         />
                     </div>
                     <button disabled={formLoading} className="bg-primary text-background font-bold px-6 py-2 rounded hover:bg-primary/90 flex items-center gap-2 font-orbitron w-full md:w-auto justify-center disabled:opacity-50">
-                        <UserPlus className="w-4 h-4" /> {formLoading ? 'GRANTING...' : 'GRANT ACCESS'}
+                        <UserPlus className="w-4 h-4" /> {formLoading ? 'PROCESSING...' : 'GRANT / UPDATE'}
                     </button>
                 </form>
             </div>

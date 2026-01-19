@@ -38,8 +38,45 @@ export async function createAdminUser(formData: FormData) {
 
     if (authError) {
         if (authError.message.includes('already registered')) {
-            // User exists, just ensure they are in app_admins
-            console.log('User exists, proceeding to role assignment');
+            // User exists!
+            // To allow Super Admin to "Reset" password, we just update it.
+            // But we need the User ID first.
+
+            // 1. Get User ID by Email using RPC (needs to be added to SQL)
+            // Function must be: get_user_uid_by_email(check_email text) -> uuid
+            // Call it as Super Admin via Service Role
+
+            // Check if user is Super Admin? We should probably protect Super Admin accounts being overwritten by other admins if we had levels. 
+            // But currently only Super Admin can call this effectively (UI protected).
+
+            const { data: userId, error: rpcError } = await supabaseAdmin.rpc('get_user_uid_by_email', { check_email: email });
+
+            if (rpcError || !userId) {
+                console.error('RPC Error searching user', rpcError);
+                return { error: 'User exists but could not locate ID for update. (SQL Function get_user_uid_by_email might be missing)' };
+            }
+
+            // 2. Update Password
+            const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(
+                userId,
+                { password: password }
+            );
+
+            if (updateError) {
+                return { error: `Failed to update password: ${updateError.message}` };
+            }
+
+            // 3. Ensure role matches in database
+            // Just upsert? Or check? 
+            // Let's just update role too to be sure.
+            const { error: roleError } = await supabaseAdmin
+                .from('app_admins')
+                .upsert({ email, role }, { onConflict: 'email' });
+
+            if (roleError) console.error('Role update error', roleError);
+
+            return { success: true, message: 'Existing Admin Password Updated.' };
+
         } else {
             return { error: authError.message };
         }
