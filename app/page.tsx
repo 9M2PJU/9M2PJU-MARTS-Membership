@@ -265,6 +265,7 @@ export default function Home() {
             {/* Header */}
             <header className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-12 gap-6 relative z-10">
                 <div className="text-center md:text-left">
+                    <img src="/logo.png" alt="MARTS Logo" className="w-20 md:w-32 h-auto mx-auto md:mx-0 mb-4 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]" />
                     <h1
                         onClick={handleReset}
                         className="text-3xl md:text-6xl font-orbitron font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-amber-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)] cursor-pointer hover:opacity-90 transition-opacity select-none"
