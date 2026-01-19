@@ -1,10 +1,11 @@
 import { Member } from "@/components/MemberCard";
 
 export type Region = 'West Malaysia' | 'Sabah' | 'Sarawak' | 'Foreign' | 'Unknown';
-export type LicenseClass = 'A' | 'B' | 'C' | 'Unknown';
+export type LicenseClass = 'A' | 'B' | 'C' | 'SWL' | 'Unknown';
 
 export function getRegion(callsign: string): Region {
     const upper = callsign.toUpperCase();
+    if (upper.startsWith('SWL')) return 'West Malaysia';
     if (upper.startsWith('9M2') || upper.startsWith('9W2') || upper.startsWith('9W3') || upper.startsWith('9M4')) return 'West Malaysia';
     if (upper.startsWith('9M6') || upper.startsWith('9W6')) return 'Sabah';
     if (upper.startsWith('9M8') || upper.startsWith('9W8')) return 'Sarawak';
@@ -16,6 +17,7 @@ export function getRegion(callsign: string): Region {
 
 export function getLicenseClass(callsign: string): LicenseClass {
     const upper = callsign.toUpperCase();
+    if (upper.startsWith('SWL')) return 'SWL';
     // Class A: 9M2, 9M6, 9M8, 9M4?
     if (upper.startsWith('9M')) return 'A';
 

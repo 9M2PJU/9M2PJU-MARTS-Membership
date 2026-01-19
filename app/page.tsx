@@ -368,7 +368,7 @@ export default function Home() {
 
                         {/* Class */}
                         <div className="flex bg-secondary/50 p-1 rounded-lg">
-                            {['All', 'A', 'B', 'C'].map(c => (
+                            {['All', 'A', 'B', 'C', 'SWL'].map(c => (
                                 <button
                                     key={c}
                                     onClick={() => setClassFilter(c as any)}
