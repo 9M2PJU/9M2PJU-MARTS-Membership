@@ -8,6 +8,9 @@
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)](https://tailwindcss.com/)
   [![Supabase](https://img.shields.io/badge/Supabase-Database-3ECF8E)](https://supabase.com/)
   [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000)](https://vercel.com/)
+  <br/>
+  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F9M2PJU%2F9M2PJU-MARTS-Membership&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+  ![Website Status](https://img.shields.io/website?url=https%3A%2F%2F9m2pju-marts-membership.vercel.app&label=System%20Status&style=flat-square)
 </div>
 
 <br />
