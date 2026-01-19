@@ -1,4 +1,20 @@
 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M12 2L15 8L21 9L17 14L18 20L12 17L6 20L7 14L3 9L9 8L12 2Z" stroke="#00d8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 11V17" stroke="#00d8ff" stroke-width="2" stroke-linecap="round"/>
+  <!-- X-Wing Body -->
+  <path d="M12 2L13.5 8H10.5L12 2Z" fill="#e0e0e0" stroke="#a0a0a0" stroke-width="0.5"/>
+  <path d="M11 8H13V16H11V8Z" fill="#e0e0e0"/>
+  
+  <!-- Wings -->
+  <path d="M11 10L6 14H8L11 11" fill="#c0c0c0"/>
+  <path d="M13 10L18 14H16L13 11" fill="#c0c0c0"/>
+  
+  <!-- Bottom Wings -->
+  <path d="M11 12L5 16H7L11 13" fill="#a0a0a0"/>
+  <path d="M13 12L19 16H17L13 13" fill="#a0a0a0"/>
+  
+  <!-- Engines -->
+  <rect x="5" y="13" width="1" height="3" fill="#ff4444"/>
+  <rect x="18" y="13" width="1" height="3" fill="#ff4444"/>
+  
+  <!-- Cockpit -->
+  <path d="M11.5 9H12.5V11H11.5V9Z" fill="#444"/>
 </svg>
