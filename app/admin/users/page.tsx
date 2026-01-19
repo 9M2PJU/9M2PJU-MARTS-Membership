@@ -11,12 +11,16 @@ export default function AdminUsersPage() {
     const [admins, setAdmins] = useState<any[]>([]);
     const [newEmail, setNewEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');
-    const [loading, setLoading] = useState(true);
+    const [initialLoading, setInitialLoading] = useState(true);
+    const [formLoading, setFormLoading] = useState(false);
     const [currentUserRole, setCurrentUserRole] = useState('');
 
     useEffect(() => {
-        checkSuperAdmin();
-        fetchAdmins();
+        (async () => {
+            await checkSuperAdmin();
+            await fetchAdmins();
+            setInitialLoading(false);
+        })();
     }, []);
 
     const checkSuperAdmin = async () => {
@@ -32,10 +36,9 @@ export default function AdminUsersPage() {
     };
 
     const fetchAdmins = async () => {
-        setLoading(true);
+        // Do not set global loading here to avoid full page re-render flicker on refresh
         const { data, error } = await supabase.from('app_admins').select('*').order('created_at');
         if (!error) setAdmins(data || []);
-        setLoading(false);
     };
 
     // Old client-side function removed in favor of Server Action
@@ -48,7 +51,7 @@ export default function AdminUsersPage() {
         else fetchAdmins();
     };
 
-    if (loading) return <div className="p-8 text-center font-orbitron text-primary">SCANNING CLEARANCE LEVELS...</div>;
+    if (initialLoading) return <div className="p-8 text-center font-orbitron text-primary">SCANNING CLEARANCE LEVELS...</div>;
 
     if (currentUserRole !== 'super_admin') return (
         <div className="min-h-screen flex items-center justify-center text-red-500 font-orbitron text-2xl">
@@ -107,36 +110,29 @@ export default function AdminUsersPage() {
             {/* Add New Admin */}
             <div className="bg-card/50 border border-primary/20 p-6 rounded-xl mb-8 backdrop-blur-md">
                 <h3 className="text-lg font-orbitron text-foreground mb-4">GRANT CLEARANCE</h3>
-                <form action={async (formData) => {
-                    setLoading(true);
-                    const res = await createAdminUser(formData);
-                    if (res?.error) {
-                        alert(res.error);
-                    } else {
-                        setNewEmail(''); // We can't clear form data easily with just action prop without hydration trick or reset, but this is simple enough for now if we don't control the input value bind.
-                        // Actually since we bind value={newEmail} we need to clear it manually.
-                        // But wait, using action prop bypasses the onSubmit event handler logic unless we wrap it.
-                        // Let's stick to onSubmit for better control over state clearance, but call the server action inside.
-                        alert('Officer Access Granted.');
-                        fetchAdmins();
-                    }
-                    setLoading(false);
-                }}
+                <form
                     onSubmit={async (e) => {
                         e.preventDefault();
-                        setLoading(true);
+                        setFormLoading(true);
                         const formData = new FormData(e.currentTarget);
-                        const res = await createAdminUser(formData);
 
-                        if (res?.error) {
-                            alert(res.error);
-                        } else {
-                            alert('Officer Access Granted.');
-                            setNewEmail('');
-                            setNewPassword('');
-                            fetchAdmins();
+                        try {
+                            const res = await createAdminUser(formData);
+
+                            if (res?.error) {
+                                alert(res.error);
+                            } else {
+                                alert('Officer Access Granted.');
+                                setNewEmail('');
+                                setNewPassword('');
+                                await fetchAdmins(); // Refresh list
+                            }
+                        } catch (err) {
+                            alert('Transmission Error.');
+                            console.error(err);
+                        } finally {
+                            setFormLoading(false);
                         }
-                        setLoading(false);
                     }}
                     className="flex flex-col md:flex-row gap-4 items-end"
                 >
@@ -165,8 +161,8 @@ export default function AdminUsersPage() {
                             minLength={6}
                         />
                     </div>
-                    <button disabled={loading} className="bg-primary text-background font-bold px-6 py-2 rounded hover:bg-primary/90 flex items-center gap-2 font-orbitron w-full md:w-auto justify-center disabled:opacity-50">
-                        <UserPlus className="w-4 h-4" /> {loading ? 'GRANTING...' : 'GRANT ACCESS'}
+                    <button disabled={formLoading} className="bg-primary text-background font-bold px-6 py-2 rounded hover:bg-primary/90 flex items-center gap-2 font-orbitron w-full md:w-auto justify-center disabled:opacity-50">
+                        <UserPlus className="w-4 h-4" /> {formLoading ? 'GRANTING...' : 'GRANT ACCESS'}
                     </button>
                 </form>
             </div>
