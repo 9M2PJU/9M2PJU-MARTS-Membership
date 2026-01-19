@@ -148,6 +148,15 @@ export default function Home() {
         }
     };
 
+    const handleReset = () => {
+        setSearch('');
+        setStatusFilter('all');
+        setRegionFilter('All');
+        setClassFilter('All');
+        setYotaFilter(false);
+        setPage(1);
+    };
+
     const handleSave = () => {
         fetchData(); // Refresh list after edit
     };
@@ -256,7 +265,10 @@ export default function Home() {
             {/* Header */}
             <header className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-12 gap-6 relative z-10">
                 <div className="text-center md:text-left">
-                    <h1 className="text-3xl md:text-6xl font-orbitron font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-amber-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
+                    <h1
+                        onClick={handleReset}
+                        className="text-3xl md:text-6xl font-orbitron font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-amber-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)] cursor-pointer hover:opacity-90 transition-opacity select-none"
+                    >
                         MARTS
                     </h1>
                     <p className="text-muted-foreground font-rajdhani tracking-widest uppercase mt-2 text-xs md:text-base">
