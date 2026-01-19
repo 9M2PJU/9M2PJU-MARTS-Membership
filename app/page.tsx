@@ -87,14 +87,16 @@ export default function Home() {
         setLoading(true);
         let allData: Member[] = [];
         let from = 0;
-        const step = 1000;
+        const step = 500; // Reduced batch size for reliability
         let hasMore = true;
 
         while (hasMore) {
+            console.log(`Fetching members from ${from} to ${from + step - 1}...`);
             const { data, error } = await supabase
                 .from('members')
                 .select('*')
                 .order('created_at', { ascending: false })
+                .order('id', { ascending: true }) // Stable sort for pagination
                 .range(from, from + step - 1);
 
             if (error) {
@@ -113,6 +115,7 @@ export default function Home() {
                 }
             }
         }
+        console.log(`Total members fetched: ${allData.length}`);
         setAllMembers(allData);
         setLoading(false);
     };
