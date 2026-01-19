@@ -52,20 +52,24 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
         e.preventDefault();
         setLoading(true);
 
+        // Sanitize data (convert empty strings to null for dates)
+        const submissionData = { ...formData };
+        if (!submissionData.date_of_birth) submissionData.date_of_birth = null;
+
         let error;
 
         if (member?.id) {
             // Update
             const { error: updateError } = await supabase
                 .from('members')
-                .update(formData)
+                .update(submissionData)
                 .eq('id', member.id);
             error = updateError;
         } else {
             // Insert
             const { error: insertError } = await supabase
                 .from('members')
-                .insert([formData]);
+                .insert([submissionData]);
             error = insertError;
         }
 

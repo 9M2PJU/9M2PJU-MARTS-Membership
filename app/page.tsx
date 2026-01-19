@@ -90,7 +90,7 @@ export default function Home() {
         const { data, error } = await supabase
             .from('members')
             .select('*')
-            .order('callsign', { ascending: true })
+            .order('created_at', { ascending: false })
             .limit(10000); // Override default 1000 limit
 
         if (error) {
