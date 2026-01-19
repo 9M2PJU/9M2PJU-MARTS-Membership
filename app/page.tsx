@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { MemberCard, Member } from '@/components/MemberCard';
 import { EditMemberModal } from '@/components/EditMemberModal';
-import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus, Baby } from 'lucide-react';
+import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus, Baby, Users } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { getRegion, getLicenseClass, isYOTA, Region, LicenseClass } from '@/lib/callsign-utils';
 import Link from 'next/link';
@@ -24,6 +24,7 @@ export default function Home() {
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
     const [debouncedSearch, setDebouncedSearch] = useState('');
+    const [onlineCount, setOnlineCount] = useState(1);
 
     // Performance: Debounce search input to avoid re-filtering 2000+ items on every keystroke
     useEffect(() => {
@@ -32,6 +33,33 @@ export default function Home() {
         }, 300);
         return () => clearTimeout(handler);
     }, [search]);
+
+    // Presence: Track online users
+    useEffect(() => {
+        const channel = supabase.channel('online_users', {
+            config: {
+                presence: {
+                    key: Math.random().toString(), // Random session ID to track unique tabs
+                },
+            },
+        });
+
+        channel
+            .on('presence', { event: 'sync' }, () => {
+                const newState = channel.presenceState();
+                const uniqueUsers = Object.keys(newState).length;
+                setOnlineCount(uniqueUsers > 0 ? uniqueUsers : 1);
+            })
+            .subscribe(async (status) => {
+                if (status === 'SUBSCRIBED') {
+                    await channel.track({});
+                }
+            });
+
+        return () => {
+            channel.unsubscribe();
+        };
+    }, []);
 
     // ... existing filters ...
     const [statusFilter, setStatusFilter] = useState('all');
@@ -300,20 +328,37 @@ export default function Home() {
 
                 {/* Stats & Auth */}
                 <div className="flex flex-col gap-4 items-end w-full md:w-auto">
-                    <div className="flex justify-between md:justify-start gap-4 md:gap-8 bg-card/40 backdrop-blur-md p-4 rounded-xl border border-primary/20 w-full md:w-auto">
-                        <div className="text-center flex-1 md:flex-none">
+                    <div className="flex justify-between md:justify-start gap-4 md:gap-8 bg-card/40 backdrop-blur-md p-4 rounded-xl border border-primary/20 w-full md:w-auto overflow-x-auto scrollbar-hide">
+                        <div className="text-center flex-1 md:flex-none min-w-[60px]">
                             <div className="text-xl md:text-3xl font-orbitron font-bold text-foreground">{stats.total}</div>
                             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Total</div>
                         </div>
                         <div className="w-px bg-border"></div>
-                        <div className="text-center flex-1 md:flex-none">
+                        <div className="text-center flex-1 md:flex-none min-w-[60px]">
                             <div className="text-xl md:text-3xl font-orbitron font-bold text-primary drop-shadow-[0_0_5px_var(--primary)]">{stats.active}</div>
                             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Active</div>
                         </div>
                         <div className="w-px bg-border"></div>
-                        <div className="text-center flex-1 md:flex-none">
+                        <div className="text-center flex-1 md:flex-none min-w-[60px]">
                             <div className="text-xl md:text-3xl font-orbitron font-bold text-red-500 drop-shadow-[0_0_5px_rgba(239,68,68,0.5)]">{stats.expired}</div>
                             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Expired</div>
+                        </div>
+                        <div className="w-px bg-border"></div>
+                        {/* Visitor Stats */}
+                        <div className="text-center flex-1 md:flex-none min-w-[60px]">
+                            <div className="text-xl md:text-3xl font-orbitron font-bold text-green-400 drop-shadow-[0_0_5px_rgba(74,222,128,0.5)] animate-pulse">{onlineCount}</div>
+                            <div className="text-[10px] uppercase tracking-wider text-muted-foreground flex items-center justify-center gap-1">
+                                <Users className="w-3 h-3" /> Online
+                            </div>
+                        </div>
+                        <div className="w-px bg-border"></div>
+                        <div className="text-center flex-1 md:flex-none min-w-[80px] flex flex-col items-center justify-center">
+                            <img
+                                src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2F9M2PJU%2F9M2PJU-MARTS-Membership&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"
+                                alt="Total Visits"
+                                className="h-6 mt-1 opacity-90"
+                            />
+                            <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">Visits</div>
                         </div>
                     </div>
 
