@@ -20,9 +20,10 @@ interface MemberCardProps {
     isAdmin?: boolean;
     onEdit?: (member: Member) => void;
     onDelete?: (id: string) => void;
+    onClick?: (member: Member) => void;
 }
 
-export function MemberCard({ member, index, isAdmin, onEdit, onDelete }: MemberCardProps) {
+export function MemberCard({ member, index, isAdmin, onEdit, onDelete, onClick }: MemberCardProps) {
     // Helpers
     const isExpired = (expiryStr: string) => {
         if (!expiryStr || expiryStr === '-') return false;
@@ -62,10 +63,12 @@ export function MemberCard({ member, index, isAdmin, onEdit, onDelete }: MemberC
     const formattedIndex = index ? `#${index.toString().padStart(3, '0')}` : '';
 
     return (
-        <div className={cn(
-            "relative group overflow-hidden rounded-xl border bg-card/50 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,215,0,0.1)]",
-            status.label === 'High Council Expelled' ? 'hover:shadow-[0_0_20px_rgba(239,68,68,0.2)] border-red-900/30' : 'border-primary/20'
-        )}>
+        <div
+            onClick={() => onClick?.(member)}
+            className={cn(
+                "relative group overflow-hidden rounded-xl border bg-card/50 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,215,0,0.1)] cursor-pointer",
+                status.label === 'High Council Expelled' ? 'hover:shadow-[0_0_20px_rgba(239,68,68,0.2)] border-red-900/30' : 'border-primary/20'
+            )}>
 
             {/* Scale/Index Number watermark */}
             {formattedIndex && (
@@ -107,14 +110,14 @@ export function MemberCard({ member, index, isAdmin, onEdit, onDelete }: MemberC
                 {isAdmin && (
                     <div className="flex gap-2 mt-2 absolute top-2 right-2 z-50">
                         <button
-                            onClick={() => onEdit?.(member)}
+                            onClick={(e) => { e.stopPropagation(); onEdit?.(member); }}
                             className="bg-primary hover:bg-white text-black p-1.5 rounded-full transition-colors"
                             title="Edit"
                         >
                             <Pencil className="w-3 h-3" />
                         </button>
                         <button
-                            onClick={() => onDelete?.(member.id)}
+                            onClick={(e) => { e.stopPropagation(); onDelete?.(member.id); }}
                             className="bg-red-500 hover:bg-red-400 text-white p-1.5 rounded-full transition-colors"
                             title="Delete"
                         >

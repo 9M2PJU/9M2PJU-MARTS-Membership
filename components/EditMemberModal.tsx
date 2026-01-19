@@ -11,9 +11,10 @@ interface EditMemberModalProps {
     onClose: () => void;
     onSave: () => void;
     isSuperAdmin: boolean;
+    readOnly?: boolean;
 }
 
-export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin }: EditMemberModalProps) {
+export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin, readOnly = false }: EditMemberModalProps) {
     const [formData, setFormData] = useState<Partial<Member>>({});
     const [loading, setLoading] = useState(false);
 
@@ -92,7 +93,9 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
             <div className="bg-background border border-primary/20 rounded-xl shadow-2xl w-full max-w-lg overflow-hidden">
                 <div className="flex justify-between items-center p-4 border-b border-white/10 bg-primary/5">
-                    <h3 className="font-orbitron font-bold text-lg text-primary">{member ? 'EDIT' : 'ADD'} MEMBER PROTOCOL</h3>
+                    <h3 className="font-orbitron font-bold text-lg text-primary">
+                        {readOnly ? 'MEMBER DETAILS' : (member ? 'EDIT MEMBER PROTOCOL' : 'ADD MEMBER PROTOCOL')}
+                    </h3>
                     <button onClick={onClose} className="text-muted-foreground hover:text-white transition-colors">
                         <X className="w-5 h-5" />
                     </button>
@@ -103,19 +106,21 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
                         <div className="space-y-1">
                             <label className="text-xs uppercase text-muted-foreground tracking-wider">Callsign</label>
                             <input
-                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none font-orbitron uppercase"
+                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none font-orbitron uppercase disabled:opacity-70 disabled:cursor-not-allowed"
                                 value={formData.callsign || ''}
                                 onChange={e => setFormData({ ...formData, callsign: e.target.value.toUpperCase() })}
                                 required
+                                disabled={readOnly}
                             />
                         </div>
                         <div className="space-y-1">
                             <label className="text-xs uppercase text-muted-foreground tracking-wider">Member ID</label>
                             <input
-                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none"
+                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none disabled:opacity-70 disabled:cursor-not-allowed"
                                 value={formData.member_id || ''}
                                 onChange={e => setFormData({ ...formData, member_id: e.target.value })}
                                 required
+                                disabled={readOnly}
                             />
                         </div>
                     </div>
@@ -123,10 +128,11 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
                     <div className="space-y-1">
                         <label className="text-xs uppercase text-muted-foreground tracking-wider">Full Name</label>
                         <input
-                            className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none"
+                            className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none disabled:opacity-70 disabled:cursor-not-allowed"
                             value={formData.name || ''}
                             onChange={e => setFormData({ ...formData, name: e.target.value })}
                             required
+                            disabled={readOnly}
                         />
                     </div>
 
@@ -134,18 +140,20 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
                         <div className="space-y-1">
                             <label className="text-xs uppercase text-muted-foreground tracking-wider">Expiry (YYYY/MM)</label>
                             <input
-                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none font-mono"
+                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none font-mono disabled:opacity-70 disabled:cursor-not-allowed"
                                 value={formData.expiry || ''}
                                 onChange={e => setFormData({ ...formData, expiry: e.target.value })}
                                 placeholder="2025/12"
+                                disabled={readOnly}
                             />
                         </div>
                         <div className="space-y-1">
                             <label className="text-xs uppercase text-muted-foreground tracking-wider">Status</label>
                             <select
-                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none"
+                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none disabled:opacity-70 disabled:cursor-not-allowed"
                                 value={formData.status}
                                 onChange={e => setFormData({ ...formData, status: e.target.value as any })}
+                                disabled={readOnly}
                             >
                                 <option value="active">Active</option>
                                 <option value="expired">Expired</option>
@@ -153,29 +161,32 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
-                        <div className="space-y-1">
-                            <label className="text-xs uppercase text-primary/70 tracking-wider">Identity Card {isSuperAdmin ? '(Private)' : '(Restricted)'}</label>
-                            <input
-                                className="w-full bg-secondary/30 border border-input/50 rounded p-2 focus:ring-2 focus:ring-primary/30 outline-none"
-                                value={formData.ic_number || ''}
-                                onChange={e => setFormData({ ...formData, ic_number: e.target.value })}
-                                placeholder={isSuperAdmin ? "######-##-####" : "Wait for Super Admin"}
-                                disabled={!isSuperAdmin && !formData.ic_number} // Optional: allow editing if they really want to overwrite? current requirement "normal admin just can submit" implies they might need to ADD it. Let's keep editable but empty.
-                            />
-                            {!isSuperAdmin && <p className="text-[9px] text-muted-foreground">Hidden. Type to overwrite.</p>}
+                    {(isSuperAdmin || !readOnly) && ( // Only show private fields if SuperAdmin OR in Edit Mode (where logic inside handles restrictions)
+                        <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                            <div className="space-y-1">
+                                <label className="text-xs uppercase text-primary/70 tracking-wider">Identity Card {isSuperAdmin ? '(Private)' : '(Restricted)'}</label>
+                                <input
+                                    className="w-full bg-secondary/30 border border-input/50 rounded p-2 focus:ring-2 focus:ring-primary/30 outline-none disabled:opacity-70 disabled:cursor-not-allowed"
+                                    value={formData.ic_number || ''}
+                                    onChange={e => setFormData({ ...formData, ic_number: e.target.value })}
+                                    placeholder={isSuperAdmin ? "######-##-####" : "Restricted"}
+                                    disabled={(!isSuperAdmin && !formData.ic_number) || readOnly}
+                                />
+                                {!isSuperAdmin && !readOnly && <p className="text-[9px] text-muted-foreground">Hidden. Type to overwrite.</p>}
+                            </div>
+                            <div className="space-y-1">
+                                <label className="text-xs uppercase text-primary/70 tracking-wider">Date of Birth {isSuperAdmin ? '(Private)' : '(Restricted)'}</label>
+                                <input
+                                    type="date"
+                                    className="w-full bg-secondary/30 border border-input/50 rounded p-2 focus:ring-2 focus:ring-primary/30 outline-none disabled:opacity-70 disabled:cursor-not-allowed"
+                                    value={formData.date_of_birth || ''}
+                                    onChange={e => setFormData({ ...formData, date_of_birth: e.target.value })}
+                                    disabled={readOnly}
+                                />
+                                {!isSuperAdmin && !readOnly && <p className="text-[9px] text-muted-foreground">Hidden. Type to overwrite.</p>}
+                            </div>
                         </div>
-                        <div className="space-y-1">
-                            <label className="text-xs uppercase text-primary/70 tracking-wider">Date of Birth {isSuperAdmin ? '(Private)' : '(Restricted)'}</label>
-                            <input
-                                type="date"
-                                className="w-full bg-secondary/30 border border-input/50 rounded p-2 focus:ring-2 focus:ring-primary/30 outline-none"
-                                value={formData.date_of_birth || ''}
-                                onChange={e => setFormData({ ...formData, date_of_birth: e.target.value })}
-                            />
-                            {!isSuperAdmin && <p className="text-[9px] text-muted-foreground">Hidden. Type to overwrite.</p>}
-                        </div>
-                    </div>
+                    )}
 
                     <div className="flex justify-end gap-2 mt-6">
                         <button
@@ -183,15 +194,17 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
                             onClick={onClose}
                             className="px-4 py-2 text-muted-foreground hover:text-white font-rajdhani font-bold"
                         >
-                            CANCEL
+                            {readOnly ? 'CLOSE' : 'CANCEL'}
                         </button>
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className="bg-primary text-background font-bold px-6 py-2 rounded flex items-center gap-2 hover:bg-primary/90 transition-colors font-orbitron"
-                        >
-                            {loading ? 'SAVING...' : <><Save className="w-4 h-4" /> SAVE CHANGES</>}
-                        </button>
+                        {!readOnly && (
+                            <button
+                                type="submit"
+                                disabled={loading}
+                                className="bg-primary text-background font-bold px-6 py-2 rounded flex items-center gap-2 hover:bg-primary/90 transition-colors font-orbitron"
+                            >
+                                {loading ? 'SAVING...' : <><Save className="w-4 h-4" /> SAVE CHANGES</>}
+                            </button>
+                        )}
                     </div>
                 </form>
             </div>
