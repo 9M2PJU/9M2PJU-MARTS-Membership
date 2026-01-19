@@ -351,16 +351,6 @@ export default function Home() {
                                 <Users className="w-3 h-3" /> Online
                             </div>
                         </div>
-                        <div className="w-px bg-border"></div>
-                        <div className="text-center flex-1 md:flex-none min-w-[80px] flex flex-col items-center justify-center">
-                            <img
-                                src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2F9m2pju-marts-membership.vercel.app&label=VISITS&countColor=%234ade80&style=flat&labelStyle=upper"
-                                alt="Total Visits"
-                                className="h-6 mt-1 opacity-90"
-                                referrerPolicy="no-referrer"
-                            />
-                            <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">Visits</div>
-                        </div>
                     </div>
 
                     <div className="flex gap-2 w-full md:w-auto justify-end">
