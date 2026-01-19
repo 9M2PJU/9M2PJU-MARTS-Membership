@@ -30,12 +30,19 @@ export default function Home() {
 
     // Modal State
     const [editingMember, setEditingMember] = useState<Member | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // ... (Auth effects remain) ...
 
     const handleEdit = (member: Member) => {
         console.log('Edit clicked for:', member.callsign);
         setEditingMember(member);
+        setIsModalOpen(true);
+    };
+
+    const handleAdd = () => {
+        setEditingMember(null);
+        setIsModalOpen(true);
     };
 
     const handleDelete = async (id: string) => {
@@ -326,7 +333,7 @@ export default function Home() {
             {/* Admin Add Button */}
             {isAdmin && (
                 <div className="flex justify-end mb-4">
-                    <MyButton className="flex items-center gap-2">
+                    <MyButton onClick={handleAdd} className="flex items-center gap-2">
                         <UserPlus className="w-4 h-4" /> ADD NEW MEMBER
                     </MyButton>
                 </div>
@@ -358,8 +365,8 @@ export default function Home() {
             {/* Edit Modal */}
             <EditMemberModal
                 member={editingMember}
-                isOpen={!!editingMember}
-                onClose={() => setEditingMember(null)}
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
                 onSave={handleSave}
                 isSuperAdmin={isSuperAdmin}
             />

@@ -33,36 +33,59 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
             }
 
             setFormData(initialData);
+        } else {
+            // Reset for Add Mode
+            setFormData({
+                status: 'active',
+                is_local: true, // Default
+                callsign: '',
+                name: '',
+                member_id: '',
+                expiry: '',
+                ic_number: '',
+                date_of_birth: ''
+            });
         }
-    }, [member, isSuperAdmin]);
+    }, [member, isSuperAdmin, isOpen]); // Added isOpen to reset when opened
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!member) return;
         setLoading(true);
 
-        const { error } = await supabase
-            .from('members')
-            .update(formData)
-            .eq('id', member.id);
+        let error;
+
+        if (member?.id) {
+            // Update
+            const { error: updateError } = await supabase
+                .from('members')
+                .update(formData)
+                .eq('id', member.id);
+            error = updateError;
+        } else {
+            // Insert
+            const { error: insertError } = await supabase
+                .from('members')
+                .insert([formData]);
+            error = insertError;
+        }
 
         setLoading(false);
 
         if (error) {
-            alert('Error updating member: ' + error.message);
+            alert('Error saving member: ' + error.message);
         } else {
             onSave();
             onClose();
         }
     };
 
-    if (!isOpen || !member) return null;
+    if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
             <div className="bg-background border border-primary/20 rounded-xl shadow-2xl w-full max-w-lg overflow-hidden">
                 <div className="flex justify-between items-center p-4 border-b border-white/10 bg-primary/5">
-                    <h3 className="font-orbitron font-bold text-lg text-primary">EDIT MEMBER PROTOCOL</h3>
+                    <h3 className="font-orbitron font-bold text-lg text-primary">{member ? 'EDIT' : 'ADD'} MEMBER PROTOCOL</h3>
                     <button onClick={onClose} className="text-muted-foreground hover:text-white transition-colors">
                         <X className="w-5 h-5" />
                     </button>
