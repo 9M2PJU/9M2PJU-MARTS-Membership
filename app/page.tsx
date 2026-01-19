@@ -7,6 +7,7 @@ import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus,
 import { supabase } from '@/lib/supabase';
 import { getRegion, getLicenseClass, isYOTA, Region, LicenseClass } from '@/lib/callsign-utils';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Mock UI components if missing tailored for this file
 const MyButton = ({ children, onClick, className, variant, size }: any) => (
@@ -21,7 +22,17 @@ const MyButton = ({ children, onClick, className, variant, size }: any) => (
 export default function Home() {
     const [allMembers, setAllMembers] = useState<Member[]>([]);
     const [loading, setLoading] = useState(true);
-    const [search, setSearch] = useState('');
+    const [debouncedSearch, setDebouncedSearch] = useState('');
+
+    // Performance: Debounce search input to avoid re-filtering 2000+ items on every keystroke
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            setDebouncedSearch(search);
+        }, 300);
+        return () => clearTimeout(handler);
+    }, [search]);
+
+    // ... existing filters ...
     const [statusFilter, setStatusFilter] = useState('all');
     const [regionFilter, setRegionFilter] = useState<Region | 'All'>('All');
     const [classFilter, setClassFilter] = useState<LicenseClass | 'All'>('All');
@@ -57,38 +68,38 @@ export default function Home() {
 
     const fetchData = async () => {
         setLoading(true);
-        let allData: Member[] = [];
-        let from = 0;
-        const step = 500; // Reduced batch size for reliability
-        let hasMore = true;
+        console.log('🚀 Starting optimized parallel fetch...');
 
-        while (hasMore) {
-            console.log(`Fetching members from ${from} to ${from + step - 1}...`);
-            const { data, error } = await supabase
+        // Performance: Parallel fetching to maximize bandwidth usage and reduce load time.
+        // We fetch 5 chunks of 500 records (Total capability: 2500) simultaneously.
+        // This is significantly faster than sequential "waterfall" fetching.
+        const chunkStarts = [0, 500, 1000, 1500, 2000];
+
+        const promises = chunkStarts.map(from =>
+            supabase
                 .from('members')
                 .select('*')
                 .order('created_at', { ascending: false })
-                .order('id', { ascending: true }) // Stable sort for pagination
-                .range(from, from + step - 1);
+                .order('id', { ascending: true })
+                .range(from, from + 499)
+        );
 
-            if (error) {
-                console.error('Error fetching members:', error);
-                hasMore = false;
-            } else {
-                if (data && data.length > 0) {
-                    allData = [...allData, ...data];
-                    if (data.length < step) {
-                        hasMore = false;
-                    } else {
-                        from += step;
-                    }
-                } else {
-                    hasMore = false;
-                }
+        const results = await Promise.all(promises);
+
+        let allData: Member[] = [];
+        results.forEach(result => {
+            if (result.data) {
+                allData = [...allData, ...result.data];
+            } else if (result.error) {
+                console.error('Error fetching chunk:', result.error);
             }
-        }
-        console.log(`Total members fetched: ${allData.length}`);
-        setAllMembers(allData);
+        });
+
+        // Deduplicate just in case of range overlaps (unlikely but safe)
+        const uniqueMembers = Array.from(new Map(allData.map(item => [item.id, item])).values());
+
+        console.log(`✅ Total members fetched (parallel): ${uniqueMembers.length}`);
+        setAllMembers(uniqueMembers);
         setLoading(false);
     };
 
@@ -186,8 +197,8 @@ export default function Home() {
         let result = allMembers;
 
         // Search
-        if (search) {
-            const q = search.toLowerCase();
+        if (debouncedSearch) {
+            const q = debouncedSearch.toLowerCase();
             result = result.filter(m =>
                 m.callsign.toLowerCase().includes(q) ||
                 m.name?.toLowerCase().includes(q) ||
@@ -229,7 +240,7 @@ export default function Home() {
         });
 
         return result;
-    }, [allMembers, search, statusFilter, regionFilter, classFilter, yotaFilter]);
+    }, [allMembers, debouncedSearch, statusFilter, regionFilter, classFilter, yotaFilter]);
 
     const displayedMembers = filteredMembers.slice(0, page * ITEMS_PER_PAGE);
     const showLoadMore = displayedMembers.length < filteredMembers.length;
@@ -265,13 +276,22 @@ export default function Home() {
             {/* Header */}
             <header className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-12 gap-6 relative z-10">
                 <div className="text-center md:text-left">
-                    <img src="/logo.png" alt="MARTS Logo" className="w-20 md:w-32 h-auto mx-auto md:mx-0 mb-4 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]" />
-                    <h1
-                        onClick={handleReset}
-                        className="text-3xl md:text-6xl font-orbitron font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-amber-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)] cursor-pointer hover:opacity-90 transition-opacity select-none"
-                    >
-                        MARTS
-                    </h1>
+                    <div className="flex flex-row items-center justify-center md:justify-start gap-4 mb-2">
+                        <Image
+                            src="/logo.png"
+                            alt="MARTS Logo"
+                            width={80}
+                            height={120}
+                            className="w-16 md:w-24 h-auto drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]"
+                            priority
+                        />
+                        <h1
+                            onClick={handleReset}
+                            className="text-3xl md:text-6xl font-orbitron font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-amber-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)] cursor-pointer hover:opacity-90 transition-opacity select-none"
+                        >
+                            MARTS
+                        </h1>
+                    </div>
                     <p className="text-muted-foreground font-rajdhani tracking-widest uppercase mt-2 text-xs md:text-base">
                         Unofficial MARTS Membership Database. Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-amber-400 transition-colors">9M2PJU</a>
                     </p>

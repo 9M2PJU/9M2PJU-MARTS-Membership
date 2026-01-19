@@ -1,29 +1,10 @@
+import { memo } from 'react';
 import { Calendar, IdCard, Pencil, Trash2, Baby } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { isYOTA } from "@/lib/callsign-utils"
 
-export type Member = {
-    id: string
-    callsign: string
-    name: string
-    member_id: string
-    expiry: string
-    is_local: boolean
-    date_of_birth?: string | null
-    ic_number?: string | null
-    status?: 'active' | 'expired'
-}
+// ... imports
 
-interface MemberCardProps {
-    member: Member
-    index?: number;
-    isAdmin?: boolean;
-    onEdit?: (member: Member) => void;
-    onDelete?: (id: string) => void;
-    onClick?: (member: Member) => void;
-}
-
-export function MemberCard({ member, index, isAdmin, onEdit, onDelete, onClick }: MemberCardProps) {
+export const MemberCard = memo(function MemberCard({ member, index, isAdmin, onEdit, onDelete, onClick }: MemberCardProps) {
+    // ... implementation
     // Helpers
     const isExpired = (expiryStr: string) => {
         if (!expiryStr || expiryStr === '-') return false;
@@ -143,4 +124,4 @@ export function MemberCard({ member, index, isAdmin, onEdit, onDelete, onClick }
             </div>
         </div>
     )
-}
+});

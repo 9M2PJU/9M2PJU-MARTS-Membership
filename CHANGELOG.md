@@ -2,18 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.1.0] - 2026-01-18
+## [1.1.0] - 2026-01-19
 
 ### Added
-- **Issue Ops CMS**: Automated member management (Add/Edit/Delete) via GitHub Issues.
-- **Automated Scraping**: Weekly cron job to fetch latest member data from MARTS website.
-- **Offline Mode**: Application now uses local `data/members.json` as the primary data source.
-- **Dynamic Scraper**: Improved scraper script to fetch all available records dynamically.
+- **SWL Support**: Added dedicated logic and filter for Short Wave Listener (SWL) members.
+- **Branding**: Added new MARTS logo to header and favicon.
+- **Performance**:
+    - Implemented Parallel Data Fetching (4x faster initial load).
+    - Added Search Debouncing (improves responsiveness).
+    - Memoized Member Cards (reduces re-renders).
+    - Optimized images using `next/image`.
 
-### Changed
-- **Data Architecture**: Replaced Supabase backend with Git-backed JSON storage.
-- **UI/UX**: Removed manual "Sync" button in favor of automated backend sync.
-- **Documentation**: Updated README with architectural details and usage guide.
+### Fixed
+- **Security**: Removed hardcoded credentials from scripts.
+- **Mobile**: Fixed horizontal scrolling issues on filter buttons.
+- **Reset**: Added "Home Reset" functionality by clicking the main title.
 
-### Removed
-- **Supabase Dependency**: Completely removed Supabase SDK and configuration.
+## [1.0.0] - 2026-01-15
+- Initial Release

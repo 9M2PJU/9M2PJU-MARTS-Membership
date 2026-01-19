@@ -1,113 +1,94 @@
-# MARTS Membership Web App
+<div align="center">
+  <img src="public/logo.png" alt="MARTS Logo" width="120" />
+  <h1>MARTS Membership Directory</h1>
+  <p><strong>The Unofficial Modern Membership Database for 9M/9W Hams</strong></p>
 
-A modern, responsive web application for managing Malaysian Amateur Radio Transmitter's Society (MARTS) membership directory.
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)](https://tailwindcss.com/)
+  [![Supabase](https://img.shields.io/badge/Supabase-Database-3ECF8E)](https://supabase.com/)
+  [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000)](https://vercel.com/)
+</div>
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Data Update](https://github.com/9m2pju/9M2PJU-MARTS-Membership/actions/workflows/scrape.yml/badge.svg)
+<br />
 
-## Features
+## 🚀 Overview
 
-- 🔍 **Search & Filter** - Real-time search by callsign, name, or member ID
-- 📊 **Multiple Filters** - Filter by prefix (9M/9W), expiry year/month, status
-- 📱 **PWA Support** - Install as app on desktop and mobile
-- 🌙 **Dark/Light Mode** - Toggle between themes
-- 📤 **Export JSON** - Download membership data
-- 💾 **Offline First** - Works without internet using local JSON data
-- 🤖 **Automated Sync** - Weekly automated scraping of official MARTS data
-- 📝 **Issue Ops Management** - Add/Delete members via GitHub Issues
+A high-performance, responsive web application tailored for the Malaysian Amateur Radio Transmitters' Society (MARTS). Built to provide lightning-fast lookups, advanced filtering, and a beautiful futuristic interface.
 
-## Architecture
+> **Note**: This is an unofficial community project made for 🇲🇾 by [9M2PJU](https://hamradio.my).
 
-This project uses a **GitOps** approach for data management:
+## ✨ Features
 
-1.  **Frontend**: Pure HTML/CSS/JS hosted on GitHub Pages.
-2.  **Data Source**: `data/members.json` is the single source of truth.
-3.  **Automation**:
-    *   **Weekly Scraper**: A GitHub Action runs every Sunday to fetch the latest list from the official MARTS website.
-    *   **Member Management**: Administrators can add or delete members by simply opening a GitHub Issue.
+- **⚡ Blazing Fast**: Powered by Next.js App Router and Supabase.
+- **🔍 Advanced Search**: Instant callsign, name, or ID lookup with debouncing.
+- **📻 Smart Filters**:
+    - **Class**: A, B, C, and **SWL** support.
+    - **Region**: West Malaysia, Sabah, Sarawak.
+    - **Status**: Live Active/Expired sorting.
+- **📱 Mobile Optimized**: Fully responsive PWA-ready design.
+- **🎨 Modern UI**: Glassmorphism aesthetics with "Space/Orbitron" theme.
+- **🛡️ RBAC Admin**: Role-based access control for Admins and Super Admins.
 
-## Quick Start
+## 🛠️ Tech Stack
 
-### 1. View Live Site
-Visit the [GitHub Pages Deployment](https://9m2pju.github.io/9M2PJU-MARTS-Membership/).
+| Component | Technology |
+|-----------|------------|
+| **Framework** | [Next.js 14](https://nextjs.org/) (App Router) |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) + Lucide Icons |
+| **Database** | [Supabase](https://supabase.com/) (PostgreSQL) |
+| **Auth** | Supabase Auth |
+| **Deployment** | [Vercel](https://vercel.com/) |
 
-### 2. Run Locally
-To test or develop locally:
+## 🚀 Getting Started
 
-```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/9M2PJU-MARTS-Membership.git
-cd 9M2PJU-MARTS-Membership
+### Prerequisites
 
-# Install dependencies (only needed for scraper scripts)
-npm install
+- Node.js 18+
+- Supabase Account
 
-# Serve locally
-npx serve .
-```
+### Installation
 
-## Data Management
+1.  **Clone the repo**
+    ```bash
+    git clone https://github.com/9M2PJU/9M2PJU-MARTS-Membership.git
+    cd 9M2PJU-MARTS-Membership
+    ```
 
-### Automatic Updates
-The directory is automatically updated **every Sunday at 00:00 UTC** by the [Member Scraper workflow](.github/workflows/scrape.yml).
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-### Manual Management (Admins Only via GitHub)
-**The web interface allows viewing only.** To add, edit, or delete members:
+3.  **Setup Environment**
+    Create a `.env.local` file:
+    ```env
+    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+    ```
 
-1.  Go to the **[Issues](../../issues/new/choose)** tab on GitHub.
-2.  Select **Add New Member**, **Edit Member details**, or **Delete Member**.
-3.  Fill out the form and submit.
-4.  A GitHub Action will automatically process your request and update the directory within ~30 seconds.
+4.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
 
-## Tech Stack
-
-- **Frontend**: Vanilla HTML5, CSS3 (Glassmorphism), JavaScript (ES6+)
-- **Data**: JSON (stored in repo)
-- **CI/CD**: GitHub Actions (Node.js)
-- **PWA**: Service Worker for offline support
-
-## File Structure
-
-```
-├── index.html          # Main HTML page
-├── manifest.json       # PWA manifest
-├── sw.js               # Service worker
-├── css/
-│   └── style.css       # Styling
-├── js/
-│   ├── data.js         # Data layer (JSON + LocalStorage)
-│   ├── filters.js      # Filter logic
-│   └── app.js          # Main app logic
-├── data/
-│   └── members.json    # The Database (JSON)
-├── scripts/
-│   ├── scrape.js          # Web scraper script
-│   └── manage_members.js  # Issue Ops processor
-└── .github/
-    ├── workflows/      # CI/CD pipelines
-    └── ISSUE_TEMPLATE/ # Forms for data management
-```
-
-## Callsign Prefixes
+## 📜 Callsign Structure
 
 | Prefix | Region | Class |
 |--------|--------|-------|
-| 9M2 | Peninsular Malaysia | A |
-| 9M4 | Peninsular Malaysia | A |
-| 9M6 | Sabah | A |
-| 9M8 | Sarawak | A |
-| 9M0 | Special Event | - |
-| 9W2 | Peninsular Malaysia | B |
-| 9W4 | Peninsular Malaysia | B |
-| 9W6 | Sabah | B |
-| 9W8 | Sarawak | B |
-| 9W3 | Malaysia (All States) | C |
+| **9M2** | West Malaysia | A |
+| **9M6** | Sabah | A |
+| **9M8** | Sarawak | A |
+| **9W2** | West Malaysia | B |
+| **9W6** | Sabah | B |
+| **9W8** | Sarawak | B |
+| **SWL** | West Malaysia | SWL |
 
-## License
+## 📄 License
 
-MIT License - Feel free to use and modify!
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## Credits
-
-- Data source: [MARTS Official](https://ahli.marts.org.my)
-- Malaysian Amateur Radio Transmitter's Society
+---
+<div align="center">
+  Made with ❤️ by 9M2PJU
+</div>
