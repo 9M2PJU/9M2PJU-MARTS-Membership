@@ -24,10 +24,8 @@ export default function RootLayout({
                     {children}
                 </div>
                 <footer className="w-full py-6 text-center text-sm text-muted-foreground border-t border-border/40 backdrop-blur-md bg-background/80">
-                    <p className="flex items-center justify-center gap-4">
-                        <span>© 2026 MARTS</span>
-                        <span>•</span>
-                        <a href="https://marts.org.my" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">marts.org.my</a>
+                    <p>
+                        © {new Date().getFullYear()} Unofficial MARTS Membership Database. Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">9M2PJU</a>
                     </p>
                 </footer>
             </body>
