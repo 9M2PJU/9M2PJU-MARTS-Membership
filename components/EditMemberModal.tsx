@@ -107,8 +107,8 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin,
                     </button>
                 </div>
 
-                <form onSubmit={handleSubmit} className="p-6 space-y-4 font-rajdhani">
-                    <div className="grid grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="p-4 md:p-6 space-y-4 font-rajdhani">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-1">
                             <label className="text-xs uppercase text-muted-foreground tracking-wider">Callsign</label>
                             <input

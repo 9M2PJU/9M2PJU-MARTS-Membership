@@ -254,36 +254,36 @@ export default function Home() {
             <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background pointer-events-none z-[-1]" />
 
             {/* Header */}
-            <header className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 relative z-10">
+            <header className="flex flex-col md:flex-row justify-between items-center mb-6 md:mb-12 gap-6 relative z-10">
                 <div className="text-center md:text-left">
-                    <h1 className="text-4xl md:text-6xl font-orbitron font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-amber-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
+                    <h1 className="text-3xl md:text-6xl font-orbitron font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-amber-500 drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
                         MARTS
                     </h1>
-                    <p className="text-muted-foreground font-rajdhani tracking-widest uppercase mt-2 text-sm md:text-base">
+                    <p className="text-muted-foreground font-rajdhani tracking-widest uppercase mt-2 text-xs md:text-base">
                         Membership Database Access Terminal
                     </p>
                 </div>
 
                 {/* Stats & Auth */}
-                <div className="flex flex-col gap-4 items-end">
-                    <div className="flex gap-4 md:gap-8 bg-card/40 backdrop-blur-md p-4 rounded-xl border border-primary/20">
-                        <div className="text-center">
-                            <div className="text-2xl md:text-3xl font-orbitron font-bold text-foreground">{stats.total}</div>
+                <div className="flex flex-col gap-4 items-end w-full md:w-auto">
+                    <div className="flex justify-between md:justify-start gap-4 md:gap-8 bg-card/40 backdrop-blur-md p-4 rounded-xl border border-primary/20 w-full md:w-auto">
+                        <div className="text-center flex-1 md:flex-none">
+                            <div className="text-xl md:text-3xl font-orbitron font-bold text-foreground">{stats.total}</div>
                             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Total</div>
                         </div>
                         <div className="w-px bg-border"></div>
-                        <div className="text-center">
-                            <div className="text-2xl md:text-3xl font-orbitron font-bold text-primary drop-shadow-[0_0_5px_var(--primary)]">{stats.active}</div>
+                        <div className="text-center flex-1 md:flex-none">
+                            <div className="text-xl md:text-3xl font-orbitron font-bold text-primary drop-shadow-[0_0_5px_var(--primary)]">{stats.active}</div>
                             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Active</div>
                         </div>
                         <div className="w-px bg-border"></div>
-                        <div className="text-center">
-                            <div className="text-2xl md:text-3xl font-orbitron font-bold text-red-500 drop-shadow-[0_0_5px_rgba(239,68,68,0.5)]">{stats.expired}</div>
+                        <div className="text-center flex-1 md:flex-none">
+                            <div className="text-xl md:text-3xl font-orbitron font-bold text-red-500 drop-shadow-[0_0_5px_rgba(239,68,68,0.5)]">{stats.expired}</div>
                             <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Expired</div>
                         </div>
                     </div>
 
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 w-full md:w-auto justify-end">
                         {user ? (
                             <>
                                 <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded text-green-500 text-xs font-orbitron">
@@ -343,7 +343,7 @@ export default function Home() {
                         <div className="h-4 w-px bg-border/50 hidden md:block"></div>
 
                         {/* Region */}
-                        <div className="flex bg-secondary/50 p-1 rounded-lg overflow-x-auto max-w-[200px] md:max-w-none">
+                        <div className="flex bg-secondary/50 p-1 rounded-lg overflow-x-auto max-w-[200px] md:max-w-none scrollbar-hide">
                             {['All', 'West Malaysia', 'Sabah', 'Sarawak', 'Foreign'].map(r => (
                                 <button
                                     key={r}
