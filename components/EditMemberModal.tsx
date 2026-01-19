@@ -52,9 +52,10 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin 
         e.preventDefault();
         setLoading(true);
 
-        // Sanitize data (convert empty strings to null for dates)
+        // Sanitize data (convert empty strings to null for dates and optional text)
         const submissionData = { ...formData };
         if (!submissionData.date_of_birth) submissionData.date_of_birth = null;
+        if (!submissionData.ic_number) submissionData.ic_number = null;
 
         let error;
 
