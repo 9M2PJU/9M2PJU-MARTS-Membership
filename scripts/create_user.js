@@ -13,7 +13,12 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function createUser() {
     const email = '9m2pju@hamradio.my';
-    const password = 'K4hvdq9tj9!@#';
+    const password = process.env.INITIAL_USER_PASSWORD;
+
+    if (!password) {
+        console.error('❌ Error: INITIAL_USER_PASSWORD environment variable is not set.');
+        process.exit(1);
+    }
 
     console.log(`🚀 Attempting to register ${email}...`);
 
