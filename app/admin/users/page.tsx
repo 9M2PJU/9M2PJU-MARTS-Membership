@@ -68,7 +68,43 @@ export default function AdminUsersPage() {
                 <Shield className="w-10 h-10" /> ADMIN MANAGEMENT
             </h1>
 
-            {/* Add New */}
+            {/* Update My Credentials */}
+            <div className="bg-card/50 border border-primary/20 p-6 rounded-xl mb-8 backdrop-blur-md">
+                <h3 className="text-lg font-orbitron text-foreground mb-4">UPDATE MY CREDENTIALS</h3>
+                <form onSubmit={async (e) => {
+                    e.preventDefault();
+                    const password = (e.currentTarget.elements.namedItem('myPassword') as HTMLInputElement).value;
+                    if (!password || password.length < 6) {
+                        alert('Password must be at least 6 characters.');
+                        return;
+                    }
+                    if (!confirm('Are you sure you want to update your own password?')) return;
+
+                    const { error } = await supabase.auth.updateUser({ password });
+                    if (error) alert(error.message);
+                    else {
+                        alert('Password updated successfully. You can now login with this password.');
+                        (e.target as HTMLFormElement).reset();
+                    }
+                }} className="flex gap-4 items-end">
+                    <div className="flex-1">
+                        <label className="text-xs font-orbitron text-primary mb-1 block">NEW PASSWORD</label>
+                        <input
+                            name="myPassword"
+                            type="text"
+                            placeholder="NewSecurePassword123"
+                            className="w-full bg-secondary/50 border border-input rounded px-4 py-2 focus:ring-2 focus:ring-primary/50 outline-none font-mono"
+                            required
+                            minLength={6}
+                        />
+                    </div>
+                    <button className="bg-amber-500 text-black font-bold px-6 py-2 rounded hover:bg-amber-400 flex items-center gap-2 font-orbitron">
+                        <Shield className="w-4 h-4" /> UPDATE MY PASSWORD
+                    </button>
+                </form>
+            </div>
+
+            {/* Add New Admin */}
             <div className="bg-card/50 border border-primary/20 p-6 rounded-xl mb-8 backdrop-blur-md">
                 <h3 className="text-lg font-orbitron text-foreground mb-4">GRANT CLEARANCE</h3>
                 <form action={async (formData) => {
