@@ -43,37 +43,6 @@ A high-performance, responsive web application tailored for the Malaysian Amateu
 | **Auth** | Supabase Auth |
 | **Deployment** | [Vercel](https://vercel.com/) |
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- Supabase Account
-
-### Installation
-
-1.  **Clone the repo**
-    ```bash
-    git clone https://github.com/9M2PJU/9M2PJU-MARTS-Membership.git
-    cd 9M2PJU-MARTS-Membership
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
-
-3.  **Setup Environment**
-    Create a `.env.local` file:
-    ```env
-    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-    ```
-
-4.  **Run Development Server**
-    ```bash
-    npm run dev
-    ```
 
 ## 📜 Callsign Structure
 
