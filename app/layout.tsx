@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 }
 
 import BackToHomeButton from '@/components/BackToHomeButton'
+import CursorTrails from '@/components/CursorTrails'
 
 export default function RootLayout({
     children,
@@ -22,6 +23,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={cn(inter.variable, orbitron.variable, rajdhani.variable, "font-sans antialiased min-h-screen flex flex-col")}>
+                <CursorTrails />
                 <div className="flex-grow">
                     {children}
                 </div>
