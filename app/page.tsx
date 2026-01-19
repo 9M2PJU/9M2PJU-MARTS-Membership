@@ -309,7 +309,7 @@ export default function Home() {
                         <Image
                             src="/logo.png"
                             alt="MARTS Logo"
-                            width={80}
+                            width={120}
                             height={120}
                             className="w-16 md:w-24 h-auto drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]"
                             priority

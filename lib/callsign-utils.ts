@@ -1,4 +1,4 @@
-import { Member } from "@/components/MemberCard";
+
 
 export type Region = 'West Malaysia' | 'Sabah' | 'Sarawak' | 'Foreign' | 'Unknown';
 export type LicenseClass = 'A' | 'B' | 'C' | 'SWL' | 'Unknown';
@@ -31,9 +31,7 @@ export function getLicenseClass(callsign: string): LicenseClass {
     return 'Unknown';
 }
 
-export function isYOTA(dob: string | null | undefined): boolean {
-    if (!dob) return false;
-
+function getAge(dob: string): number {
     const birthDate = new Date(dob);
     const now = new Date();
 
@@ -42,6 +40,19 @@ export function isYOTA(dob: string | null | undefined): boolean {
     if (m < 0 || (m === 0 && now.getDate() < birthDate.getDate())) {
         age--;
     }
+    return age;
+}
 
-    return age < 40;
+export function isYOTA(dob: string | null | undefined): boolean {
+    if (!dob) return false;
+    const age = getAge(dob);
+    return age <= 30;
+}
+
+export function getYotaRole(dob: string | null | undefined): 'Participant' | 'Leader' | null {
+    if (!dob) return null;
+    const age = getAge(dob);
+    if (age <= 25) return 'Participant';
+    if (age <= 30) return 'Leader';
+    return null;
 }

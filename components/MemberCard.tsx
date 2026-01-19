@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { Calendar, IdCard, Pencil, Trash2, Baby } from "lucide-react"
+import { Calendar, IdCard, Pencil, Trash2, Baby, GraduationCap } from "lucide-react"
 import { Member } from '@/app/page';
-import { isYOTA } from '@/lib/callsign-utils';
+import { isYOTA, getYotaRole } from '@/lib/callsign-utils';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -49,7 +49,7 @@ export const MemberCard = memo(function MemberCard({ member, index, isAdmin, onE
 
     const status = getStatus(member.expiry);
     const isLocal = member.is_local;
-    const isYouth = isYOTA(member.date_of_birth);
+    const yotaRole = getYotaRole(member.date_of_birth);
 
     // Format index strictly to 3 digits like #001, #045, #1999 (ok 4 digits if needed)
     const formattedIndex = index ? `#${index.toString().padStart(3, '0')}` : '';
@@ -83,9 +83,15 @@ export const MemberCard = memo(function MemberCard({ member, index, isAdmin, onE
                         </div>
                         <h3 className="font-orbitron font-bold text-2xl tracking-wider text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
                             {member.callsign}
-                            {isYouth && (
-                                <span className="inline-flex items-center gap-1 rounded bg-purple-500/20 border border-purple-500/50 px-1.5 py-0.5 text-[10px] text-purple-400 font-orbitron tracking-widest uppercase">
-                                    <Baby className="w-3 h-3" /> YOTA
+                            {yotaRole && (
+                                <span className={cn(
+                                    "inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-[10px] font-orbitron tracking-widest uppercase",
+                                    yotaRole === 'Leader'
+                                        ? "bg-amber-500/20 border-amber-500/50 text-amber-400"
+                                        : "bg-purple-500/20 border-purple-500/50 text-purple-400"
+                                )}>
+                                    {yotaRole === 'Leader' ? <GraduationCap className="w-3 h-3" /> : <Baby className="w-3 h-3" />}
+                                    {yotaRole === 'Leader' ? 'YOTA LDR' : 'YOTA'}
                                 </span>
                             )}
                         </h3>
