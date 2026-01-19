@@ -43,16 +43,26 @@
 
     body {
         @apply bg-background text-foreground;
+        /* Default cursor for everything */
         cursor: url('/rocket.svg') 12 2, auto;
     }
 
+    /* Force the custom cursor on ALL interactive elements */
     a,
     button,
     [role="button"],
     input,
     select,
-    textarea {
-        cursor: url('/rocket.svg') 12 2, pointer;
+    textarea,
+    [type="button"],
+    [type="submit"],
+    [type="reset"] {
+        cursor: url('/rocket.svg') 12 2, pointer !important;
+    }
+
+    /* Ensure specific overrides don't break it */
+    .cursor-pointer {
+        cursor: url('/rocket.svg') 12 2, pointer !important;
     }
 }
 
