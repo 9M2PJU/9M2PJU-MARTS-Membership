@@ -36,9 +36,11 @@ export function MemberCard({ member, index, isAdmin, onEdit, onDelete }: MemberC
     };
 
     const getStatus = (expiry: string) => {
-        if (!expiry || expiry === '-') return { label: 'Unknown', color: 'bg-gray-500/20 text-gray-400 border-gray-500/50' };
-        const expired = isExpired(expiry);
-        const parts = expiry.split('/');
+        // Treat missing data as Expired (1900/01)
+        const effectiveExpiry = (!expiry || expiry === '-') ? '1900/01' : expiry;
+
+        const expired = isExpired(effectiveExpiry);
+        const parts = effectiveExpiry.split('/');
         const year = parseInt(parts[0]);
         const month = parts[1] ? parseInt(parts[1]) - 1 : 11;
         const expiryDate = new Date(year, month + 1, 0, 23, 59, 59);

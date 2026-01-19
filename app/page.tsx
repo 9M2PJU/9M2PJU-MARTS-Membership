@@ -133,12 +133,16 @@ export default function Home() {
         let active = 0;
         let expired = 0;
         // Reuse expiry logic broadly (simplified for stats)
+        // Reuse expiry logic broadly (simplified for stats)
         allMembers.forEach(m => {
-            if (!m.expiry || m.expiry === '-') return;
-            const parts = m.expiry.split('/');
+            // Treat missing or dummy dates as Expired (default to 1900)
+            const expiryStr = (m.expiry && m.expiry !== '-') ? m.expiry : '1900/01';
+
+            const parts = expiryStr.split('/');
             const year = parseInt(parts[0]);
             const month = parts[1] ? parseInt(parts[1]) - 1 : 11;
             const expiryDate = new Date(year, month + 1, 0, 23, 59, 59);
+
             if (new Date() > expiryDate) expired++;
             else active++;
         });
