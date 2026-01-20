@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Heart } from 'lucide-react';
 import Image from 'next/image';
 
@@ -51,7 +52,9 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
 
     if (!isVisible) return null;
 
-    return (
+    if (!isVisible) return null;
+
+    return createPortal(
         <div
             className="fixed inset-0 z-[9999] isolate flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
             onClick={handleClose}
@@ -121,7 +124,8 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
                     </button>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }
 
