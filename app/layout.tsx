@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 
 import BackToHomeButton from '@/components/BackToHomeButton'
 import CursorTrails from '@/components/CursorTrails'
+import { DonationPopup } from '@/components/DonationPopup'
 
 export default function RootLayout({
     children,
@@ -28,6 +29,7 @@ export default function RootLayout({
                     {children}
                 </div>
                 <BackToHomeButton />
+                <DonationPopup />
                 <footer className="w-full py-6 text-center text-sm text-muted-foreground border-t border-border/40 backdrop-blur-md bg-background/80">
                     <p>
                         © {new Date().getFullYear()} Unofficial Malaysian Amateur Radio Transmitters' Society Membership Database. Made for 🇲🇾 by <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">9M2PJU</a>

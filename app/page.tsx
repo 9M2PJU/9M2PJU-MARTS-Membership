@@ -3,11 +3,12 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { MemberCard, Member } from '@/components/MemberCard';
 import { EditMemberModal } from '@/components/EditMemberModal';
-import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus, Baby, Users } from 'lucide-react';
+import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus, Baby, Users, Heart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { getRegion, getLicenseClass, isYOTA, Region, LicenseClass } from '@/lib/callsign-utils';
 import Link from 'next/link';
 import Image from 'next/image';
+import { DonationButton } from '@/components/DonationPopup';
 
 // Mock UI components if missing tailored for this file
 const MyButton = ({ children, onClick, className, variant, size }: any) => (
@@ -362,7 +363,8 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="flex gap-2 w-full md:w-auto justify-end">
+                    <div className="flex gap-2 w-full md:w-auto justify-end flex-wrap">
+                        <DonationButton />
                         {user ? (
                             <>
                                 <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded text-green-500 text-xs font-orbitron">
