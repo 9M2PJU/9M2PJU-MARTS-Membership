@@ -54,13 +54,15 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
 
     if (!isVisible) return null;
 
+    if (!isVisible) return null;
+
     return createPortal(
         <div
             className="fixed inset-0 z-[9999] isolate flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
             onClick={handleClose}
         >
             <div
-                className="relative bg-gradient-to-br from-background via-background to-primary/5 border border-primary/30 rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto"
+                className="relative bg-gradient-to-br from-background via-background to-primary/5 border border-primary/30 rounded-2xl shadow-2xl w-[95%] max-w-md max-h-[85vh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
@@ -72,18 +74,18 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
                 </button>
 
                 {/* Header */}
-                <div className="bg-gradient-to-r from-primary/20 to-amber-500/20 p-6 text-center border-b border-primary/20">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 mb-3">
-                        <Heart className="w-6 h-6 text-primary" />
+                <div className="bg-gradient-to-r from-primary/20 to-amber-500/20 p-4 md:p-6 text-center border-b border-primary/20">
+                    <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/20 mb-2 md:mb-3">
+                        <Heart className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                     </div>
-                    <h2 className="font-orbitron font-bold text-base text-primary leading-tight">
+                    <h2 className="font-orbitron font-bold text-sm md:text-base text-primary leading-tight px-4">
                         Support Unofficial MARTS Membership Database by 9M2PJU
                     </h2>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 space-y-4">
-                    <p className="text-foreground/80 text-center font-rajdhani text-sm leading-relaxed">
+                <div className="p-4 md:p-6 space-y-4">
+                    <p className="text-foreground/80 text-center font-rajdhani text-xs md:text-sm leading-relaxed">
                         Help us cover server maintenance costs and keep MARTS Membership Directory running smoothly for the Malaysian amateur radio community. Every contribution, big or small, makes a difference!
                     </p>
 
@@ -95,20 +97,20 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
                                 alt="DuitNow QR Code for Donation"
                                 width={200}
                                 height={200}
-                                className="rounded-lg"
+                                className="rounded-lg w-[160px] h-[160px] md:w-[200px] md:h-[200px]"
                             />
                         </div>
-                        <p className="text-xs text-muted-foreground text-center">
+                        <p className="text-[10px] md:text-xs text-muted-foreground text-center">
                             Scan with your banking or e-wallet app to donate
                         </p>
                     </div>
 
                     {/* Thank You Message */}
                     <div className="text-center pt-2 border-t border-white/10">
-                        <p className="text-sm text-primary/80 font-rajdhani">
+                        <p className="text-xs md:text-sm text-primary/80 font-rajdhani">
                             Thank you for your generous support! 🙏
                         </p>
-                        <p className="text-xs text-muted-foreground mt-1 font-orbitron">
+                        <p className="text-[10px] md:text-xs text-muted-foreground mt-1 font-orbitron">
                             73 de 9M2PJU
                         </p>
                     </div>
@@ -118,7 +120,7 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
                 <div className="p-4 bg-primary/5 border-t border-primary/20">
                     <button
                         onClick={handleClose}
-                        className="w-full py-2 px-4 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg text-primary font-rajdhani font-bold transition-colors"
+                        className="w-full py-2 px-4 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg text-primary font-rajdhani font-bold transition-colors text-sm md:text-base"
                     >
                         Maybe Later
                     </button>
