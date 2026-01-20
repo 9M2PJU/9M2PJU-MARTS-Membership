@@ -364,7 +364,6 @@ export default function Home() {
                     </div>
 
                     <div className="flex gap-2 w-full md:w-auto justify-end flex-wrap">
-                        <DonationButton />
                         {user ? (
                             <>
                                 <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/30 rounded text-green-500 text-xs font-orbitron">
@@ -455,6 +454,9 @@ export default function Home() {
                         >
                             <Baby className="w-3 h-3" /> YOTA
                         </button>
+
+                        {/* Donation Button */}
+                        <DonationButton />
                     </div>
                 </div>
             </div>
