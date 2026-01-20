@@ -56,7 +56,7 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
             onClick={handleClose}
         >
             <div
-                className="relative bg-gradient-to-br from-background via-background to-primary/5 border border-primary/30 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden"
+                className="relative bg-gradient-to-br from-background via-background to-primary/5 border border-primary/30 rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
