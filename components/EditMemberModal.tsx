@@ -172,8 +172,8 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin,
                             <label className="text-xs uppercase text-muted-foreground tracking-wider">Status</label>
                             {readOnly ? (
                                 <div className={`w-full border rounded p-2 font-medium ${calculatedStatus === 'expired'
-                                        ? 'bg-red-500/20 border-red-500/50 text-red-400'
-                                        : 'bg-green-500/20 border-green-500/50 text-green-400'
+                                    ? 'bg-red-500/20 border-red-500/50 text-red-400'
+                                    : 'bg-green-500/20 border-green-500/50 text-green-400'
                                     }`}>
                                     {calculatedStatus === 'active' ? 'Active' : 'Expired'}
                                 </div>
@@ -190,7 +190,17 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin,
                         </div>
                     </div>
 
-                    {(isSuperAdmin || !readOnly) && ( // Only show private fields if SuperAdmin OR in Edit Mode (where logic inside handles restrictions)
+                    {/* Renew Membership Button for Expired Members */}
+                    {readOnly && calculatedStatus === 'expired' && (
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScRkcEtqmCQ8E6H_M9Sl86Cr2ggY7ur24GgjFhbFVHJQJm0TQ/viewform"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-bold py-3 px-4 rounded-lg transition-all duration-300 font-orbitron uppercase tracking-wider shadow-lg hover:shadow-amber-500/25"
+                        >
+                            🔄 Renew Membership
+                        </a>
+                    )}                    {(isSuperAdmin || !readOnly) && ( // Only show private fields if SuperAdmin OR in Edit Mode (where logic inside handles restrictions)
                         <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
                             <div className="space-y-1">
                                 <label className="text-xs uppercase text-primary/70 tracking-wider">Identity Card {isSuperAdmin ? '(Private)' : '(Restricted)'}</label>
