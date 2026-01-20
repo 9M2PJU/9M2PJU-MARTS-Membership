@@ -18,7 +18,7 @@ export const MemberCard = memo(function MemberCard({ member, index, isAdmin, onE
     // ... implementation
     // Helpers
     const isExpired = (expiryStr: string) => {
-        if (!expiryStr || expiryStr === '-') return false;
+        if (!expiryStr || expiryStr === '-') return true; // Missing expiry = expired
         // Format YYYY or YYYY/MM
         const parts = expiryStr.split('/');
         const year = parseInt(parts[0]);
@@ -29,11 +29,14 @@ export const MemberCard = memo(function MemberCard({ member, index, isAdmin, onE
     };
 
     const getStatus = (expiry: string) => {
-        // Treat missing data as Expired (1900/01)
-        const effectiveExpiry = (!expiry || expiry === '-') ? '1900/01' : expiry;
+        const expired = isExpired(expiry);
 
-        const expired = isExpired(effectiveExpiry);
-        const parts = effectiveExpiry.split('/');
+        // For "expiring soon" check, we need a valid date
+        if (!expiry || expiry === '-') {
+            return { label: 'High Council Expelled', color: 'bg-red-500/10 text-red-500 border-red-500/50' };
+        }
+
+        const parts = expiry.split('/');
         const year = parseInt(parts[0]);
         const month = parts[1] ? parseInt(parts[1]) - 1 : 11;
         const expiryDate = new Date(year, month + 1, 0, 23, 59, 59);
