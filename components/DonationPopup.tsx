@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { X, Heart } from 'lucide-react';
 import Image from 'next/image';
 
-const POPUP_DELAY_MS = 5 * 60 * 1000; // 5 minutes
+const INITIAL_DELAY_MS = 3 * 1000; // 3 seconds for new users
+const REPOPUP_HOURS = 1; // Re-show popup after 1 hour
 const STORAGE_KEY = 'donation_popup_dismissed';
 
 interface DonationPopupProps {
@@ -22,20 +23,20 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
             return;
         }
 
-        // Check if popup was recently dismissed (within 24 hours)
+        // Check if popup was recently dismissed
         const dismissedAt = localStorage.getItem(STORAGE_KEY);
         if (dismissedAt) {
             const dismissedTime = parseInt(dismissedAt, 10);
             const hoursSinceDismiss = (Date.now() - dismissedTime) / (1000 * 60 * 60);
-            if (hoursSinceDismiss < 24) {
-                return; // Don't show popup if dismissed within 24 hours
+            if (hoursSinceDismiss < REPOPUP_HOURS) {
+                return; // Don't show popup if dismissed within the hour
             }
         }
 
-        // Show popup after 5 minutes
+        // Show popup after short delay (3 seconds)
         const timer = setTimeout(() => {
             setIsVisible(true);
-        }, POPUP_DELAY_MS);
+        }, INITIAL_DELAY_MS);
 
         return () => clearTimeout(timer);
     }, [forceShow]);
@@ -72,8 +73,8 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 mb-3">
                         <Heart className="w-6 h-6 text-primary" />
                     </div>
-                    <h2 className="font-orbitron font-bold text-xl text-primary">
-                        Support MARTS Membership
+                    <h2 className="font-orbitron font-bold text-base text-primary leading-tight">
+                        Support Unofficial MARTS Membership Database by 9M2PJU
                     </h2>
                 </div>
 
