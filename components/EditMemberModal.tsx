@@ -14,9 +14,24 @@ interface EditMemberModalProps {
     readOnly?: boolean;
 }
 
+// Helper to calculate status from expiry date
+const calculateStatusFromExpiry = (expiryStr: string | undefined): 'active' | 'expired' => {
+    if (!expiryStr || expiryStr === '-') return 'expired';
+
+    const parts = expiryStr.split('/');
+    const year = parseInt(parts[0]);
+    const month = parts[1] ? parseInt(parts[1]) - 1 : 11; // End of year if month missing
+
+    const expiryDate = new Date(year, month + 1, 0, 23, 59, 59); // Last day of month
+    return new Date() > expiryDate ? 'expired' : 'active';
+};
+
 export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin, readOnly = false }: EditMemberModalProps) {
     const [formData, setFormData] = useState<Partial<Member>>({});
     const [loading, setLoading] = useState(false);
+
+    // Calculate the actual status based on expiry date
+    const calculatedStatus = calculateStatusFromExpiry(formData.expiry);
 
     useEffect(() => {
         if (member) {
@@ -155,15 +170,23 @@ export function EditMemberModal({ member, isOpen, onClose, onSave, isSuperAdmin,
                         </div>
                         <div className="space-y-1">
                             <label className="text-xs uppercase text-muted-foreground tracking-wider">Status</label>
-                            <select
-                                className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none disabled:opacity-70 disabled:cursor-not-allowed"
-                                value={formData.status}
-                                onChange={e => setFormData({ ...formData, status: e.target.value as any })}
-                                disabled={readOnly}
-                            >
-                                <option value="active">Active</option>
-                                <option value="expired">Expired</option>
-                            </select>
+                            {readOnly ? (
+                                <div className={`w-full border rounded p-2 font-medium ${calculatedStatus === 'expired'
+                                        ? 'bg-red-500/20 border-red-500/50 text-red-400'
+                                        : 'bg-green-500/20 border-green-500/50 text-green-400'
+                                    }`}>
+                                    {calculatedStatus === 'active' ? 'Active' : 'Expired'}
+                                </div>
+                            ) : (
+                                <select
+                                    className="w-full bg-secondary/50 border border-input rounded p-2 focus:ring-2 focus:ring-primary/50 outline-none disabled:opacity-70 disabled:cursor-not-allowed"
+                                    value={formData.status}
+                                    onChange={e => setFormData({ ...formData, status: e.target.value as any })}
+                                >
+                                    <option value="active">Active</option>
+                                    <option value="expired">Expired</option>
+                                </select>
+                            )}
                         </div>
                     </div>
 
