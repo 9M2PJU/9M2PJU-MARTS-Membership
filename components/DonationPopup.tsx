@@ -79,7 +79,7 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
 
                 {/* Content */}
                 <div className="p-6 space-y-4">
-                    <p className="text-muted-foreground text-center font-rajdhani text-sm leading-relaxed">
+                    <p className="text-foreground/80 text-center font-rajdhani text-sm leading-relaxed">
                         Help us cover server maintenance costs and keep MARTS Membership Directory running smoothly for the Malaysian amateur radio community. Every contribution, big or small, makes a difference!
                     </p>
 
