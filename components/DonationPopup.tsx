@@ -52,7 +52,7 @@ export function DonationPopup({ forceShow = false, onClose }: DonationPopupProps
 
     return (
         <div
-            className="fixed inset-0 z-[200] flex items-start justify-center pt-[200px] md:pt-[180px] p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
+            className="fixed inset-0 z-[9999] isolate flex items-start justify-center pt-[200px] md:pt-[180px] p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
             onClick={handleClose}
         >
             <div
