@@ -85,3 +85,10 @@ export function getMembershipStatus(expiry: string | null | undefined): { status
         return { status: 'EXPIRED', expiryDate: null };
     }
 }
+
+export function cleanCallsign(callsign: string): string {
+    if (!callsign) return '';
+    // Removes " EX ..." or " ( EX ..." or "(EX ..."
+    // Case insensitive, handles optional parentheses and whitespace
+    return callsign.replace(/\s*\(?\s*EX\b.*/i, '').trim();
+}

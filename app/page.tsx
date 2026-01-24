@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { MemberCard, Member } from '@/components/MemberCard';
+import { MemberCard } from '@/components/MemberCard';
+import { Member } from '@/lib/types';
 import { EditMemberModal } from '@/components/EditMemberModal';
 import { Search, Filter, RefreshCw, Smartphone, LogIn, Shield, LogOut, UserPlus, Baby, Users, Heart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';

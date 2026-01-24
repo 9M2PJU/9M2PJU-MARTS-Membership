@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { Calendar, IdCard, Pencil, Trash2, Baby, GraduationCap } from "lucide-react"
-import { Member } from '@/app/page';
-import { isYOTA, getYotaRole } from '@/lib/callsign-utils';
+import { Member } from '@/lib/types';
+import { isYOTA, getYotaRole, cleanCallsign } from '@/lib/callsign-utils';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -85,7 +85,7 @@ export const MemberCard = memo(function MemberCard({ member, index, isAdmin, onE
                             {formattedIndex}
                         </div>
                         <h3 className="font-orbitron font-bold text-2xl tracking-wider text-foreground group-hover:text-primary transition-colors flex items-center gap-2">
-                            {member.callsign}
+                            {cleanCallsign(member.callsign)}
                             {yotaRole && (
                                 <span className={cn(
                                     "inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-[10px] font-orbitron tracking-widest uppercase",

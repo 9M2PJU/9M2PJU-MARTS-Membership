@@ -25,10 +25,11 @@ export async function GET(
             return NextResponse.json({ error: 'Callsign required' }, { status: 400, headers });
         }
 
+        // Search for exact match OR "Callsign EX ..." OR "Callsign ( EX ..."
         const { data, error } = await supabase
             .from('members')
             .select('*')
-            .ilike('callsign', callsign)
+            .or(`callsign.ilike.${callsign},callsign.ilike.${callsign} EX %,callsign.ilike.${callsign} ( EX %`)
             .single();
 
         if (error) {
@@ -41,9 +42,16 @@ export async function GET(
 
         const { status, expiryDate } = getMembershipStatus(data.expiry);
 
+        // Clean the callsign in the response (e.g. "9M2EDK EX 9W2EDK" -> "9M2EDK")
+        const cleanName = data.callsign.replace(/\s*\(?\s*EX\b.*/i, '').trim();
+        const memberData = {
+            ...data,
+            callsign: cleanName
+        };
+
         return NextResponse.json({
             found: true,
-            member: data,
+            member: memberData,
             status,
             calculated_expiry_date: expiryDate
         }, { status: 200, headers });

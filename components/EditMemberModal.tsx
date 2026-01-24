@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { X, Save, Eraser } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
-import { Member } from './MemberCard';
+import { Member } from '@/lib/types';
 
 interface EditMemberModalProps {
     member?: Member | null;
