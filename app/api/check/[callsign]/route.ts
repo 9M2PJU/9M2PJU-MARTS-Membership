@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabase';
-import { getMembershipStatus } from '@/lib/callsign-utils';
+import { getMembershipStatus, cleanCallsign } from '@/lib/callsign-utils';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
@@ -25,27 +25,46 @@ export async function GET(
             return NextResponse.json({ error: 'Callsign required' }, { status: 400, headers });
         }
 
-        // Search for exact match OR "Callsign EX ..." OR "Callsign ( EX ..."
+        // Search logic:
+        // 1. Exact match
+        // 2. Starts with "CALLSIGN " (e.g. "9M2HIM EX 9W2NKL")
+        // 3. Starts with "CALLSIGN(" (e.g. "9M2HIM(EX...")
+        // 4. Contains " EX CALLSIGN" at the end or followed by closing paren (searches for old callsign)
         const { data, error } = await supabase
             .from('members')
             .select('*')
-            .or(`callsign.ilike.${callsign},callsign.ilike.${callsign} EX %,callsign.ilike.${callsign} ( EX %`)
-            .single();
+            .or(`callsign.ilike.${callsign},callsign.ilike.${callsign} %,callsign.ilike.${callsign}(%,callsign.ilike.% EX ${callsign},callsign.ilike.% EX ${callsign})%`)
+            .limit(5); // Allow multiple matches
 
         if (error) {
-            if (error.code === 'PGRST116') { // Not found
-                return NextResponse.json({ found: false, message: 'Member not found' }, { status: 404, headers });
-            }
             console.error('Supabase error:', error);
             return NextResponse.json({ error: 'Database error' }, { status: 500, headers });
         }
 
-        const { status, expiryDate } = getMembershipStatus(data.expiry);
+        if (!data || data.length === 0) {
+            return NextResponse.json({ found: false, message: 'Member not found' }, { status: 404, headers });
+        }
 
-        // Clean the callsign in the response (e.g. "9M2EDK EX 9W2EDK" -> "9M2EDK")
-        const cleanName = data.callsign.replace(/\s*\(?\s*EX\b.*/i, '').trim();
+        // Prioritize: Find exact match of the clean callsign
+        // If the search term matches the *current* callsign of a record, that record takes priority
+        // over records where the search term only matches the "formerly known as" part.
+        let bestMatch = data[0];
+
+        const searchCallsignNormalized = callsign.toUpperCase().trim();
+        const exactMatch = data.find(record => {
+            const currentCallsign = cleanCallsign(record.callsign).toUpperCase();
+            return currentCallsign === searchCallsignNormalized;
+        });
+
+        if (exactMatch) {
+            bestMatch = exactMatch;
+        }
+
+        const { status, expiryDate } = getMembershipStatus(bestMatch.expiry);
+
+        const cleanName = cleanCallsign(bestMatch.callsign);
         const memberData = {
-            ...data,
+            ...bestMatch,
             callsign: cleanName
         };
 
