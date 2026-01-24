@@ -56,3 +56,32 @@ export function getYotaRole(dob: string | null | undefined): 'Participant' | 'Le
     if (age <= 30) return 'Leader';
     return null;
 }
+
+export function getMembershipStatus(expiry: string | null | undefined): { status: 'ACTIVE' | 'EXPIRED', expiryDate: string | null } {
+    if (!expiry || expiry === '-') {
+        return { status: 'EXPIRED', expiryDate: null };
+    }
+
+    if (expiry.toLowerCase().includes('life')) {
+        return { status: 'ACTIVE', expiryDate: null };
+    }
+
+    try {
+        const parts = expiry.split('/');
+        const year = parseInt(parts[0]);
+        // Default to December if month is missing, or parse month (1-based in string, 0-based in Date)
+        const month = parts[1] ? parseInt(parts[1]) - 1 : 11;
+
+        // Set to end of the month: day 0 of next month returns last day of current month
+        const expiryDate = new Date(year, month + 1, 0, 23, 59, 59);
+        const now = new Date();
+
+        return {
+            status: now > expiryDate ? 'EXPIRED' : 'ACTIVE',
+            expiryDate: expiryDate.toISOString()
+        };
+    } catch (e) {
+        console.error('Error parsing expiry date:', expiry, e);
+        return { status: 'EXPIRED', expiryDate: null };
+    }
+}

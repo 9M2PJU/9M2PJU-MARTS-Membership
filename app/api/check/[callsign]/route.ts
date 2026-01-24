@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase';
+import { getMembershipStatus } from '@/lib/callsign-utils';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
@@ -38,7 +39,14 @@ export async function GET(
             return NextResponse.json({ error: 'Database error' }, { status: 500, headers });
         }
 
-        return NextResponse.json({ found: true, member: data }, { status: 200, headers });
+        const { status, expiryDate } = getMembershipStatus(data.expiry);
+
+        return NextResponse.json({
+            found: true,
+            member: data,
+            status,
+            calculated_expiry_date: expiryDate
+        }, { status: 200, headers });
 
     } catch (error: any) {
         console.error('Server error:', error);
